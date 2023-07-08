@@ -8,7 +8,7 @@ public class BasicPlantBehaviour : MonoBehaviour
     public string plantName;
     [Tooltip("The plant's Health Points")]
     public int HP;
-    [Tooltip("Bullets every 5 seconds")]
+    [Tooltip("Bullets per seconds")]
     public float attackSpeed;
     [Tooltip("In units per second")]
     public float bulletSpeed;
@@ -20,13 +20,26 @@ public class BasicPlantBehaviour : MonoBehaviour
     public int brainReward;
 
 
+    [Tooltip("The projectile used by the plant")]
+    public GameObject bulletPrefab;
+
+
+
     private int currentHP;
 
     private PlantManager plantManager;
     private ZombieManager zombieManager;
-    private int[] position = new int[2];
+
+    private int[] plantPosition = new int[2];
 
     private bool initialized = false;
+
+
+
+    private int framesCount;
+    private int framesPerBullet;
+
+
 
     public enum Colors
 	{
@@ -42,44 +55,55 @@ public class BasicPlantBehaviour : MonoBehaviour
 	{
         plantManager = p;
         zombieManager = z;
-        position[0] = linePos;
-        position[1] = columnPos;
+        plantPosition[0] = linePos;
+        plantPosition[1] = columnPos;
         initialized = true;
     }
 
 	private void Start()
 	{
         currentHP = HP;
+        framesPerBullet = (int)(60/attackSpeed);
 	}
 
 	// Update is called once per frame
 	void Update()
     {
-        
+        if (framesPerBullet!=0 && framesCount % framesPerBullet == 0 && zombieInLine(plantPosition[0]))
+            ShootProjectile();
+
+        framesCount ++;
     }
 
-    bool zombieInLine(int i) // Returns true if at least one zombie is on the line
+
+    private void ShootProjectile()
 	{
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletSpeed, bulletDamage); // May be very VERY glutton
+	}
+
+
+    private bool zombieInLine(int i) // Returns true if at least one zombie is on the line
+	{
+        // Look at the zombie list row i to see if it's empty or not (in zombie manager)
         return true;
 	}
 
 
-    public bool takeDamage(int damage) // Decreases the plant's hp and returns true if that kills it
+    public void takeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
 	{
         currentHP -= damage;
 
 		if (currentHP <= 0)
 		{
-            zombieManager.GetBrains(brainReward);
+            zombieManager.ObtainBrains(brainReward);
             Death();
-            return true;
         }
-        return false;
     }
 
     public void Death()
 	{
-        plantManager.FreePlantPlaceHolder(position[0], position[1]);
+        plantManager.FreePlantPlaceHolder(plantPosition[0], plantPosition[1]);
         Destroy(gameObject);
 	}
 }
