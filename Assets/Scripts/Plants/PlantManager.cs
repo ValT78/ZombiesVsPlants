@@ -21,22 +21,33 @@ public class PlantManager : MonoBehaviour
     public float averageTimeBetweenPlants;
 
 
-    private int totalSun;
+    public int totalSun;
 
     private int framesCount;
+
+    private int index;
+
+
+    //********************************************
+
+
+    public int[] plantOrder = {0,3,3,0,3,0,2,3,0,3,0,3,3,3,2}; // Corresponds to the "PlantType" ENUM stored in BasicPlantBehaviour
+
+
+    //********************************************
+
 
 
     void Start()
     {
         Application.targetFrameRate = 60;
 
+        index = 0;
         totalSun = startingSun;
 
         if (priceGrid.Length != plantTypes.Length)
             Debug.LogError("Price Grid and plant types must have the same length !");
 
-
-        InstantiatePlant(5, 0, 0);
 
 		/*for (int i = 0; i < 5; i++)
 		{
@@ -49,11 +60,47 @@ public class PlantManager : MonoBehaviour
 
     void Update()
     {
-		if (framesCount % 350 == 0)
+		if (framesCount % 720 == 0)
 		{
             GetSun(passiveSun);
 		}
+
+        if(framesCount% ((int)averageTimeBetweenPlants*30) == 0)
+		{
+
+            //Debug.Log("Trying to plant at frame "+framesCount);
+
+            int[] pos = GetRandomNextFreePosition();
+
+			if (InstantiatePlant(plantOrder[index], pos[0], pos[1]) || Random.Range(0f, 1f) > 0.96)
+			{
+                index = (index+1)%plantOrder.Length;
+                //Debug.Log("Skipped a plant !");
+			}
+		}
+
+        framesCount++;
     }
+
+    
+    private int[] GetRandomNextFreePosition()
+	{
+        int i = Random.Range(0,5);
+        int j = 0;
+
+        int sat = 0;
+
+		while (plantMatrix[i, j] != null)
+		{
+            i = Random.Range(0, 5);
+            sat += 1;
+
+            j = sat % 6;
+        }
+
+        return new int[] { i, j };
+	}
+
 
     public void GetSun(int amount)
 	{
@@ -71,7 +118,7 @@ public class PlantManager : MonoBehaviour
 
 		if (totalSun - priceGrid[plant] < 0)
 		{
-            Debug.LogError("Not enough sun to plant !");
+            //Debug.LogError("Not enough sun to plant !");
             return false;
         }
 
@@ -79,6 +126,9 @@ public class PlantManager : MonoBehaviour
         GameObject instance = Instantiate(plantTypes[plant], new Vector3(columnPos, linePos, 0), Quaternion.identity);
         instance.GetComponent<BasicPlantBehaviour>().Initialize(this, zombieManager, linePos, columnPos);
         plantMatrix[linePos, columnPos] = instance;
+
+        totalSun -= priceGrid[plant];
+
         return true;
     }
 

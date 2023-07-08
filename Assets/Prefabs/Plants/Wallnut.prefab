@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5152d1350c2cc4087c7634b5cbf573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantType: 1
+  plantType: 2
   cost: 100
   HP: 80
   attackSpeed: 0

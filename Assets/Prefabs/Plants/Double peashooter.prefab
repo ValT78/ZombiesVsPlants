@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5152d1350c2cc4087c7634b5cbf573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantType: 3
+  plantType: 4
   cost: 125
   HP: 20
-  attackSpeed: 1
+  attackSpeed: 0.5
   bulletSpeed: 3
   bulletDamage: 5
   plantColor: 0

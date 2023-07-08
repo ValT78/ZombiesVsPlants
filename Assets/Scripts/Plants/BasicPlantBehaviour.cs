@@ -38,8 +38,12 @@ public class BasicPlantBehaviour : MonoBehaviour
 
 
 
-    private int framesCount;
+    private int framesCount = 1;
     private int framesPerBullet;
+
+
+    private int nextWait = 720;
+
 
     public enum PlantTypes
     {
@@ -86,12 +90,15 @@ public class BasicPlantBehaviour : MonoBehaviour
             ShootProjectile();
 
 
-        if(plantType <= PlantTypes.Supersunflower && framesCount % 350 == 0)
+        if(plantType <= PlantTypes.Supersunflower && framesCount % nextWait == 0)
 		{
             plantManager.GetSun(50);
 
             if (plantType == PlantTypes.Supersunflower)
                 plantManager.GetSun(50);
+
+            nextWait = Random.Range(720, 1000);
+
 		}
 
         framesCount ++;

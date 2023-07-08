@@ -16,7 +16,7 @@ public class ProjectileBehaviour : MonoBehaviour
 
     public void Initialize(float bs, int dmg)
 	{
-		bulletSpeed = bs;
+		bulletSpeed = bs + Random.Range(-0.4f,0.4f);
 		damage = dmg;
 		initialized = true;
 	}
