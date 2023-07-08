@@ -70,7 +70,7 @@ public class BasicPlantBehaviour : MonoBehaviour
 
 		if (currentHP <= 0)
 		{
-            zombieManager.GetBrains(brainReward);
+            zombieManager.ObtainBrains(brainReward);
             Death();
             return true;
         }
