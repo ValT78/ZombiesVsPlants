@@ -22,6 +22,11 @@ public class BasicPlantBehaviour : MonoBehaviour
 
     private int currentHP;
 
+    private PlantManager plantManager;
+    private ZombieManager zombieManager;
+    private int[] position = new int[2];
+
+    private bool initialized = false;
 
     public enum Colors
 	{
@@ -31,12 +36,16 @@ public class BasicPlantBehaviour : MonoBehaviour
 	}
 
 
-    public static GameObject InstantiatePlant(GameObject prefab, int linePos, int colomunPos)
-	{
-        GameObject instance = Instantiate(prefab, new Vector3(colomunPos, linePos, 0), Quaternion.identity);
-        return instance;
-	}
+    
 
+    public void Initialize(PlantManager p, ZombieManager z, int linePos, int columnPos)
+	{
+        plantManager = p;
+        zombieManager = z;
+        position[0] = linePos;
+        position[1] = columnPos;
+        initialized = true;
+    }
 
 	private void Start()
 	{
@@ -61,11 +70,16 @@ public class BasicPlantBehaviour : MonoBehaviour
 
 		if (currentHP <= 0)
 		{
-            // Call function GetBrain() from zombieManager
+            zombieManager.GetBrains(brainReward);
+            Death();
             return true;
         }
-
         return false;
     }
 
+    public void Death()
+	{
+        plantManager.FreePlantPlaceHolder(position[0], position[1]);
+        Destroy(gameObject);
+	}
 }
