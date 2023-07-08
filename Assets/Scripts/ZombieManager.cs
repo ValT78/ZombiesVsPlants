@@ -8,6 +8,8 @@ public class ZombieManager : MonoBehaviour
 
     [SerializeField] private int startBrains;
     [SerializeField] private float timePassiveBrains;
+
+    public List<Transform> availableSpawn;
     private int brains;
     void Start()
     {
@@ -23,16 +25,21 @@ public class ZombieManager : MonoBehaviour
 
     private IEnumerator PassiveBrains()
     {
-        yield return new WaitForSeconds(timePassiveBrains);
-        SummonGroundBrain();
-        StartCoroutine(PassiveBrains());
+        while (true)
+        {
+            yield return new WaitForSeconds(timePassiveBrains);
+            SummonGroundBrain();
+        }
 
     }
 
-    public void GetBrains(int brains)
+    public void ObtainBrains(int brains)
     {
         this.brains += brains;
-        print(this.brains);
+    }
+    public int GetBrains()
+    {
+        return brains;
     }
     private void SummonGroundBrain()
     {

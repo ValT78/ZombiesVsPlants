@@ -18,10 +18,11 @@ public class Tombstone : MonoBehaviour
     
     private IEnumerator GenerateBrains()
     {
-        yield return new WaitForSeconds(timeGenerateBrains);
-        SummonBrain();
-        StartCoroutine(GenerateBrains());
-
+        while (true)
+        {
+            yield return new WaitForSeconds(timeGenerateBrains);
+            SummonBrain();
+        }
     }
 
    

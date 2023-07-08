@@ -10,8 +10,8 @@ public class LoadingHolder : MonoBehaviour
     [SerializeField] private float loadTime;
 
     private float loadTimer;
-    // Start is called before the first frame update
-    void Start()
+
+    void OnEnable()
     {
         loadTimer = loadTime;
     }
@@ -21,9 +21,10 @@ public class LoadingHolder : MonoBehaviour
     {
         if (loadTimer<=0f)
         {
-            //buyHolder.CanBuy();
+            buyHolder.CanBuy();
             this.gameObject.SetActive(false);
         }
+
         loader.fillAmount = loadTimer / loadTime;
         loadTimer -= Time.deltaTime;
     }
