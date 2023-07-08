@@ -22,7 +22,6 @@ public class ProjectileBehaviour : MonoBehaviour
 	}
     
 
-    // Update is called once per frame
     void FixedUpdate()
     {
 		if (frameCount > bulletLifeTime)
@@ -30,9 +29,11 @@ public class ProjectileBehaviour : MonoBehaviour
 
 		if(initialized)
 			transform.Translate(bulletSpeed / 60, 0, 0);
+
+		frameCount++;
     }
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	/*private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (initialized && collision.collider.CompareTag("Zombie"))
 		{
@@ -50,5 +51,5 @@ public class ProjectileBehaviour : MonoBehaviour
 			// collision.collider.GetComponent<ZombieManager>().
 			Destroy(gameObject);
 		}
-	}
+	}*/
 }

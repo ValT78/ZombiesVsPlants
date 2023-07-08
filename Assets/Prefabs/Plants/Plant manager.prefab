@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5642088026739439927
+--- !u!1 &8092172307898083608
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5642088026739439926}
-  - component: {fileID: 5642088026739439925}
+  - component: {fileID: 8092172307898083614}
+  - component: {fileID: 8092172307898083609}
   m_Layer: 0
   m_Name: Plant manager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5642088026739439926
+--- !u!4 &8092172307898083614
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5642088026739439927}
+  m_GameObject: {fileID: 8092172307898083608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.9673169, y: 0.54167104, z: 2.8532326}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,18 +32,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5642088026739439925
+--- !u!114 &8092172307898083609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5642088026739439927}
+  m_GameObject: {fileID: 8092172307898083608}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78658c2d42e9c06418842130a05f189a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantTypes:
-  - {fileID: 5700544790019128515, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
+  - {fileID: 2338437170530538874, guid: 0e1bcc39e8b1ef94296f81f6fd403d70, type: 3}
+  - {fileID: 6689820752548645022, guid: 7630918f686fd9443bab2686e9402a69, type: 3}
+  - {fileID: 8469030830306099787, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
+  - {fileID: 2994846578334188613, guid: 4cf5e268f18e2944f960ad37950a7b93, type: 3}
+  - {fileID: 7172391900952836306, guid: 1ed3c34225b4b44408e98580777d93b7, type: 3}
+  - {fileID: 6746338822584851891, guid: a4c2f6615d5b0f4469b37c73fb928f86, type: 3}
+  - {fileID: 1325101161886079111, guid: 6496b448e3b581e4d9826735786dc462, type: 3}
+  - {fileID: 4818720737582652706, guid: 9c5b2e970cce8304b8113aea943a7910, type: 3}
+  priceGrid: 3200000064000000320000004b0000004b0000007d0000009600000096000000
   zombieManager: {fileID: 0}
+  startingSunflowers: 50
+  passiveSunflowers: 25
+  averageTimeBetweenPlants: 6

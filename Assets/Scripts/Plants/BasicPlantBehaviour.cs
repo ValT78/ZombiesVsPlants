@@ -5,7 +5,9 @@ using UnityEngine;
 public class BasicPlantBehaviour : MonoBehaviour
 {
     [Tooltip("The plant's name displayed to the player")]
-    public string plantName;
+    public PlantTypes plantType;
+    [Tooltip("Amount of sunflowers requiered to plant it")]
+    public int cost;
     [Tooltip("The plant's Health Points")]
     public int HP;
     [Tooltip("Bullets per seconds")]
@@ -39,7 +41,14 @@ public class BasicPlantBehaviour : MonoBehaviour
     private int framesCount;
     private int framesPerBullet;
 
-
+    public enum PlantTypes
+    {
+        Sunflower,
+        Supersunflower,
+        Wallnut,
+        Peashooter,
+        DoublePeashooter
+    }
 
     public enum Colors
 	{
@@ -60,17 +69,30 @@ public class BasicPlantBehaviour : MonoBehaviour
         initialized = true;
     }
 
-	private void Start()
+	void Start()
 	{
         currentHP = HP;
-        framesPerBullet = (int)(60/attackSpeed);
+        framesPerBullet = (int)(60 / attackSpeed);
 	}
 
-	// Update is called once per frame
 	void Update()
     {
-        if (framesPerBullet!=0 && framesCount % framesPerBullet == 0 && zombieInLine(plantPosition[0]))
+
+        if (plantType >= PlantTypes.Peashooter && framesCount % framesPerBullet == 0)
             ShootProjectile();
+
+
+        if (plantType == PlantTypes.DoublePeashooter && framesCount % framesPerBullet == framesPerBullet/6)
+            ShootProjectile();
+
+
+        if(plantType <= PlantTypes.Supersunflower && framesCount % 350 == 0)
+		{
+            plantManager.GetSun(50);
+
+            if (plantType == PlantTypes.Supersunflower)
+                plantManager.GetSun(50);
+		}
 
         framesCount ++;
     }
@@ -82,12 +104,6 @@ public class BasicPlantBehaviour : MonoBehaviour
         bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletSpeed, bulletDamage); // May be very VERY glutton
 	}
 
-
-    private bool zombieInLine(int i) // Returns true if at least one zombie is on the line
-	{
-        // Look at the zombie list row i to see if it's empty or not (in zombie manager)
-        return true;
-	}
 
 
     public void takeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
