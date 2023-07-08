@@ -16,7 +16,6 @@ public class LoadingHolder : MonoBehaviour
         loadTimer = loadTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (loadTimer<=0f)

@@ -9,18 +9,12 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private int startBrains;
     [SerializeField] private float timePassiveBrains;
 
-    public List<Transform> availableSpawn;
+    public GameObject[] PlaceHolders = new GameObject[60];
     private int brains;
     void Start()
     {
         brains = startBrains;
         StartCoroutine(PassiveBrains());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private IEnumerator PassiveBrains()
