@@ -207,6 +207,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &443353666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443353668}
+  - component: {fileID: 443353667}
+  m_Layer: 0
+  m_Name: Zombie Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &443353667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443353666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ed2e0e1bad7c34c8f8ac00af75f994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
+  startBrains: 2
+  timePassiveBrains: 1
+--- !u!4 &443353668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443353666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9686129, y: -0.3456147, z: 4.3433623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522770983
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,52 +338,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &549130076
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 549130077}
-  - component: {fileID: 549130078}
-  m_Layer: 0
-  m_Name: Plant manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &549130077
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549130076}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9673169, y: 0.54167104, z: 2.8532326}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &549130078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549130076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78658c2d42e9c06418842130a05f189a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plants:
-  - {fileID: 5700544790019128515, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
 --- !u!1 &641494316
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,5 +422,123 @@ Transform:
   - {fileID: 522770984}
   - {fileID: 426171706}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1210779010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1935360759485331809, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_Name
+      value: brainUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935360759485331811, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e293e725a4c00d44296251dc39e8b4a9, type: 3}
+--- !u!1001 &5642088027287385707
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5642088026739439925, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: zombieManager
+      value: 
+      objectReference: {fileID: 443353667}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9673169
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.54167104
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.8532326
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439926, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642088026739439927, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: m_Name
+      value: Plant manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
