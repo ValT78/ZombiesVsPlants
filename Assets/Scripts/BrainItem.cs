@@ -10,18 +10,27 @@ public class BrainItem : MonoBehaviour
     [SerializeField] private int storedBrains;
     [SerializeField] private float despawnTime;
     [SerializeField] private float collectTime;
-    [SerializeField] private float fromGroundSpeed;
+    [SerializeField] private float floatRange;
+    [SerializeField] private float floatSpeed;
+    [SerializeField] private float floatTime;
 
     private bool fromGround;
     private float collectTimer = 0;
     private bool getClicked = false;
     private Vector3 startPosition;
+    private Vector2 newPosition;
+    private float fromGroundSpeed;
 
     void Start()
     {
         StartCoroutine(Depop());
+        StartCoroutine(FloatingAnimation());
+
         zombieManager = FindObjectOfType<ZombieManager>();
         target = GameObject.Find("brainUI").transform.position;
+        fromGroundSpeed = Random.Range(1.0f, 2.0f);
+        startPosition = transform.position;
+        newPosition = transform.position + new Vector3(0.1f, 1);
     }
 
     // Update is called once per frame
@@ -31,7 +40,12 @@ public class BrainItem : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + fromGroundSpeed * Time.deltaTime, transform.position.z);
         }
-        if(getClicked)
+        else if(!getClicked)
+        {
+            transform.position = Vector2.Lerp(transform.position, newPosition, floatSpeed * Time.deltaTime);
+        }
+
+        if (getClicked)
         {
             collectTimer += Time.deltaTime;
 
@@ -41,8 +55,8 @@ public class BrainItem : MonoBehaviour
 
             if (t >= 1f)
             {
-                zombieManager.GetComponent<ZombieManager>().GetBrains(storedBrains);
                 Destroy(this.gameObject);
+                zombieManager.GetComponent<ZombieManager>().GetBrains(storedBrains);
             }
         }
     }
@@ -67,5 +81,14 @@ public class BrainItem : MonoBehaviour
     public void SetFromGround(bool ground)
     {
         fromGround = ground;
+    }
+    private IEnumerator FloatingAnimation()
+    {
+        Vector2 randomDirection = Random.insideUnitCircle;
+        newPosition = new Vector2(startPosition.x, startPosition.y) + randomDirection * floatRange;
+        yield return new WaitForSeconds(floatTime);
+        if (!fromGround && !getClicked)
+            StartCoroutine(FloatingAnimation());
+
     }
 }

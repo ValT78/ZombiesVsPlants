@@ -101,7 +101,9 @@ MonoBehaviour:
   storedBrains: 25
   despawnTime: 10
   collectTime: 1
-  fromGroundSpeed: 1.5
+  floatRange: 2
+  floatSpeed: 0.3
+  floatTime: 1
 --- !u!58 &8181392724142703512
 CircleCollider2D:
   m_ObjectHideFlags: 0
