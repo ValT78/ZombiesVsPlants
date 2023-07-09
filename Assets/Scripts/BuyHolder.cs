@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class BuyHolder : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject loading;
     [SerializeField] private GameObject image;
     [SerializeField] private GameObject toBuy;
     [SerializeField] private int price;
     [SerializeField] private float conqueredArea;
     [SerializeField] private bool isAZombie;
+    [SerializeField] private bool isOpen;
 
+    private GameObject closestObject;
     private ZombieManager zombieManager;
     private bool canBuy = false;
     private bool select = false;
-    private GameObject closestObject;
 
     void Start()
     {
@@ -78,15 +80,28 @@ public class BuyHolder : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if(canBuy && price<=zombieManager.GetBrains())
+        if (isOpen)
         {
-            select = true;
+            if (canBuy && price <= zombieManager.GetBrains())
+            {
+                select = true;
+            }
         }
     }
-
     public void CanBuy()
     {
         canBuy = true;
-        print(canBuy);
+    }
+    public void OpenTab()
+    {
+        isOpen = true; 
+        spriteRenderer.enabled = true;
+
+    }
+    public void CloseTab()
+    {
+        isOpen = false;
+        spriteRenderer.enabled = false;
+
     }
 }

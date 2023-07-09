@@ -100,10 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08caa17bfcc2d414b87f826c973a24f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5328195804465144093}
   loading: {fileID: 5328195804492714935}
   image: {fileID: 5328195804666246755}
   toBuy: {fileID: 7730931122551912228, guid: 024ff4390e139aa499ecceb4c62ed32d, type: 3}
   price: 50
+  conqueredArea: 4
+  isAZombie: 0
+  isOpen: 0
 --- !u!61 &5328195804465144095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5328195804601803809}
   - component: {fileID: 5328195804601804252}
+  - component: {fileID: 2858784567265992151}
   - component: {fileID: 5328195804601803811}
   - component: {fileID: 5328195804601803810}
   m_Layer: 5
@@ -283,6 +288,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2858784567265992151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328195804601803808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e97c094c95eec4eb1482893ae41ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 5328195804601804252}
 --- !u!114 &5328195804601803811
 MonoBehaviour:
   m_ObjectHideFlags: 0
