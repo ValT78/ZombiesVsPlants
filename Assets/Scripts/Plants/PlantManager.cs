@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlantManager : MonoBehaviour
 {
@@ -33,20 +34,23 @@ public class PlantManager : MonoBehaviour
 
     private float randomSeed;
 
-
-    //********************************************
-
-
-    public int[] plantOrder = {0,3,3,0,3,0,2,3,0,3,0,3,3,3,2}; // Corresponds to the "PlantType" ENUM stored in BasicPlantBehaviour
+    private int[] plantOrder;
 
 
-    //********************************************
 
-
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		if (scene.isLoaded)
+		{
+            plantOrder = GameObject.Find("Level_parameters").GetComponent<LevelParameters>().plantTable;
+        }
+	}
 
     void Start()
     {
         Application.targetFrameRate = 60;
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
         index = 0;
         totalSun = startingSun;
