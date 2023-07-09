@@ -101,7 +101,7 @@ public class PlantManager : MonoBehaviour
 
         int sat = 0;
 
-		while (plantMatrix[i, j] != null || j > 12)
+		while (j < 12 && plantMatrix[i, j] != null)
 		{
             i = Random.Range(0, 5);
             sat += 1;

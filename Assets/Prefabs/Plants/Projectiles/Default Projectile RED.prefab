@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 520173810699311631}
   - component: {fileID: 7577089369442680641}
   - component: {fileID: 3333085580405008776}
+  - component: {fileID: 4604601018016963660}
   m_Layer: 0
   m_Name: Default Projectile RED
   m_TagString: Untagged
@@ -98,3 +99,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletColour: 2
+--- !u!58 &4604601018016963660
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476864066535955260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.275

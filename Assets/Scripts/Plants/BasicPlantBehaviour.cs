@@ -97,7 +97,7 @@ public class BasicPlantBehaviour : MonoBehaviour
             if (plantType == PlantTypes.Supersunflower)
                 plantManager.GetSun(50);
 
-            nextWait = Random.Range(720, 1000);
+            nextWait = Random.Range(720, 2000);
 
 		}
 
