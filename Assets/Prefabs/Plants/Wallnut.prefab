@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantType: 2
   cost: 100
-  HP: 80
+  HP: 150
   attackSpeed: 0
   bulletSpeed: 0
   bulletDamage: 0
