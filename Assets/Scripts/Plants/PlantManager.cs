@@ -11,6 +11,8 @@ public class PlantManager : MonoBehaviour
 
     private GameObject[,] plantMatrix = new GameObject[5, 12];
 
+    public Transform[] plantTransformMatrix;
+
     public ZombieManager zombieManager;
 
     [Tooltip("Number of sunflowers to start with")]
@@ -19,6 +21,8 @@ public class PlantManager : MonoBehaviour
     public int passiveSun;
     [Tooltip("Average duration (in seconds) between which plants are being planted")]
     public float averageTimeBetweenPlants;
+
+
 
 
     public int totalSun;
@@ -97,12 +101,12 @@ public class PlantManager : MonoBehaviour
 
         int sat = 0;
 
-		while (plantMatrix[i, j] != null)
+		while (plantMatrix[i, j] != null || j > 12)
 		{
             i = Random.Range(0, 5);
             sat += 1;
 
-            j = sat % 6;
+            j = sat / 6;
         }
 
         return new int[] { i, j };
@@ -129,8 +133,9 @@ public class PlantManager : MonoBehaviour
             return false;
         }
 
+        Transform pos = plantTransformMatrix[linePos*12+columnPos];
 
-        GameObject instance = Instantiate(plantTypes[plant], new Vector3(columnPos, linePos, 0), Quaternion.identity);
+        GameObject instance = Instantiate(plantTypes[plant], pos.position, Quaternion.identity);
         instance.GetComponent<BasicPlantBehaviour>().Initialize(this, zombieManager, linePos, columnPos);
         plantMatrix[linePos, columnPos] = instance;
 

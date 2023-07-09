@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5513043432827472493}
   m_Layer: 0
   m_Name: Peashooter RED
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2994846578334188613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.3, y: -2.957, z: 0}
-  m_LocalScale: {x: 0.21440548, y: 0.2171713, z: 0.21440548}
+  m_LocalScale: {x: 0.4509403, y: 0.4567574, z: 0.4509403}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,8 +102,8 @@ MonoBehaviour:
   cost: 75
   HP: 10
   attackSpeed: 0.75
-  bulletSpeed: 2
-  bulletDamage: 5
+  bulletSpeed: 6
+  bulletDamage: 10
   plantColor: 2
   brainReward: 50
   bulletPrefab: {fileID: 5476864066535955260, guid: 7b53ef5144177f644a1535b49b3b110a, type: 3}
