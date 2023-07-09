@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8d9d4b51d90ae47ba2e259cc95edeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 721125040760021876, guid: b65393a5e79fa6345b9f33f85847cb09, type: 3}
   startingHP: 500
   lifeBar: {fileID: 1434418416536990287}
 --- !u!61 &3826652514628277358
