@@ -5,6 +5,8 @@ using UnityEngine;
 public class NexusManager : MonoBehaviour
 {
 
+    public GameObject gameOverScreen;
+
     public int startingHP;
 
     public GameObject lifeBar;
@@ -38,6 +40,7 @@ public class NexusManager : MonoBehaviour
 
     private void Death()
 	{
+        Instantiate(gameOverScreen,Vector3.zero, Quaternion.identity);
         Destroy(gameObject);
 	}
 
