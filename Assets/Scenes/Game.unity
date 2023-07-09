@@ -1177,6 +1177,7 @@ MonoBehaviour:
   - {fileID: 689258872}
   counterText: {fileID: 1998180204}
   brainCostUI: {fileID: 605510924}
+  victoryScreen: {fileID: 721125040760021876, guid: b65393a5e79fa6345b9f33f85847cb09, type: 3}
   PlaceHolders:
   - {fileID: 622646904}
   - {fileID: 1189952502}
@@ -1820,6 +1821,10 @@ PrefabInstance:
     - target: {fileID: 368582955945781191, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: m_Name
       value: goldbrain (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
+      propertyPath: plantType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantManager
@@ -2492,6 +2497,10 @@ PrefabInstance:
     - target: {fileID: 368582955945781191, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: m_Name
       value: goldbrain (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
+      propertyPath: plantType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantManager
@@ -3458,6 +3467,10 @@ PrefabInstance:
       value: goldbrain (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
+      propertyPath: plantType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantManager
       value: 
       objectReference: {fileID: 2100318}
@@ -4200,6 +4213,10 @@ PrefabInstance:
     - target: {fileID: 368582955945781191, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: m_Name
       value: goldbrain (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
+      propertyPath: plantType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantManager
@@ -6071,6 +6088,10 @@ PrefabInstance:
     - target: {fileID: 368582955945781191, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: m_Name
       value: goldbrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
+      propertyPath: plantType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantManager

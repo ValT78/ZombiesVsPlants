@@ -9,15 +9,16 @@ public class ZombieManager : MonoBehaviour
 
     [SerializeField] private int startBrains;
     [SerializeField] private float timePassiveBrains;
-    [SerializeField] private List<GameObject> goldenBrains;
+    public List<GameObject> goldenBrains;
     [SerializeField] private TextMeshProUGUI counterText;
     [SerializeField] private GameObject brainCostUI;
+    [SerializeField] private GameObject victoryScreen;
 
     public GameObject[] PlaceHolders = new GameObject[60];
     private int brains;
     void Start()
     {
-        goldenBrains = new List<GameObject>();
+        //goldenBrains = new List<GameObject>();
         brains = startBrains;
         StartCoroutine(PassiveBrains());
         counterText.text = "\nX" + this.brains.ToString() + "   ";
@@ -59,9 +60,15 @@ public class ZombieManager : MonoBehaviour
 
     public void CheckVictory()
     {
-        if(goldenBrains.Count <= 1)
+        StartCoroutine(DelayVictory());
+    }
+    private IEnumerator DelayVictory()
+    {
+        yield return new WaitForSeconds(0.2f);
+        print(goldenBrains.Count);
+        if (goldenBrains.Count <= 0)
         {
-            print("Victory");
+            Instantiate(victoryScreen, Vector3.zero, Quaternion.identity);
         }
     }
 }

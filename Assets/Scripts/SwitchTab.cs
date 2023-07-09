@@ -17,7 +17,6 @@ public class SwitchTab : MonoBehaviour
         for (int i = 0; i < mainTab.transform.childCount; i++)
         {
             Transform child = mainTab.transform.GetChild(i);
-            print(child.GetChild(1).gameObject);
             child.GetComponent<BuyHolder>().OpenTab();
             child.GetChild(0).GetComponent<ModifyCanvas>().MakeVisible();
             child.GetChild(1).gameObject.SetActive(true);

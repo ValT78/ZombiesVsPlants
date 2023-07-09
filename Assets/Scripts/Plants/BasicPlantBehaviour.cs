@@ -123,6 +123,7 @@ public class BasicPlantBehaviour : MonoBehaviour
             zombieManager.ObtainBrains(brainReward);
             if(plantType == PlantTypes.Brain)
             {
+                zombieManager.goldenBrains.Remove(this.gameObject);
                 zombieManager.CheckVictory();
             }
             Death();
