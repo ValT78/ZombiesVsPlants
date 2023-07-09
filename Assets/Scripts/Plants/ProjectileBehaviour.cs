@@ -45,15 +45,24 @@ public class ProjectileBehaviour : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collider)
 	{
 
-		Debug.Log("Collision !");
+		//Debug.Log("Collision !");
 
 		if (initialized && collider.CompareTag("Nexus"))
 		{
-			Debug.Log("Dealt damage !");
+			//Debug.Log("Dealt damage !");
 			collider.GetComponent<NexusManager>().TakeDamage(damage);
 			Destroy(gameObject);
 		}
-	}// Deal damage to the zombie or building
+		else if(initialized && collider.CompareTag("Build"))
+		{
+			collider.GetComponent<BuildHP>().TakeDamage(damage);
+		}
+		else if(initialized && collider.CompareTag("Zombie"))
+		{
+			collider.GetComponent<ZombieBehaviour>().TakeDamage(damage);
+		}
+	}
+	// Deal damage to the zombie or building
 			// collision.collider.GetComponent<ZombieManager>().
 /*
 	private void OnCollisionStay2D(Collision2D collision)

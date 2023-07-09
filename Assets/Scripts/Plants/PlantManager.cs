@@ -11,7 +11,7 @@ public class PlantManager : MonoBehaviour
 
     private GameObject[,] plantMatrix = new GameObject[5, 12];
 
-    public Transform[] plantTransformMatrix;
+    public GameObject[] placeholdersMatrix;
 
     public ZombieManager zombieManager;
 
@@ -133,7 +133,17 @@ public class PlantManager : MonoBehaviour
             return false;
         }
 
-        Transform pos = plantTransformMatrix[linePos*12+columnPos];
+        PlaceHolder placeholder = placeholdersMatrix[linePos * 12 + columnPos].GetComponent<PlaceHolder>();
+
+        if (!placeholder.canBuild)
+		{
+            // Can't build !
+            return false;
+		}
+
+        placeholder.canBuild = false;
+
+        Transform pos = placeholdersMatrix[linePos*12+columnPos].transform;
 
         GameObject instance = Instantiate(plantTypes[plant], pos.position, Quaternion.identity);
         instance.GetComponent<BasicPlantBehaviour>().Initialize(this, zombieManager, linePos, columnPos);
@@ -146,6 +156,7 @@ public class PlantManager : MonoBehaviour
 
     public void FreePlantPlaceHolder(int linePos, int columnPos)
 	{
+        placeholdersMatrix[linePos * 12 + columnPos].GetComponent<PlaceHolder>().canBuild = true;
         plantMatrix[linePos, columnPos] = null;
     }
 }
