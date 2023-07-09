@@ -13,7 +13,7 @@ public class ZombieBehaviour : MonoBehaviour
 
     private GameObject eated;
     private float startTime;
-    private int isEating;
+    private bool isEating;
 
     void Start()
     {
@@ -33,25 +33,29 @@ public class ZombieBehaviour : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Plant"))
         {
-            isEating += 1;
+            if(!isEating)
+            {
+                StartCoroutine(Eat());
+            }
+            isEating = true;
             eated = collider.gameObject;
-            StartCoroutine(Eat());
         }
     }
     private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Plant"))
         {
-            isEating -= 1;
+            isEating = false;
         }
     }
     private IEnumerator Eat()
     {
-        while (isEating <= 1)
+        yield return new WaitForSeconds(0.2f);
+        while (isEating)
         {
             eated.GetComponent<BasicPlantBehaviour>().takeDamage(damage);
             yield return new WaitForSeconds(12.5f/frequency);
