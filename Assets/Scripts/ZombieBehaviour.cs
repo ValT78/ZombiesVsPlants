@@ -37,6 +37,7 @@ public class ZombieBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Plant"))
         {
+            print("touch");
             isEating = true;
             eated = collision.gameObject;
             StartCoroutine(Eat());

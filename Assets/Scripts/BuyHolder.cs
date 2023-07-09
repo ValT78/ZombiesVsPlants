@@ -41,16 +41,17 @@ public class BuyHolder : MonoBehaviour
                 zombieManager.ObtainBrains(-price);
                 select = false;
                 canBuy = false;
-                Instantiate(toBuy, image.transform.position, Quaternion.identity);
+                GameObject instanceSpawn = Instantiate(toBuy, image.transform.position, Quaternion.identity);
+                instanceSpawn.transform.position += new Vector3(0, 0.55f, 0);
                 closestObject.GetComponent<PlaceHolder>().canBuild = isAZombie;
-                if(!isAZombie)
+                if (!isAZombie)
                 {
                     foreach (GameObject placeHolder in zombieManager.PlaceHolders)
                     {
                         if(Vector3.Distance(placeHolder.transform.position, image.transform.position) < conqueredArea)
                         {
                             placeHolder.GetComponent<PlaceHolder>().canSpawn = true;
-                            placeHolder.GetComponent<BuildHP>().distance = placeHolder.GetComponent<PlaceHolder>().distance;
+                            instanceSpawn.GetComponent<BuildHP>().distance = placeHolder.GetComponent<PlaceHolder>().distance;
                             if (tabColor==1)
                             {
                                 placeHolder.GetComponent<PlaceHolder>().redSpawn = true;
@@ -111,7 +112,7 @@ public class BuyHolder : MonoBehaviour
     {
         if (isOpen)
         {
-            if (tabColor == 0 || (tabColor == 2 && HasBlueHolder()) || (tabColor == 1 && HasRedHolder()))
+            if (tabColor == 0 || !isAZombie || (tabColor == 2 && HasBlueHolder()) || (tabColor == 1 && HasRedHolder()))
             {
                 if (canBuy && price <= zombieManager.GetBrains())
                 {

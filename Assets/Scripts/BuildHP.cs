@@ -6,7 +6,7 @@ public class BuildHP : MonoBehaviour
 {
     [SerializeField] private float HP;
 
-    [HideInInspector] public int distance;
+    [HideInInspector] public int distance = 12;
     // Start is called before the first frame update
 
     public void TakeDamage(int damage)

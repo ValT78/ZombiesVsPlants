@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1487561588493753417}
   m_Layer: 0
   m_Name: redtomb
-  m_TagString: Zombie
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
