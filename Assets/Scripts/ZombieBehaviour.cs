@@ -8,6 +8,8 @@ public class ZombieBehaviour : MonoBehaviour
     [SerializeField] private float frequency;
     [SerializeField] private float amplitude;
     [SerializeField] private int damage;
+    [SerializeField] private int HP;
+    [SerializeField] private ZombieColor zombieColor; 
 
     private GameObject eated;
     private float startTime;
@@ -56,5 +58,20 @@ public class ZombieBehaviour : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        HP -= damage;
+        if (HP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public enum ZombieColor
+    {
+        Neutral,
+        Blue,
+        Red
+    }
 
 }

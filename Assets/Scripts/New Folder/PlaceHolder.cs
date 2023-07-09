@@ -8,4 +8,5 @@ public class PlaceHolder : MonoBehaviour
     public bool canSpawn = true;
     public bool blueSpawn = false;
     public bool redSpawn = false;
+    public int distance;
 }

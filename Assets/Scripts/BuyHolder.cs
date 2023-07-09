@@ -50,7 +50,8 @@ public class BuyHolder : MonoBehaviour
                         if(Vector3.Distance(placeHolder.transform.position, image.transform.position) < conqueredArea)
                         {
                             placeHolder.GetComponent<PlaceHolder>().canSpawn = true;
-                            if(tabColor==1)
+                            placeHolder.GetComponent<BuildHP>().distance = placeHolder.GetComponent<PlaceHolder>().distance;
+                            if (tabColor==1)
                             {
                                 placeHolder.GetComponent<PlaceHolder>().redSpawn = true;
 
