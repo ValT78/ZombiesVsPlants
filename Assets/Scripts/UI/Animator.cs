@@ -27,4 +27,10 @@ public class Animator : MonoBehaviour
 		hoversoundEffect.Play();
 	}
 
+
+	public void QuitApplication()
+	{
+		Application.Quit();
+	}
+
 }
