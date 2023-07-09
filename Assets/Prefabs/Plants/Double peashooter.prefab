@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8827270878961027809}
   m_Layer: 0
   m_Name: Double peashooter
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6746338822584851891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.462, y: -3.132, z: 0}
-  m_LocalScale: {x: 0.1816319, y: 0.18397494, z: 0.1816319}
+  m_LocalScale: {x: 0.45104647, y: 0.45686495, z: 0.45104647}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,10 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantType: 4
   cost: 125
-  HP: 20
+  HP: 10
   attackSpeed: 0.5
-  bulletSpeed: 3
-  bulletDamage: 5
+  bulletSpeed: 6
+  bulletDamage: 10
   plantColor: 0
   brainReward: 125
   bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
