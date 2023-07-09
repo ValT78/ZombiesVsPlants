@@ -33,19 +33,18 @@ public class ZombieBehaviour : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Plant"))
+        if (collider.gameObject.CompareTag("Plant"))
         {
-            print("touch");
             isEating = true;
-            eated = collision.gameObject;
+            eated = collider.gameObject;
             StartCoroutine(Eat());
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Plant"))
+        if (collider.gameObject.CompareTag("Plant"))
         {
             isEating = false;
         }
