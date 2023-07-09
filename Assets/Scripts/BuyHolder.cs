@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuyHolder : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private BoxCollider2D col;
     [SerializeField] private GameObject loading;
     [SerializeField] private GameObject image;
     [SerializeField] private GameObject toBuy;
@@ -32,7 +33,7 @@ public class BuyHolder : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 select = false;
-                image.transform.position = Vector3.zero;
+                image.transform.position = transform.position;
             }
             else if (Input.GetMouseButtonDown(0))
             {
@@ -96,12 +97,13 @@ public class BuyHolder : MonoBehaviour
     {
         isOpen = true; 
         spriteRenderer.enabled = true;
+        col.enabled = true;
 
     }
     public void CloseTab()
     {
         isOpen = false;
         spriteRenderer.enabled = false;
-
+        col.enabled = false;
     }
 }
