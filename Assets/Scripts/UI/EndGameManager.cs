@@ -29,7 +29,7 @@ public class EndGameManager : MonoBehaviour
 
 		if (framesCount>=360)
 		{
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("AdriKat");
 		}
     }
 }
