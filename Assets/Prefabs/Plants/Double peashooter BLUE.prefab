@@ -106,7 +106,7 @@ MonoBehaviour:
   bulletDamage: 5
   plantColor: 1
   brainReward: 125
-  bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
+  bulletPrefab: {fileID: 5476864066535955260, guid: e2834bd7c57d6a845919197af1982009, type: 3}
 --- !u!61 &7906624320038095723
 BoxCollider2D:
   m_ObjectHideFlags: 0

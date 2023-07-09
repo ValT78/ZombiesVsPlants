@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7172391900952836306
+--- !u!1 &5476864066535955260
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4703619185331995036}
-  - component: {fileID: 4967226827428133404}
-  - component: {fileID: 1329152457038076717}
-  - component: {fileID: 3122858690372363266}
+  - component: {fileID: 520173810699311631}
+  - component: {fileID: 7577089369442680641}
+  - component: {fileID: 3333085580405008776}
   m_Layer: 0
-  m_Name: Peashooter BLUE
+  m_Name: Default Projectile BLUE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4703619185331995036
+--- !u!4 &520173810699311631
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7172391900952836306}
+  m_GameObject: {fileID: 5476864066535955260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.915, y: -1.677, z: 0}
-  m_LocalScale: {x: 0.21544302, y: 0.2182222, z: 0.21544302}
+  m_LocalPosition: {x: -2.1079, y: 0.5579, z: 0}
+  m_LocalScale: {x: 0.6842, y: 0.6842, z: 0.6842}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4967226827428133404
+--- !u!212 &7577089369442680641
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7172391900952836306}
+  m_GameObject: {fileID: 5476864066535955260}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d5d2e0d8d8835704d85d52059eb0ad53, type: 3}
-  m_Color: {r: 0.4666667, g: 0.8470589, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: da396610d27b8fa408d1994b6bea39db, type: 3}
+  m_Color: {r: 0, g: 0.5793958, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,50 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1329152457038076717
+--- !u!114 &3333085580405008776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7172391900952836306}
+  m_GameObject: {fileID: 5476864066535955260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f5152d1350c2cc4087c7634b5cbf573, type: 3}
+  m_Script: {fileID: 11500000, guid: 60907ebbea06ef84ca6e315f85c390b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantType: 3
-  cost: 75
-  HP: 10
-  attackSpeed: 0.75
-  bulletSpeed: 2
-  bulletDamage: 5
-  plantColor: 1
-  brainReward: 50
-  bulletPrefab: {fileID: 5476864066535955260, guid: e2834bd7c57d6a845919197af1982009, type: 3}
---- !u!61 &3122858690372363266
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7172391900952836306}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.07008314, y: -0.83756936}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.65, y: 5.29}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.565317, y: 3.5987694}
-  m_EdgeRadius: 0
+  bulletColour: 1

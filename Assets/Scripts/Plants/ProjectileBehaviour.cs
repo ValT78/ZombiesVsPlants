@@ -5,6 +5,9 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour
 {
 
+	public BulletColor bulletColour;
+
+
 	private const int bulletLifeTime = 480;
 
     private float bulletSpeed;
@@ -16,11 +19,17 @@ public class ProjectileBehaviour : MonoBehaviour
 
     public void Initialize(float bs, int dmg)
 	{
-		bulletSpeed = bs + Random.Range(-0.4f,0.4f);
+		bulletSpeed = bs + Random.Range(-0.3f,0.3f);
 		damage = dmg;
 		initialized = true;
 	}
     
+	public enum BulletColor
+	{
+		Neutral,
+		Blue,
+		Red
+	}
 
     void FixedUpdate()
     {

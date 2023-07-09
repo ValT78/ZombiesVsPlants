@@ -27,6 +27,8 @@ public class PlantManager : MonoBehaviour
 
     private int index;
 
+    private float randomSeed;
+
 
     //********************************************
 
@@ -49,13 +51,16 @@ public class PlantManager : MonoBehaviour
             Debug.LogError("Price Grid and plant types must have the same length !");
 
 
-		/*for (int i = 0; i < 5; i++)
+        /*for (int i = 0; i < 5; i++)
 		{
 			for (int j = 0; j < 12; j++)
 			{
 				InstantiatePlant(0, i, j);
 			}
 		}*/
+
+        randomSeed = Random.Range(0, 50);
+
 	}
 
     void Update()
@@ -65,7 +70,7 @@ public class PlantManager : MonoBehaviour
             GetSun(passiveSun);
 		}
 
-        if(framesCount% ((int)averageTimeBetweenPlants*30) == 0)
+        if(framesCount% (int)(averageTimeBetweenPlants*30 + randomSeed) == 0)
 		{
 
             //Debug.Log("Trying to plant at frame "+framesCount);
@@ -77,7 +82,9 @@ public class PlantManager : MonoBehaviour
                 index = (index+1)%plantOrder.Length;
                 //Debug.Log("Skipped a plant !");
 			}
-		}
+
+            randomSeed = Random.Range(0, 50);
+        }
 
         framesCount++;
     }
