@@ -56,10 +56,13 @@ public class ProjectileBehaviour : MonoBehaviour
 		else if(initialized && collider.CompareTag("Build"))
 		{
 			collider.GetComponent<BuildHP>().TakeDamage(damage);
+			Destroy(gameObject);
 		}
 		else if(initialized && collider.CompareTag("Zombie"))
 		{
 			collider.GetComponent<ZombieBehaviour>().TakeDamage(damage);
+			Destroy(gameObject);
+
 		}
 	}
 	// Deal damage to the zombie or building

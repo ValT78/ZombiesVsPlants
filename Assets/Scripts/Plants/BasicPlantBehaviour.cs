@@ -29,8 +29,8 @@ public class BasicPlantBehaviour : MonoBehaviour
 
     private int currentHP;
 
-    private PlantManager plantManager;
-    private ZombieManager zombieManager;
+    [SerializeField] private PlantManager plantManager;
+    [SerializeField] private ZombieManager zombieManager;
 
     private int[] plantPosition = new int[2];
 
@@ -50,8 +50,10 @@ public class BasicPlantBehaviour : MonoBehaviour
         Sunflower,
         Supersunflower,
         Wallnut,
+        Brain,
         Peashooter,
         DoublePeashooter
+        
     }
 
     public enum Colors
@@ -116,17 +118,21 @@ public class BasicPlantBehaviour : MonoBehaviour
     public void takeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
 	{
         currentHP -= damage;
-
+        print(currentHP);
 		if (currentHP <= 0)
 		{
             zombieManager.ObtainBrains(brainReward);
+            if(plantType == PlantTypes.Brain)
+            {
+                zombieManager.CheckVictory();
+            }
             Death();
         }
     }
 
     public void Death()
 	{
-        plantManager.FreePlantPlaceHolder(plantPosition[0], plantPosition[1]);
         Destroy(gameObject);
+        plantManager.FreePlantPlaceHolder(plantPosition[0], plantPosition[1]);
 	}
 }
