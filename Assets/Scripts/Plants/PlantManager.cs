@@ -34,7 +34,7 @@ public class PlantManager : MonoBehaviour
 
     private float randomSeed;
 
-    private int[] plantOrder;
+    public int[] plantOrder;
 
 
 
@@ -43,6 +43,7 @@ public class PlantManager : MonoBehaviour
 		if (scene.isLoaded)
 		{
             plantOrder = GameObject.Find("Level_parameters").GetComponent<LevelParameters>().plantTable;
+            Debug.Log(GameObject.Find("Level_parameters"));
         }
 	}
 
