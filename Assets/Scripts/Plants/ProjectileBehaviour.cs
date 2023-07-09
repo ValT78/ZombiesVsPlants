@@ -42,16 +42,20 @@ public class ProjectileBehaviour : MonoBehaviour
 		frameCount++;
     }
 
-	/*private void OnCollisionEnter2D(Collision2D collision)
+	private void OnTriggerEnter2D(Collider2D collider)
 	{
-		if (initialized && collision.collider.CompareTag("Zombie"))
+
+		Debug.Log("Collision !");
+
+		if (initialized && collider.CompareTag("Nexus"))
 		{
-			// Deal damage to the zombie or building
-			// collision.collider.GetComponent<ZombieManager>().
+			Debug.Log("Dealt damage !");
+			collider.GetComponent<NexusManager>().TakeDamage(damage);
 			Destroy(gameObject);
 		}
-	}
-
+	}// Deal damage to the zombie or building
+			// collision.collider.GetComponent<ZombieManager>().
+/*
 	private void OnCollisionStay2D(Collision2D collision)
 	{
 		if (initialized && collision.collider.CompareTag("Zombie"))

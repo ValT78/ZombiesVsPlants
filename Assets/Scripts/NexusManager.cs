@@ -9,7 +9,7 @@ public class NexusManager : MonoBehaviour
 
     public GameObject lifeBar;
 
-
+    public const float baseScaleY = 31.95916f;
 
     private int currentHP;
 
@@ -17,7 +17,7 @@ public class NexusManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHP = startingHP;
     }
 
     // Update is called once per frame
@@ -27,8 +27,10 @@ public class NexusManager : MonoBehaviour
     }
 
 
-    public void takeDamage(int dmg)
+    public void TakeDamage(int dmg)
 	{
+        lifeBar.transform.localScale += new Vector3(0, -baseScaleY*dmg/startingHP, 0);
+
         currentHP -= dmg;
         if (currentHP <= 0)
             Death();
