@@ -5,10 +5,12 @@ using UnityEngine;
 public class BasicPlantBehaviour : MonoBehaviour
 {
     [Tooltip("The plant's name displayed to the player")]
-    public string plantName;
+    public PlantTypes plantType;
+    [Tooltip("Amount of sunflowers requiered to plant it")]
+    public int cost;
     [Tooltip("The plant's Health Points")]
     public int HP;
-    [Tooltip("Bullets every 5 seconds")]
+    [Tooltip("Bullets per seconds")]
     public float attackSpeed;
     [Tooltip("In units per second")]
     public float bulletSpeed;
@@ -20,13 +22,37 @@ public class BasicPlantBehaviour : MonoBehaviour
     public int brainReward;
 
 
+    [Tooltip("The projectile used by the plant")]
+    public GameObject bulletPrefab;
+
+
+
     private int currentHP;
 
     private PlantManager plantManager;
     private ZombieManager zombieManager;
-    private int[] position = new int[2];
+
+    private int[] plantPosition = new int[2];
 
     private bool initialized = false;
+
+
+
+    private int framesCount = 1;
+    private int framesPerBullet;
+
+
+    private int nextWait = 720;
+
+
+    public enum PlantTypes
+    {
+        Sunflower,
+        Supersunflower,
+        Wallnut,
+        Peashooter,
+        DoublePeashooter
+    }
 
     public enum Colors
 	{
@@ -42,29 +68,52 @@ public class BasicPlantBehaviour : MonoBehaviour
 	{
         plantManager = p;
         zombieManager = z;
-        position[0] = linePos;
-        position[1] = columnPos;
+        plantPosition[0] = linePos;
+        plantPosition[1] = columnPos;
         initialized = true;
     }
 
-	private void Start()
+	void Start()
 	{
         currentHP = HP;
+        framesPerBullet = (int)(60 / attackSpeed);
 	}
 
-	// Update is called once per frame
 	void Update()
     {
-        
+
+        if (plantType >= PlantTypes.Peashooter && framesCount % framesPerBullet == 0)
+            ShootProjectile();
+
+
+        if (plantType == PlantTypes.DoublePeashooter && framesCount % framesPerBullet == framesPerBullet/6)
+            ShootProjectile();
+
+
+        if(plantType <= PlantTypes.Supersunflower && framesCount % nextWait == 0)
+		{
+            plantManager.GetSun(50);
+
+            if (plantType == PlantTypes.Supersunflower)
+                plantManager.GetSun(50);
+
+            nextWait = Random.Range(720, 1000);
+
+		}
+
+        framesCount ++;
     }
 
-    bool zombieInLine(int i) // Returns true if at least one zombie is on the line
+
+    private void ShootProjectile()
 	{
-        return true;
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletSpeed, bulletDamage); // May be very VERY glutton
 	}
 
 
-    public bool takeDamage(int damage) // Decreases the plant's hp and returns true if that kills it
+
+    public void takeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
 	{
         currentHP -= damage;
 
@@ -72,14 +121,12 @@ public class BasicPlantBehaviour : MonoBehaviour
 		{
             zombieManager.ObtainBrains(brainReward);
             Death();
-            return true;
         }
-        return false;
     }
 
     public void Death()
 	{
-        plantManager.FreePlantPlaceHolder(position[0], position[1]);
+        plantManager.FreePlantPlaceHolder(plantPosition[0], plantPosition[1]);
         Destroy(gameObject);
 	}
 }
