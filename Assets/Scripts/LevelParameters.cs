@@ -18,7 +18,6 @@ public class LevelParameters : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
-        listLevel.Add(new int[] { 7 });
         listLevel.Add(new int[] { 0, 3, 3, 0, 3, 3, 2, 3, 3, 2, 3, 3, 2, 3, 3, 3, 3, 2 });
         listLevel.Add(new int[] { 0, 3, 3, 2, 3, 3, 2, 3, 3, 2, 3, 3, 6, 6, 3, 6, 6, 2 });
         listLevel.Add(new int[] { 0, 3, 3, 6, 3, 3, 3, 3, 2, 2, 2, 0, 6, 6, 3, 6, 6, 2 });
