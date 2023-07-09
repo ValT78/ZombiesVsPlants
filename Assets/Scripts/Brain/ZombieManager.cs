@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ZombieManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private int startBrains;
     [SerializeField] private float timePassiveBrains;
     [SerializeField] private List<GameObject> goldenBrains;
+    [SerializeField] private TextMeshProUGUI counterText;
+    [SerializeField] private GameObject brainCostUI;
 
     public GameObject[] PlaceHolders = new GameObject[60];
     private int brains;
@@ -17,6 +20,8 @@ public class ZombieManager : MonoBehaviour
         goldenBrains = new List<GameObject>();
         brains = startBrains;
         StartCoroutine(PassiveBrains());
+        counterText.text = "\nX" + this.brains.ToString() + "   ";
+
     }
 
     private IEnumerator PassiveBrains()
@@ -31,10 +36,20 @@ public class ZombieManager : MonoBehaviour
     public void ObtainBrains(int brains)
     {
         this.brains += brains;
+        counterText.text = "\nX" + this.brains.ToString() + "   ";
     }
     public int GetBrains()
     {
         return brains;
+    }
+    public void ShowCost(int cost)
+    {
+        brainCostUI.SetActive(true);
+        brainCostUI.GetComponentInChildren<TextMeshProUGUI>().text = "\nCoût : " + cost.ToString();
+    }
+    public void HideCost()
+    {
+        brainCostUI.SetActive(false);
     }
     private void SummonGroundBrain()
     {

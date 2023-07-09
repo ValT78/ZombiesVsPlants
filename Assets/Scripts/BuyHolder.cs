@@ -107,6 +107,14 @@ public class BuyHolder : MonoBehaviour
 
         }
     }
+    private void OnMouseEnter()
+    {
+        zombieManager.ShowCost(price);
+    }
+    private void OnMouseExit()
+    {
+        zombieManager.HideCost();
+    }
 
     private void OnMouseUp()
     {
