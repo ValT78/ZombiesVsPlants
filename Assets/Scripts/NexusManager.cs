@@ -38,7 +38,7 @@ public class NexusManager : MonoBehaviour
 
     private void Death()
 	{
-
+        Destroy(gameObject);
 	}
 
 }

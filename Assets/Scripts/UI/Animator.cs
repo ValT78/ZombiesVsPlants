@@ -11,7 +11,7 @@ public class Animator : MonoBehaviour
 
 	private GameObject[] options;
 
-
+	public AudioSource hoversoundEffect;
 	void Start()
 	{
 		options = new GameObject[] { playButton, htpButton, creditsButton, quitButton };
@@ -24,6 +24,7 @@ public class Animator : MonoBehaviour
 	{
 		hoveredOption = hovered;
 		icon.transform.position = options[hoveredOption].transform.position - Vector3.right*130;
+		hoversoundEffect.Play();
 	}
 
 }
