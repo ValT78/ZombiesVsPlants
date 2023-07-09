@@ -61,10 +61,8 @@ public class ProjectileBehaviour : MonoBehaviour
 		{
 			collider.GetComponent<ZombieBehaviour>().TakeDamage(damage);
 		}
-
-
-
-	}// Deal damage to the zombie or building
+	}
+	// Deal damage to the zombie or building
 			// collision.collider.GetComponent<ZombieManager>().
 /*
 	private void OnCollisionStay2D(Collision2D collision)
