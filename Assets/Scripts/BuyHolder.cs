@@ -11,6 +11,7 @@ public class BuyHolder : MonoBehaviour
     [SerializeField] private GameObject toBuy;
     [SerializeField] private int price;
     [SerializeField] private float conqueredArea;
+    [SerializeField] private int tabColor;
     [SerializeField] private bool isAZombie;
     [SerializeField] private bool isOpen;
 
@@ -42,15 +43,26 @@ public class BuyHolder : MonoBehaviour
                 canBuy = false;
                 Instantiate(toBuy, image.transform.position, Quaternion.identity);
                 closestObject.GetComponent<PlaceHolder>().canBuild = isAZombie;
-                if (!isAZombie)
+                if(!isAZombie)
                 {
                     foreach (GameObject placeHolder in zombieManager.PlaceHolders)
                     {
                         if(Vector3.Distance(placeHolder.transform.position, image.transform.position) < conqueredArea)
                         {
                             placeHolder.GetComponent<PlaceHolder>().canSpawn = true;
+                            if(tabColor==1)
+                            {
+                                placeHolder.GetComponent<PlaceHolder>().redSpawn = true;
+
+                            }
+                            else if (tabColor == 2)
+                            {
+                                placeHolder.GetComponent<PlaceHolder>().blueSpawn = true;
+
+                            }
                         } 
                     }
+                    
                 }
                 image.transform.position = transform.position;
                 loading.SetActive(true);
@@ -62,13 +74,28 @@ public class BuyHolder : MonoBehaviour
                 float closestDistance = Mathf.Infinity;
                 foreach (GameObject spawn in zombieManager.PlaceHolders)
                 {
-                    if (spawn.GetComponent<PlaceHolder>().canSpawn && ( isAZombie || spawn.GetComponent<PlaceHolder>().canBuild))
+                    if (spawn.GetComponent<PlaceHolder>().canSpawn)
                     {
-                        float distance = Vector3.Distance(spawn.transform.position, mousePosition);
-                        if (distance < closestDistance)
+                        if (isAZombie)
                         {
-                            closestObject = spawn;
-                            closestDistance = distance;
+                            if (tabColor == 0 || (tabColor == 2 && spawn.GetComponent<PlaceHolder>().blueSpawn) || (tabColor == 1 && spawn.GetComponent<PlaceHolder>().redSpawn))
+                            {
+                                float distance = Vector3.Distance(spawn.transform.position, mousePosition);
+                                if (distance < closestDistance)
+                                {
+                                    closestObject = spawn;
+                                    closestDistance = distance;
+                                }
+                            }
+                        }
+                        else if (spawn.GetComponent<PlaceHolder>().canBuild)
+                        {
+                            float distance = Vector3.Distance(spawn.transform.position, mousePosition);
+                            if (distance < closestDistance)
+                            {
+                                closestObject = spawn;
+                                closestDistance = distance;
+                            }
                         }
                     }
                 }
@@ -83,9 +110,12 @@ public class BuyHolder : MonoBehaviour
     {
         if (isOpen)
         {
-            if (canBuy && price <= zombieManager.GetBrains())
+            if (tabColor == 0 || (tabColor == 2 && HasBlueHolder()) || (tabColor == 1 && HasRedHolder()))
             {
-                select = true;
+                if (canBuy && price <= zombieManager.GetBrains())
+                {
+                    select = true;
+                }
             }
         }
     }
@@ -105,5 +135,29 @@ public class BuyHolder : MonoBehaviour
         isOpen = false;
         spriteRenderer.enabled = false;
         col.enabled = false;
+    }
+    private bool HasBlueHolder()
+    {
+        foreach (GameObject spawn in zombieManager.PlaceHolders)
+        {
+            if(spawn.GetComponent<PlaceHolder>().blueSpawn)
+            {
+                return true;
+            }
+        }
+        return false;
+
+    }
+    private bool HasRedHolder()
+    {
+        foreach (GameObject spawn in zombieManager.PlaceHolders)
+        {
+            if (spawn.GetComponent<PlaceHolder>().redSpawn)
+            {
+                return true;
+            }
+        }
+        return false;
+
     }
 }

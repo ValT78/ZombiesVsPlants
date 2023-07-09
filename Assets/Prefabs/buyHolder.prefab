@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5328195804465144094}
   - component: {fileID: 5328195804465144093}
+  - component: {fileID: -8991868147743544679}
   - component: {fileID: 5328195804465144092}
   - component: {fileID: 5328195804465144095}
   m_Layer: 0
@@ -88,6 +89,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8991868147743544679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328195804465144163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ff1e2738cf0bb48b28a0ace51940ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
 --- !u!114 &5328195804465144092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +121,7 @@ MonoBehaviour:
   toBuy: {fileID: 7730931122551912228, guid: 024ff4390e139aa499ecceb4c62ed32d, type: 3}
   price: 50
   conqueredArea: 4
+  tabColor: 0
   isAZombie: 0
   isOpen: 0
 --- !u!61 &5328195804465144095
