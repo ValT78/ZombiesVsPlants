@@ -13,7 +13,7 @@ public class ZombieBehaviour : MonoBehaviour
 
     private GameObject eated;
     private float startTime;
-    private bool isEating;
+    private int isEating;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class ZombieBehaviour : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Plant"))
         {
-            isEating = true;
+            isEating += 1;
             eated = collider.gameObject;
             StartCoroutine(Eat());
         }
@@ -46,12 +46,12 @@ public class ZombieBehaviour : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Plant"))
         {
-            isEating = false;
+            isEating -= 1;
         }
     }
     private IEnumerator Eat()
     {
-        while (isEating)
+        while (isEating <= 1)
         {
             eated.GetComponent<BasicPlantBehaviour>().takeDamage(damage);
             yield return new WaitForSeconds(12.5f/frequency);
