@@ -1177,7 +1177,7 @@ MonoBehaviour:
   - {fileID: 689258872}
   counterText: {fileID: 1998180204}
   brainCostUI: {fileID: 605510924}
-  victoryScreen: {fileID: 721125040760021876, guid: b65393a5e79fa6345b9f33f85847cb09, type: 3}
+  victoryScreen: {fileID: 1513136751942210467, guid: 243201e8a691f6241a92cfdb00fb1add, type: 3}
   PlaceHolders:
   - {fileID: 622646904}
   - {fileID: 1189952502}
