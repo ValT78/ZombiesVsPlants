@@ -63,9 +63,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.49803922
       objectReference: {fileID: 0}
+    - target: {fileID: 5544028209996440573, guid: bc8167ef648fd8545bb5f17cdea09106, type: 3}
+      propertyPath: m_Size.y
+      value: 3.9038186
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544028209996440573, guid: bc8167ef648fd8545bb5f17cdea09106, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.4673762
+      objectReference: {fileID: 0}
     - target: {fileID: 6400607480450590696, guid: bc8167ef648fd8545bb5f17cdea09106, type: 3}
       propertyPath: m_Name
-      value: sportZombie
+      value: sportZombie Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc8167ef648fd8545bb5f17cdea09106, type: 3}

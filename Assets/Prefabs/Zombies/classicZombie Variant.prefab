@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7735660374544706052, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
+      propertyPath: m_Size.x
+      value: 6.9362392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735660374544706052, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
+      propertyPath: m_Size.y
+      value: 7.492885
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735660374544706052, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.20375681
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735660374544706052, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.26140428
+      objectReference: {fileID: 0}
     - target: {fileID: 7735660374544706053, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -21,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7735660374544706055, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: m_Name
-      value: classicZombie
+      value: classicZombie Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7735660374544706074, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: m_RootOrder

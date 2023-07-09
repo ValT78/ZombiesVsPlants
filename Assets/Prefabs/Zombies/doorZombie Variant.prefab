@@ -13,7 +13,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325820897212062122, guid: 6702883390870b544a020b924f32d21b, type: 3}
       propertyPath: m_Name
-      value: doorZombie
+      value: doorZombie Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563515195117917814, guid: 6702883390870b544a020b924f32d21b, type: 3}
+      propertyPath: m_Size.y
+      value: 7.340561
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563515195117917814, guid: 6702883390870b544a020b924f32d21b, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.5253496
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563515195117917814, guid: 6702883390870b544a020b924f32d21b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1852423
       objectReference: {fileID: 0}
     - target: {fileID: 5915608313897573771, guid: 6702883390870b544a020b924f32d21b, type: 3}
       propertyPath: m_Color.g

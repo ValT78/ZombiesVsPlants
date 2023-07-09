@@ -15,9 +15,25 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1244946605786217381, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
+      propertyPath: m_Size.x
+      value: 7.713642
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244946605786217381, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
+      propertyPath: m_Size.y
+      value: 7.4410563
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244946605786217381, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5924587
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244946605786217381, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2354908
+      objectReference: {fileID: 0}
     - target: {fileID: 1244946605786217382, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
       propertyPath: m_Name
-      value: classicZombie
+      value: classicZombie Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 1244946605786217402, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
       propertyPath: zombieColor

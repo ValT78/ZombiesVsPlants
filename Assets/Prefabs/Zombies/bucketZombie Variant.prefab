@@ -19,6 +19,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1695528232505126643, guid: ea260ab0aea6f69459fe6ac0172b678e, type: 3}
+      propertyPath: m_Size.y
+      value: 7.3170285
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695528232505126643, guid: ea260ab0aea6f69459fe6ac0172b678e, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.9189212
+      objectReference: {fileID: 0}
     - target: {fileID: 2883229410663021619, guid: ea260ab0aea6f69459fe6ac0172b678e, type: 3}
       propertyPath: m_Name
       value: bucketZombie Variant

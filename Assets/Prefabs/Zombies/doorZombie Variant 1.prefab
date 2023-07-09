@@ -65,7 +65,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7073253278960418429, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
       propertyPath: m_Name
-      value: doorZombie
+      value: doorZombie Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041724113304809889, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
+      propertyPath: m_Size.y
+      value: 8.069036
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041724113304809889, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.5253496
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041724113304809889, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5494795
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}

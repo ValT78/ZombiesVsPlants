@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: zombieColor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1200870376997749138, guid: cf022af91253a0747894e7f3060cd302, type: 3}
+      propertyPath: m_Size.y
+      value: 9.154586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200870376997749138, guid: cf022af91253a0747894e7f3060cd302, type: 3}
+      propertyPath: m_Offset.y
+      value: -2.1977038
+      objectReference: {fileID: 0}
     - target: {fileID: 2794044846525394854, guid: cf022af91253a0747894e7f3060cd302, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3016296799041001451, guid: cf022af91253a0747894e7f3060cd302, type: 3}
       propertyPath: m_Name
-      value: eliteZombie
+      value: eliteZombie Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5364382574057527533, guid: cf022af91253a0747894e7f3060cd302, type: 3}
       propertyPath: m_Color.g

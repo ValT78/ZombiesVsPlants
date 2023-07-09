@@ -118,7 +118,6 @@ public class BasicPlantBehaviour : MonoBehaviour
     public void takeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
 	{
         currentHP -= damage;
-        print(currentHP);
 		if (currentHP <= 0)
 		{
             zombieManager.ObtainBrains(brainReward);
