@@ -74,7 +74,7 @@ public class PlantManager : MonoBehaviour
 
     void Update()
     {
-		if (framesCount % 720 == 0)
+		if (framesCount % 1440 == 0)
 		{
             GetSun(passiveSun);
 		}

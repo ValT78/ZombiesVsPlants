@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
   startBrains: 50
-  timePassiveBrains: 1
+  timePassiveBrains: 10
   goldenBrains:
   - {fileID: 378474652}
   - {fileID: 361926103}
@@ -4352,6 +4352,10 @@ PrefabInstance:
       propertyPath: zombieManager
       value: 
       objectReference: {fileID: 608215787}
+    - target: {fileID: 8092172307898083609, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
+      propertyPath: averageTimeBetweenPlants
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8092172307898083609, guid: ab8f3f32d0911f547863e73845704e67, type: 3}
       propertyPath: placeholdersMatrix.Array.data[0]
       value: 
