@@ -106,7 +106,7 @@ MonoBehaviour:
   bulletSpeed: 7
   bulletDamage: 10
   plantColor: 1
-  brainReward: 125
+  brainReward: 50
   bulletPrefab: {fileID: 5476864066535955260, guid: e2834bd7c57d6a845919197af1982009, type: 3}
   plantManager: {fileID: 0}
   zombieManager: {fileID: 0}

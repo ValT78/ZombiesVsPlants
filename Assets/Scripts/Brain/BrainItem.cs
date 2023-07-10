@@ -56,15 +56,23 @@ public class BrainItem : MonoBehaviour
             if (t >= 1f)
             {
                 Destroy(this.gameObject);
-                zombieManager.GetComponent<ZombieManager>().ObtainBrains(storedBrains);
             }
         }
     }
 
     private void OnMouseDown()
     {
+        if (!getClicked)
+        {
+            zombieManager.GetComponent<ZombieManager>().ObtainBrains(storedBrains);
+        }
         getClicked = true;
         startPosition = transform.position;
+
+    }
+    private void OnMouseOver()
+    {
+        print("check");
     }
     private IEnumerator Depop()
     {
