@@ -603,7 +603,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: price
-      value: 400
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
@@ -685,9 +685,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: FootBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -38.4
+      value: -31.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -758,7 +790,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: price
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
@@ -836,9 +868,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: BucketBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125.3
+      value: 119.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -905,7 +969,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: price
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
@@ -983,9 +1047,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: BucketBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125.3
+      value: 119.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -1168,7 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
   startBrains: 50
-  timePassiveBrains: 10
+  timePassiveBrains: 7
   goldenBrains:
   - {fileID: 378474652}
   - {fileID: 361926103}
@@ -1277,6 +1373,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1073614000}
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: price
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: isOpen
       value: 1
       objectReference: {fileID: 0}
@@ -1332,6 +1432,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: TombBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 346.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7504570e6080b9f4785516902085a023, type: 3}
 --- !u!1 &689258872 stripped
@@ -1368,7 +1504,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: price
-      value: 400
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
@@ -1442,9 +1578,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: FootBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -38.4
+      value: -31.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804666246684, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Sprite
@@ -1496,7 +1664,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: price
-      value: 400
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
@@ -1578,9 +1746,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: FootBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -38.4
+      value: -31.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -1676,6 +1876,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 406407738}
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
       value: 
       objectReference: {fileID: 8826255574919775773, guid: 9fd04c3a40f8752499759a6344fd5814, type: 3}
@@ -1751,9 +1955,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: SportBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 42.6
+      value: 44.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -2154,6 +2390,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1073614000}
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
       value: 
       objectReference: {fileID: 6400607480450590696, guid: bc8167ef648fd8545bb5f17cdea09106, type: 3}
@@ -2217,9 +2457,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: SportBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 42.6
+      value: 44.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804666246684, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Sprite
@@ -2254,6 +2526,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168474560}
     m_Modifications:
+    - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
       value: 
@@ -2330,9 +2606,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: SportBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 42.6
+      value: 44.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -2465,9 +2773,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 288.82
+      value: 269.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804666246684, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Sprite
@@ -2728,6 +3068,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1073614000}
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: price
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
       value: 
       objectReference: {fileID: 7735660374544706055, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
@@ -2791,9 +3135,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714925, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.19999999
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 207.1
+      value: 194.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804666246684, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Sprite
@@ -3079,9 +3463,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 288.82
+      value: 269.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -3128,6 +3544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 406407738}
     m_Modifications:
+    - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: price
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
       value: 
@@ -3204,9 +3624,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 207.1
+      value: 194.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -3607,6 +4059,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 346.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3672,6 +4160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168474560}
     m_Modifications:
+    - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: price
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
       value: 
@@ -3748,9 +4240,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 207.1
+      value: 194.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -3873,9 +4397,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 288.82
+      value: 269.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled
@@ -3954,7 +4510,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: price
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: toBuy
@@ -4020,9 +4576,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: BucketBuyHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: loadTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125.3
+      value: 119.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804666246684, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Sprite
@@ -4134,6 +4722,38 @@ PrefabInstance:
     - target: {fileID: 5328195804465144163, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Name
       value: TombBuyHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 346.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328195804601803811, guid: 7504570e6080b9f4785516902085a023, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804601804252, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_Enabled

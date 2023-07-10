@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
-  timeGenerateBrains: 15
+  timeGenerateBrains: 12
 --- !u!61 &-8375079349468493173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,5 +139,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f078f27fee25a4f908a6a455009a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 30
+  HP: 10
   distance: 12

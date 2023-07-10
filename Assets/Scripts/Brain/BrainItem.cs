@@ -89,11 +89,12 @@ public class BrainItem : MonoBehaviour
     }
     private IEnumerator FloatingAnimation()
     {
-        Vector2 randomDirection = Random.insideUnitCircle;
-        newPosition = new Vector2(startPosition.x, startPosition.y) + randomDirection * floatRange;
-        yield return new WaitForSeconds(floatTime);
-        if (!fromGround && !getClicked)
-            StartCoroutine(FloatingAnimation());
-
+        while (!fromGround && !getClicked)
+        {
+            Vector2 randomDirection = Random.insideUnitCircle;
+            newPosition = new Vector2(startPosition.x, startPosition.y) + randomDirection * floatRange;
+            yield return new WaitForSeconds(floatTime);
+            
+        }
     }
 }

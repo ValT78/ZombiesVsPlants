@@ -22,15 +22,11 @@ public class ZombieBehaviour : MonoBehaviour
 
     void Update()
     {
-        float rotation = Mathf.Sin((Time.time - startTime) * frequency);
-        rotation = Mathf.Clamp(rotation, -0.8f, 1f) * amplitude;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotation));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Clamp(Mathf.Sin((Time.time - startTime) * frequency), -0.8f, 1f) * amplitude));
 
         if (!isEating)
         {
-            float offset = Mathf.Clamp01(0.8f - (Mathf.Abs(Mathf.Sin((Time.time - startTime) * frequency) + 1) / 2));
-            Vector3 destination = transform.position + new Vector3(-1, 0, 0) * offset;
-            transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(-1, 0, 0) * Mathf.Clamp01(0.8f - (Mathf.Abs(Mathf.Sin((Time.time - startTime) * frequency) + 1) / 2)), speed * Time.deltaTime);
         }
     }
     private void OnTriggerStay2D(Collider2D collider)

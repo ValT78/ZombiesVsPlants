@@ -128,5 +128,5 @@ MonoBehaviour:
   frequency: 5
   amplitude: 5
   damage: 5
-  HP: 100
+  HP: 50
   zombieColor: 0
