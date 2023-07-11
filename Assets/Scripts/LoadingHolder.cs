@@ -7,26 +7,60 @@ public class LoadingHolder : MonoBehaviour
 {
     [SerializeField] private BuyHolder buyHolder;
     [SerializeField] private Image loader;
-    [SerializeField] private float loadTime;
+    [SerializeField] private float[] reloadTimes;
 
-    private float loadTimer;
+    private int activeTab;
+    private float[] reloadTimer = { 0, 0, 0 };
+    private bool flag;
 
+    private void Awake()
+    {
+        activeTab = 0;
+        
+    }
     void OnEnable()
     {
-        loadTimer = loadTime;
+        activeTab = buyHolder.tabColor;
+        reloadTimer[activeTab] = 0;
     }
 
     void Update()
     {
-        if (loadTimer<=0f)
+        flag = true;
+        for (int i = 0; i < 3; i++)
         {
-            buyHolder.CanBuy();
+            if (reloadTimer[i] < reloadTimes[i])
+            {
+                reloadTimer[i] += Time.deltaTime;
+                flag = false;
+            }
+            
+        }
+        if (flag)
+        {
             this.gameObject.SetActive(false);
         }
+        if (reloadTimer[activeTab] < reloadTimes[activeTab])
+        {
+            loader.fillAmount = 1 - reloadTimer[activeTab] / reloadTimes[activeTab];
+        }
+        else
+        {
+            loader.fillAmount = 0;
+            buyHolder.CanBuy();
+        }
 
-        loader.fillAmount = loadTimer / loadTime;
-        loadTimer -= Time.deltaTime;
+    }
+    public bool SetActiveTab(int i)
+    {
+        activeTab = i;
+        if(reloadTimer[activeTab] >= reloadTimes[activeTab])
+        {
+            return true;
+        }
+        return false;
+
     }
 
-    
+
 }

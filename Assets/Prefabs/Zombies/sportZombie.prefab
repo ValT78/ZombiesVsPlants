@@ -130,3 +130,5 @@ MonoBehaviour:
   damage: 5
   HP: 50
   zombieColor: 0
+  blinkDuration: 0.5
+  spriteRenderer: {fileID: 5118353816513391811}

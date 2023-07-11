@@ -8,6 +8,8 @@ TagManager:
   - Zombie
   - Nexus
   - Build
+  - Brain
+  - BuyTab
   layers:
   - Default
   - TransparentFX

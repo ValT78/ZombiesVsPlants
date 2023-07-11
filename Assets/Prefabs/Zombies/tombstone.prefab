@@ -140,4 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
+  blinkDuration: 0.5
+  spriteRenderer: {fileID: 7730931122551912231}
   distance: 12

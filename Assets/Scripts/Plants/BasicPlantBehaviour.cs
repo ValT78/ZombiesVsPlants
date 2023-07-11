@@ -25,6 +25,8 @@ public class BasicPlantBehaviour : MonoBehaviour
     [Tooltip("The projectile used by the plant")]
     public GameObject bulletPrefab;
 
+    [SerializeField] private float blinkDuration;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
 
     private int currentHP;
@@ -35,6 +37,7 @@ public class BasicPlantBehaviour : MonoBehaviour
     private int[] plantPosition = new int[2];
 
     private bool initialized = false;
+    private float blinkTimer;
 
 
 
@@ -94,10 +97,10 @@ public class BasicPlantBehaviour : MonoBehaviour
 
         if(plantType <= PlantTypes.Supersunflower && framesCount % nextWait == 0)
 		{
-            plantManager.GetSun(50);
+            plantManager.GetSun(25);
 
             if (plantType == PlantTypes.Supersunflower)
-                plantManager.GetSun(50);
+                plantManager.GetSun(25);
 
             nextWait = Random.Range(720, 2000);
 
@@ -128,6 +131,7 @@ public class BasicPlantBehaviour : MonoBehaviour
             }
             Death();
         }
+        StartCoroutine(Blink());
     }
 
     public void Death()
@@ -135,4 +139,18 @@ public class BasicPlantBehaviour : MonoBehaviour
         Destroy(gameObject);
         plantManager.FreePlantPlaceHolder(plantPosition[0], plantPosition[1]);
 	}
+    private IEnumerator Blink()
+    {
+        blinkTimer = 0;
+        while (blinkTimer < blinkDuration)
+        {
+            // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement
+            float t = Mathf.PingPong(blinkTimer * 1f, 1f) / blinkDuration;
+            spriteRenderer.color = Color.Lerp(Color.green, Color.white, t);
+
+            blinkTimer += Time.deltaTime;
+            yield return null;
+        }
+
+    }
 }

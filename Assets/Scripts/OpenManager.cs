@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class OpenManager : MonoBehaviour
 {
-    [SerializeField] private SwitchTab classicTab;
-    [SerializeField] private SwitchTab redTab;
-    [SerializeField] private SwitchTab blueTab;
+    [SerializeField] private BuyHolder[] tabs;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            blueTab.Activate();
+            Activate(2);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            redTab.Activate();
+            Activate(1);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            classicTab.Activate();
+            Activate(0);
+        }
+    }
+    public void Activate(int tabColor)
+    {
+        foreach (BuyHolder tab in tabs)
+        {
+            tab.ChangeColor(tabColor);
+
         }
     }
 }

@@ -60,7 +60,7 @@ public class BrainItem : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void OnMouseClic()
     {
         if (!getClicked)
         {
@@ -70,10 +70,7 @@ public class BrainItem : MonoBehaviour
         startPosition = transform.position;
 
     }
-    private void OnMouseOver()
-    {
-        print("check");
-    }
+    
     private IEnumerator Depop()
     {
         yield return new WaitForSeconds(despawnTime);

@@ -13,6 +13,8 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI counterText;
     [SerializeField] private GameObject brainCostUI;
     [SerializeField] private GameObject victoryScreen;
+    [SerializeField] private BuyHolder[] buyTabs;
+
 
     public GameObject[] PlaceHolders = new GameObject[60];
     private int brains;
@@ -47,6 +49,11 @@ public class ZombieManager : MonoBehaviour
     {
         brainCostUI.SetActive(true);
         brainCostUI.GetComponentInChildren<TextMeshProUGUI>().text = "\nCoût : " + cost.ToString();
+
+        foreach(BuyHolder tab in buyTabs)
+        {
+            tab.ResetImage();
+        }
     }
     public void HideCost()
     {

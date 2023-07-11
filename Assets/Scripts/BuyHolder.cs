@@ -5,18 +5,22 @@ using UnityEngine;
 public class BuyHolder : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer imageRenderer;
     [SerializeField] private BoxCollider2D col;
     [SerializeField] private GameObject loading;
     [SerializeField] private GameObject image;
-    [SerializeField] private GameObject toBuy;
-    [SerializeField] private int price;
+
+    [SerializeField] private GameObject[] toBuy;
+    [SerializeField] private int[] prices;
+    [SerializeField] private Color[] colors;
+
     [SerializeField] private float conqueredArea;
-    [SerializeField] private int tabColor;
     [SerializeField] private bool isAZombie;
     [SerializeField] private bool isOpen;
 
     private GameObject closestObject;
     private ZombieManager zombieManager;
+    [HideInInspector] public int tabColor;
     private bool canBuy = false;
     private bool select = false;
 
@@ -29,30 +33,28 @@ public class BuyHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(select)
+        if (select)
         {
             if (Input.GetMouseButtonDown(1))
             {
-                select = false;
-                image.transform.position = transform.position;
+                ResetImage();
             }
             else if (Input.GetMouseButtonDown(0))
             {
-                zombieManager.ObtainBrains(-price);
-                select = false;
+                zombieManager.ObtainBrains(-prices[tabColor]);
                 canBuy = false;
-                GameObject instanceSpawn = Instantiate(toBuy, image.transform.position, Quaternion.identity);
+                GameObject instanceSpawn = Instantiate(toBuy[tabColor], image.transform.position, Quaternion.identity);
                 instanceSpawn.transform.position += new Vector3(0, 0.55f, 0);
                 closestObject.GetComponent<PlaceHolder>().canBuild = isAZombie;
                 if (!isAZombie)
                 {
                     foreach (GameObject placeHolder in zombieManager.PlaceHolders)
                     {
-                        if(Vector3.Distance(placeHolder.transform.position, image.transform.position) < conqueredArea)
+                        if (Vector3.Distance(placeHolder.transform.position, image.transform.position) < conqueredArea)
                         {
                             placeHolder.GetComponent<PlaceHolder>().canSpawn = true;
                             instanceSpawn.GetComponent<BuildHP>().distance = placeHolder.GetComponent<PlaceHolder>().distance;
-                            if (tabColor==1)
+                            if (tabColor == 1)
                             {
                                 placeHolder.GetComponent<PlaceHolder>().redSpawn = true;
 
@@ -62,13 +64,14 @@ public class BuyHolder : MonoBehaviour
                                 placeHolder.GetComponent<PlaceHolder>().blueSpawn = true;
 
                             }
-                        } 
+                        }
                     }
-                    
+
                 }
-                image.transform.position = transform.position;
+                ResetImage();
+                loading.SetActive(false);
                 loading.SetActive(true);
-                
+
             }
             else
             {
@@ -109,42 +112,28 @@ public class BuyHolder : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        zombieManager.ShowCost(price);
+        zombieManager.ShowCost(prices[tabColor]);
+        
     }
     private void OnMouseExit()
     {
         zombieManager.HideCost();
     }
 
-    private void OnMouseUp()
+    public void OnMouseClic()
     {
-        if (isOpen)
+        if (tabColor == 0 || !isAZombie || (tabColor == 2 && HasBlueHolder()) || (tabColor == 1 && HasRedHolder()))
         {
-            if (tabColor == 0 || !isAZombie || (tabColor == 2 && HasBlueHolder()) || (tabColor == 1 && HasRedHolder()))
+            if (canBuy && prices[tabColor] <= zombieManager.GetBrains())
             {
-                if (canBuy && price <= zombieManager.GetBrains())
-                {
-                    select = true;
-                }
+                select = true;
             }
         }
     }
+
     public void CanBuy()
     {
         canBuy = true;
-    }
-    public void OpenTab()
-    {
-        isOpen = true; 
-        spriteRenderer.enabled = true;
-        col.enabled = true;
-
-    }
-    public void CloseTab()
-    {
-        isOpen = false;
-        spriteRenderer.enabled = false;
-        col.enabled = false;
     }
     private bool HasBlueHolder()
     {
@@ -169,5 +158,28 @@ public class BuyHolder : MonoBehaviour
         }
         return false;
 
+    }
+    public void ResetImage()
+    {
+        select = false;
+        image.transform.position = transform.position;
+    }
+    public void ChangeColor(int tabColor)
+    {
+        this.tabColor = tabColor;
+        spriteRenderer.color = colors[tabColor];
+        if(isAZombie)
+        {
+            imageRenderer.color = colors[tabColor];
+
+        }
+        else
+        {
+            imageRenderer.color = colors[tabColor];
+
+        }
+        if (loading.activeSelf) {
+            canBuy = loading.GetComponent<LoadingHolder>().SetActiveTab(tabColor);
+        }
     }
 }

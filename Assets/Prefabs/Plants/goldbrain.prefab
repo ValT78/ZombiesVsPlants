@@ -129,6 +129,10 @@ MonoBehaviour:
   plantColor: 0
   brainReward: 0
   bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
+  blinkDuration: 0.5
+  spriteRenderer: {fileID: 1131828628619135306}
+  plantManager: {fileID: 0}
+  zombieManager: {fileID: 0}
 --- !u!61 &2138694929409575895
 BoxCollider2D:
   m_ObjectHideFlags: 0

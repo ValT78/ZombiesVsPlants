@@ -100,14 +100,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 5
-  cost: 150
+  cost: 300
   HP: 10
-  attackSpeed: 0.75
+  attackSpeed: 0.25
   bulletSpeed: 7
   bulletDamage: 10
   plantColor: 1
   brainReward: 50
   bulletPrefab: {fileID: 5476864066535955260, guid: e2834bd7c57d6a845919197af1982009, type: 3}
+  blinkDuration: 0.5
+  spriteRenderer: {fileID: 1793370247683493774}
   plantManager: {fileID: 0}
   zombieManager: {fileID: 0}
 --- !u!61 &7906624320038095723
