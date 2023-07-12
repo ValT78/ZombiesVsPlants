@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f078f27fee25a4f908a6a455009a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HP: 5
   blinkDuration: 0.5
   spriteRenderer: {fileID: 7730931122551912231}
   distance: 12

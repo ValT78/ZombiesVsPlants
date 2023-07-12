@@ -12,11 +12,11 @@ public class OpenManager : MonoBehaviour
         {
             Activate(2);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
             Activate(1);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             Activate(0);
         }

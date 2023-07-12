@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3de1a3c5bedda4d977965863bc09c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  col: {fileID: 8181392724142703512}
   storedBrains: 25
   despawnTime: 10
   collectTime: 1

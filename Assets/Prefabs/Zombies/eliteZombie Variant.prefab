@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 610554921991923813, guid: cf022af91253a0747894e7f3060cd302, type: 3}
+      propertyPath: HP
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 610554921991923813, guid: cf022af91253a0747894e7f3060cd302, type: 3}
       propertyPath: zombieColor
       value: 1
       objectReference: {fileID: 0}

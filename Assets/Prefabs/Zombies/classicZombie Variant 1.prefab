@@ -36,8 +36,12 @@ PrefabInstance:
       value: classicZombie Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 1244946605786217402, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
+      propertyPath: HP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244946605786217402, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
       propertyPath: zombieColor
-      value: 2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1244946605786217403, guid: 568fa68995b80c548ba2cf302c8625c8, type: 3}
       propertyPath: m_RootOrder

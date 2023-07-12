@@ -127,8 +127,8 @@ MonoBehaviour:
   speed: 0.3
   frequency: 5
   amplitude: 5
-  damage: 5
-  HP: 300
+  damage: 1
+  HP: 100
   zombieColor: 0
   blinkDuration: 0.5
   spriteRenderer: {fileID: 5915608313897573771}

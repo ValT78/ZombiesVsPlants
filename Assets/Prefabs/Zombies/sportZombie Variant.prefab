@@ -52,6 +52,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1641288291275492526, guid: bc8167ef648fd8545bb5f17cdea09106, type: 3}
+      propertyPath: HP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641288291275492526, guid: bc8167ef648fd8545bb5f17cdea09106, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641288291275492526, guid: bc8167ef648fd8545bb5f17cdea09106, type: 3}
       propertyPath: zombieColor
       value: 1
       objectReference: {fileID: 0}

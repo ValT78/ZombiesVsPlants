@@ -45,29 +45,14 @@ public class BuyHolder : MonoBehaviour
                 canBuy = false;
                 GameObject instanceSpawn = Instantiate(toBuy[tabColor], image.transform.position, Quaternion.identity);
                 instanceSpawn.transform.position += new Vector3(0, 0.55f, 0);
-                closestObject.GetComponent<PlaceHolder>().canBuild = isAZombie;
                 if (!isAZombie)
                 {
-                    foreach (GameObject placeHolder in zombieManager.PlaceHolders)
-                    {
-                        if (Vector3.Distance(placeHolder.transform.position, image.transform.position) < conqueredArea)
-                        {
-                            placeHolder.GetComponent<PlaceHolder>().canSpawn = true;
-                            instanceSpawn.GetComponent<BuildHP>().distance = placeHolder.GetComponent<PlaceHolder>().distance;
-                            if (tabColor == 1)
-                            {
-                                placeHolder.GetComponent<PlaceHolder>().redSpawn = true;
-
-                            }
-                            else if (tabColor == 2)
-                            {
-                                placeHolder.GetComponent<PlaceHolder>().blueSpawn = true;
-
-                            }
-                        }
-                    }
-
+                    closestObject.GetComponent<PlaceHolder>().canBuild = false;
+                    instanceSpawn.GetComponent<BuildHP>().placeHolder = closestObject;
+                    instanceSpawn.GetComponent<BuildHP>().distance = closestObject.GetComponent<PlaceHolder>().distance;
+                    zombieManager.AddBuild(instanceSpawn, tabColor);
                 }
+                
                 ResetImage();
                 loading.SetActive(false);
                 loading.SetActive(true);
@@ -180,6 +165,11 @@ public class BuyHolder : MonoBehaviour
         }
         if (loading.activeSelf) {
             canBuy = loading.GetComponent<LoadingHolder>().SetActiveTab(tabColor);
+            
+        }
+        if (!canBuy || (tabColor == 1 && !HasRedHolder()) || (tabColor == 2 && !HasBlueHolder()))
+        {
+            ResetImage();
         }
     }
 }

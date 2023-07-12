@@ -9,6 +9,7 @@ public class ZombieManager : MonoBehaviour
 
     [SerializeField] private int startBrains;
     [SerializeField] private float timePassiveBrains;
+    [SerializeField] private float conqueredArea;
     public List<GameObject> goldenBrains;
     [SerializeField] private TextMeshProUGUI counterText;
     [SerializeField] private GameObject brainCostUI;
@@ -17,10 +18,12 @@ public class ZombieManager : MonoBehaviour
 
 
     public GameObject[] PlaceHolders = new GameObject[60];
+
+    private List<GameObject> builds;
     private int brains;
     void Start()
     {
-        //goldenBrains = new List<GameObject>();
+        builds = new List<GameObject>();
         brains = startBrains;
         StartCoroutine(PassiveBrains());
         counterText.text = "\nX" + this.brains.ToString() + "   ";
@@ -72,10 +75,94 @@ public class ZombieManager : MonoBehaviour
     private IEnumerator DelayVictory()
     {
         yield return new WaitForSeconds(0.2f);
-        print(goldenBrains.Count);
         if (goldenBrains.Count <= 0)
         {
             Instantiate(victoryScreen, Vector3.zero, Quaternion.identity);
         }
+    }
+    public void AddBuild(GameObject build, int tabColor)
+    {
+        builds.Add(build);
+        UpdateHolder(build, tabColor,true);
+    }
+
+    public void RemoveBuild(GameObject building, GameObject holder, int tabColor)
+    {
+        holder.GetComponent<PlaceHolder>().canBuild = true;
+        builds.Remove(building);
+        UpdateHolder(building, tabColor, false);
+        foreach (GameObject build in builds)
+        {
+            UpdateHolder(build, tabColor, true);
+        }
+        if (tabColor == 1)
+        {
+            bool flag = false;
+            foreach (GameObject spawn in PlaceHolders)
+            {
+                if (spawn.GetComponent<PlaceHolder>().redSpawn)
+                {
+                    flag = true;
+                }
+            }
+            if(!flag)
+            {
+                foreach (BuyHolder tab in buyTabs)
+                {
+                    if (tab.tabColor == 1)
+                    {
+                        tab.ResetImage();
+                    }
+                }
+            }
+        }
+        if (tabColor == 2)
+        {
+            bool flag = false;
+            foreach (GameObject spawn in PlaceHolders)
+            {
+                if (spawn.GetComponent<PlaceHolder>().blueSpawn)
+                {
+                    flag = true;
+                }
+            }
+            if (!flag)
+            {
+                foreach (BuyHolder tab in buyTabs)
+                {
+                    if (tab.tabColor == 2)
+                    {
+                        tab.ResetImage();
+                    }
+                }
+            }
+        }
+
+    }
+    private void UpdateHolder(GameObject building, int tabColor, bool isBuilding)
+    {
+        foreach (GameObject placeHolder in PlaceHolders)
+        {
+            if (Vector3.Distance(placeHolder.transform.position, building.transform.position) < conqueredArea)
+            {
+                PlaceHolder component = placeHolder.GetComponent<PlaceHolder>();
+                if(component.distance!=12)
+                {
+                    component.canSpawn = isBuilding;
+                }
+                if (building.GetComponent<BuildHP>().color == 1)
+                {
+                    component.redSpawn = isBuilding;
+                    
+                }
+                else if (building.GetComponent<BuildHP>().color == 2)
+                {
+                    component.blueSpawn = isBuilding;
+
+                }
+            }
+        }
+        
+
     }
 }

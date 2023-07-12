@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour
 {
 
-	public BulletColor bulletColour;
+	[SerializeField] private int bulletColor;
 
 
 	private const int bulletLifeTime = 480;
@@ -17,18 +17,12 @@ public class ProjectileBehaviour : MonoBehaviour
 
 	private bool initialized = false;
 
-    public void Initialize(float bs, int dmg)
+    public void Initialize(float bs, int dmg, int plantColor)
 	{
 		bulletSpeed = bs + Random.Range(-0.3f,0.3f);
 		damage = dmg;
 		initialized = true;
-	}
-    
-	public enum BulletColor
-	{
-		Neutral,
-		Blue,
-		Red
+		bulletColor = plantColor;
 	}
 
     void FixedUpdate()
@@ -47,20 +41,20 @@ public class ProjectileBehaviour : MonoBehaviour
 
 		//Debug.Log("Collision !");
 
-		if (initialized && collider.CompareTag("Nexus"))
+		if (initialized && collider.TryGetComponent<NexusManager>(out NexusManager nexusManager))
 		{
 			//Debug.Log("Dealt damage !");
-			collider.GetComponent<NexusManager>().TakeDamage(damage);
+			nexusManager.TakeDamage(damage);
 			Destroy(gameObject);
 		}
-		else if(initialized && collider.CompareTag("Build"))
+		else if(initialized && collider.TryGetComponent<BuildHP>(out BuildHP build))
 		{
-			collider.GetComponent<BuildHP>().TakeDamage(damage);
+			build.TakeDamage(damage);
 			Destroy(gameObject);
 		}
-		else if(initialized && collider.CompareTag("Zombie"))
+		else if(initialized && collider.TryGetComponent<ZombieBehaviour>(out ZombieBehaviour zombie))
 		{
-			collider.GetComponent<ZombieBehaviour>().TakeDamage(damage);
+			zombie.TakeDamage(damage, bulletColor);
 			Destroy(gameObject);
 
 		}

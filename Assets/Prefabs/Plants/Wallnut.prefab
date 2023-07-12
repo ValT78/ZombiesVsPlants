@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantType: 2
   cost: 150
-  HP: 40
+  HP: 50
   attackSpeed: 0
   bulletSpeed: 0
   bulletDamage: 0
@@ -110,8 +110,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
   blinkDuration: 0.5
   spriteRenderer: {fileID: 6689820752548645009}
-  plantManager: {fileID: 0}
-  zombieManager: {fileID: 0}
 --- !u!61 &6689820752548645011
 BoxCollider2D:
   m_ObjectHideFlags: 0

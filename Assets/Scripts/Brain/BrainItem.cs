@@ -7,6 +7,7 @@ public class BrainItem : MonoBehaviour
     private ZombieManager zombieManager;
     private Vector3 target;
 
+    [SerializeField] private Collider2D col;
     [SerializeField] private int storedBrains;
     [SerializeField] private float despawnTime;
     [SerializeField] private float collectTime;
@@ -64,6 +65,7 @@ public class BrainItem : MonoBehaviour
     {
         if (!getClicked)
         {
+            col.enabled = false;
             zombieManager.GetComponent<ZombieManager>().ObtainBrains(storedBrains);
         }
         getClicked = true;

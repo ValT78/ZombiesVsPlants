@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5213501027713449920}
   - component: {fileID: 7397451884001910041}
   - component: {fileID: 1487561588493753417}
+  - component: {fileID: 5513450304093570014}
   m_Layer: 0
   m_Name: redtomb
   m_TagString: Build
@@ -124,7 +125,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f078f27fee25a4f908a6a455009a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HP: 5
   blinkDuration: 0.5
   spriteRenderer: {fileID: 5213501027713449920}
   distance: 0
+  placeHolder: {fileID: 0}
+  color: 1
+--- !u!114 &5513450304093570014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362880317073250613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31a377b9f468454ebe3011b1541da17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
+  timeGenerateBrains: 12

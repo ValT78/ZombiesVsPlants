@@ -10,13 +10,23 @@ public class BuildHP : MonoBehaviour
 
     [HideInInspector] public int distance = 12;
 
+    [HideInInspector] public GameObject placeHolder;
+    public int color;
+    private ZombieManager zombieManager;
     private float blinkTimer;
 
-    public void TakeDamage(int damage)
+    private void Start()
     {
-        HP -= damage*2f/(distance-1);
+        zombieManager = FindObjectOfType<ZombieManager>();
+
+    }
+    public void TakeDamage(float damage)
+    {
+        print(damage / (distance - 1));
+        HP -= damage/(distance-1);
         if (HP<=0f)
         {
+            zombieManager.RemoveBuild(this.gameObject, placeHolder, color);
             Destroy(this.gameObject);
         }
         StartCoroutine(Blink());
@@ -26,7 +36,6 @@ public class BuildHP : MonoBehaviour
         blinkTimer = 0;
         while (blinkTimer < blinkDuration)
         {
-            // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement
             float t = Mathf.PingPong(blinkTimer * 1f, 1f) / blinkDuration;
             spriteRenderer.color = Color.Lerp(Color.green, Color.white, t);
 

@@ -77,11 +77,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6550093978181797076, guid: ea260ab0aea6f69459fe6ac0172b678e, type: 3}
       propertyPath: HP
-      value: 450
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6550093978181797076, guid: ea260ab0aea6f69459fe6ac0172b678e, type: 3}
       propertyPath: zombieColor
-      value: 2
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea260ab0aea6f69459fe6ac0172b678e, type: 3}

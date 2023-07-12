@@ -9,7 +9,7 @@ public class ZombieBehaviour : MonoBehaviour
     [SerializeField] private float amplitude;
     [SerializeField] private int damage;
     [SerializeField] private int HP;
-    [SerializeField] private ZombieColor zombieColor;
+    [SerializeField] private int zombieColor;
     [SerializeField] private float blinkDuration;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -17,6 +17,7 @@ public class ZombieBehaviour : MonoBehaviour
     private float startTime;
     private bool isEating;
     private float blinkTimer;
+    private int additionnalDamage = 5;
 
     void Start()
     {
@@ -61,9 +62,9 @@ public class ZombieBehaviour : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, int bulletColor)
     {
-        HP -= damage;
+        HP -= damage - additionnalDamage*bulletColor*zombieColor;
         if (HP <= 0)
         {
             Destroy(this.gameObject);
@@ -72,12 +73,6 @@ public class ZombieBehaviour : MonoBehaviour
 
     }
 
-    public enum ZombieColor
-    {
-        Neutral,
-        Blue,
-        Red
-    }
     private IEnumerator Blink()
     {
         blinkTimer = 0;

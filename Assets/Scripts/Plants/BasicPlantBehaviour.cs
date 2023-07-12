@@ -17,7 +17,7 @@ public class BasicPlantBehaviour : MonoBehaviour
     [Tooltip("In units per second")]
     public int bulletDamage;
     [Tooltip("In units per second")]
-    public Colors plantColor;
+    public int plantColor;
     [Tooltip("Brains granted to player uppon death of the plant")]
     public int brainReward;
 
@@ -58,14 +58,6 @@ public class BasicPlantBehaviour : MonoBehaviour
         DoublePeashooter
         
     }
-
-    public enum Colors
-	{
-        Neutral,
-        Blue,
-        Red
-	}
-
 
     
 
@@ -113,7 +105,7 @@ public class BasicPlantBehaviour : MonoBehaviour
     private void ShootProjectile()
 	{
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletSpeed, bulletDamage); // May be very VERY glutton
+        bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletSpeed, bulletDamage, plantColor); // May be very VERY glutton
 	}
 
 
