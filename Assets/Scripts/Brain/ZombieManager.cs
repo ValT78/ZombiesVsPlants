@@ -43,17 +43,37 @@ public class ZombieManager : MonoBehaviour
     {
         this.brains += brains;
         counterText.text = "\nX" + this.brains.ToString() + "   ";
+        foreach(BuyHolder tab in buyTabs)
+        {
+            tab.UpdateBuyable();
+        }
     }
     public int GetBrains()
     {
         return brains;
     }
-    public void ShowCost(int cost)
+    public void ShowCostZombie(int cost, float[] information)
     {
         brainCostUI.SetActive(true);
-        brainCostUI.GetComponentInChildren<TextMeshProUGUI>().text = "\nCoût : " + cost.ToString();
+        brainCostUI.GetComponentInChildren<TextMeshProUGUI>().text = " HP : "+ information[0].ToString() + "\n Damage : " + information[1].ToString() + "\n Speed : " + information[2].ToString() + "\n Coast : " + cost.ToString();
 
         foreach(BuyHolder tab in buyTabs)
+        {
+            tab.ResetImage();
+        }
+    }
+    public void ShowCostTomb(int cost, int color)
+    {
+        brainCostUI.SetActive(true);
+        if (color == 0)
+        {
+            brainCostUI.GetComponentInChildren<TextMeshProUGUI>().text = " Create brain\n Expand the\n zombie zone\n Coast : " + cost.ToString();
+        }
+        else
+        {
+            brainCostUI.GetComponentInChildren<TextMeshProUGUI>().text = " Create brain\n Allows color\n zombies\n Coast : " + cost.ToString();
+        }
+        foreach (BuyHolder tab in buyTabs)
         {
             tab.ResetImage();
         }
@@ -80,20 +100,24 @@ public class ZombieManager : MonoBehaviour
             Instantiate(victoryScreen, Vector3.zero, Quaternion.identity);
         }
     }
-    public void AddBuild(GameObject build, int tabColor)
+    public void AddBuild(GameObject build)
     {
         builds.Add(build);
-        UpdateHolder(build, tabColor,true);
+        UpdateHolder(build, true);
+        foreach (BuyHolder tab in buyTabs)
+        {
+            tab.UpdateBuyable();
+        }
     }
 
     public void RemoveBuild(GameObject building, GameObject holder, int tabColor)
     {
         holder.GetComponent<PlaceHolder>().canBuild = true;
         builds.Remove(building);
-        UpdateHolder(building, tabColor, false);
+        UpdateHolder(building, false);
         foreach (GameObject build in builds)
         {
-            UpdateHolder(build, tabColor, true);
+            UpdateHolder(build, true);
         }
         if (tabColor == 1)
         {
@@ -112,6 +136,7 @@ public class ZombieManager : MonoBehaviour
                     if (tab.tabColor == 1)
                     {
                         tab.ResetImage();
+                        tab.UpdateBuyable();
                     }
                 }
             }
@@ -133,13 +158,14 @@ public class ZombieManager : MonoBehaviour
                     if (tab.tabColor == 2)
                     {
                         tab.ResetImage();
+                        tab.UpdateBuyable();
                     }
                 }
             }
         }
 
     }
-    private void UpdateHolder(GameObject building, int tabColor, bool isBuilding)
+    private void UpdateHolder(GameObject building,  bool isBuilding)
     {
         foreach (GameObject placeHolder in PlaceHolders)
         {

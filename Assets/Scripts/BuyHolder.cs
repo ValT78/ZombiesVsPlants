@@ -28,6 +28,8 @@ public class BuyHolder : MonoBehaviour
     {
         zombieManager = FindObjectOfType<ZombieManager>();
         closestObject = zombieManager.PlaceHolders[0];
+        imageRenderer.color /= 2;
+        UpdateBuyable();
     }
 
     // Update is called once per frame
@@ -45,14 +47,15 @@ public class BuyHolder : MonoBehaviour
                 canBuy = false;
                 GameObject instanceSpawn = Instantiate(toBuy[tabColor], image.transform.position, Quaternion.identity);
                 instanceSpawn.transform.position += new Vector3(0, 0.55f, 0);
+                //instanceSpawn.GetComponent<SpriteRenderer>().sortingOrder = 100 + (int) instanceSpawn.transform.position.y;
                 if (!isAZombie)
                 {
                     closestObject.GetComponent<PlaceHolder>().canBuild = false;
                     instanceSpawn.GetComponent<BuildHP>().placeHolder = closestObject;
                     instanceSpawn.GetComponent<BuildHP>().distance = closestObject.GetComponent<PlaceHolder>().distance;
-                    zombieManager.AddBuild(instanceSpawn, tabColor);
+                    zombieManager.AddBuild(instanceSpawn);
                 }
-                
+
                 ResetImage();
                 loading.SetActive(false);
                 loading.SetActive(true);
@@ -67,7 +70,7 @@ public class BuyHolder : MonoBehaviour
                     if (spawn.GetComponent<PlaceHolder>().canSpawn)
                     {
                         if (isAZombie)
-                        {
+                        {   
                             if (tabColor == 0 || (tabColor == 2 && spawn.GetComponent<PlaceHolder>().blueSpawn) || (tabColor == 1 && spawn.GetComponent<PlaceHolder>().redSpawn))
                             {
                                 float distance = Vector3.Distance(spawn.transform.position, mousePosition);
@@ -97,8 +100,15 @@ public class BuyHolder : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        zombieManager.ShowCost(prices[tabColor]);
-        
+        if (isAZombie)
+        {
+            zombieManager.ShowCostZombie(prices[tabColor], toBuy[tabColor].GetComponent<ZombieBehaviour>().Information());
+        }
+        else
+        {
+            zombieManager.ShowCostTomb(prices[tabColor], tabColor);
+        }
+
     }
     private void OnMouseExit()
     {
@@ -153,16 +163,17 @@ public class BuyHolder : MonoBehaviour
     {
         this.tabColor = tabColor;
         spriteRenderer.color = colors[tabColor];
-        if(isAZombie)
+        /*if(isAZombie)
         {
             imageRenderer.color = colors[tabColor];
-
         }
         else
         {
             imageRenderer.color = colors[tabColor];
 
-        }
+        }*/
+        UpdateBuyable();
+
         if (loading.activeSelf) {
             canBuy = loading.GetComponent<LoadingHolder>().SetActiveTab(tabColor);
             
@@ -170,6 +181,20 @@ public class BuyHolder : MonoBehaviour
         if (!canBuy || (tabColor == 1 && !HasRedHolder()) || (tabColor == 2 && !HasBlueHolder()))
         {
             ResetImage();
+        }
+    }
+
+    public void UpdateBuyable()
+    {
+        imageRenderer.color = colors[tabColor];
+        if(zombieManager.GetBrains() < prices[tabColor])
+        {
+            imageRenderer.color /= 2;
+        }
+        else if(isAZombie && (tabColor == 1 && !HasRedHolder() || tabColor == 2 && !HasBlueHolder()))
+        {
+            imageRenderer.color /= 2;
+
         }
     }
 }

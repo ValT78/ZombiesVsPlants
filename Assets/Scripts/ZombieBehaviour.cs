@@ -13,15 +13,17 @@ public class ZombieBehaviour : MonoBehaviour
     [SerializeField] private float blinkDuration;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    private Color color;
     private GameObject eated;
     private float startTime;
     private bool isEating;
     private float blinkTimer;
-    private int additionnalDamage = 5;
+    private readonly int additionnalDamage = 5;
 
     void Start()
     {
         startTime = Time.time;
+        color = spriteRenderer.color;
     }
 
     void Update()
@@ -80,11 +82,16 @@ public class ZombieBehaviour : MonoBehaviour
         {
             // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement
             float t = Mathf.PingPong(blinkTimer * 1f, 1f) / blinkDuration;
-            spriteRenderer.color = Color.Lerp(Color.green, Color.white, t);
+            spriteRenderer.color = Color.Lerp(Color.green, color, t);
 
             blinkTimer += Time.deltaTime;
             yield return null;
         }
 
+    }
+    public float[] Information()
+    {
+        float[] test = { HP, damage, speed };
+        return test;
     }
 }
