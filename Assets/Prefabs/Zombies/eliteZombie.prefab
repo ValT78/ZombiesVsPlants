@@ -127,7 +127,7 @@ MonoBehaviour:
   speed: 1.2
   frequency: 5
   amplitude: 2
-  damage: 5
+  damage: 10
   HP: 200
   zombieColor: 0
   blinkDuration: 0.5

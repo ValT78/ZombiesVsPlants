@@ -9,20 +9,22 @@ public class ClicCamera : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-
-            if (hit.collider != null)
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
+            foreach (RaycastHit2D hit in hits)
             {
-                // Vérifie si le collider cliqué est celui que vous souhaitez
-                if (hit.collider.CompareTag("BuyTab"))
+                if (hit.collider != null)
                 {
-                    // Réalisez les actions souhaitées
-                    hit.collider.GetComponent<BuyHolder>().OnMouseClic();
-                }
-                else if (hit.collider.CompareTag("Brain"))
-                {
-                    // Réalisez les actions souhaitées
-                    hit.collider.GetComponent<BrainItem>().OnMouseClic();
+                    // Vérifie si le collider cliqué est celui que vous souhaitez
+                    if (hit.collider.CompareTag("BuyTab"))
+                    {
+                        // Réalisez les actions souhaitées
+                        hit.collider.GetComponent<BuyHolder>().OnMouseClic();
+                    }
+                    else if (hit.collider.CompareTag("Brain"))
+                    {
+                        // Réalisez les actions souhaitées
+                        hit.collider.GetComponent<BrainItem>().OnMouseClic();
+                    }
                 }
             }
         }

@@ -47,7 +47,6 @@ public class BuyHolder : MonoBehaviour
                 canBuy = false;
                 GameObject instanceSpawn = Instantiate(toBuy[tabColor], image.transform.position, Quaternion.identity);
                 instanceSpawn.transform.position += new Vector3(0, 0.55f, 0);
-                //instanceSpawn.GetComponent<SpriteRenderer>().sortingOrder = 100 + (int) instanceSpawn.transform.position.y;
                 if (!isAZombie)
                 {
                     closestObject.GetComponent<PlaceHolder>().canBuild = false;

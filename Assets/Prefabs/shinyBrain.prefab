@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8181392724142703513}
   - component: {fileID: 8181392724142703512}
   - component: {fileID: 4965772681639915958}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shinyBrain
   m_TagString: Brain
   m_Icon: {fileID: 0}
