@@ -735,6 +735,8 @@ MonoBehaviour:
   - {fileID: 1351935990}
   - {fileID: 259134688}
   - {fileID: 1230816497}
+  blueSwitch: {fileID: 448614238}
+  openManager: {fileID: 1147232516}
   PlaceHolders:
   - {fileID: 622646904}
   - {fileID: 1189952502}
@@ -1723,6 +1725,7 @@ MonoBehaviour:
   - {fileID: 1351935990}
   - {fileID: 259134688}
   - {fileID: 1230816497}
+  blueTabActive: 1
 --- !u!4 &1147232518
 Transform:
   m_ObjectHideFlags: 0

@@ -15,25 +15,47 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private GameObject brainCostUI;
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private BuyHolder[] buyTabs;
-
+    [SerializeField] private GameObject blueSwitch;
+    [SerializeField] private GameObject openManager;
 
     public GameObject[] PlaceHolders = new GameObject[60];
 
     private List<GameObject> builds;
     private int brains;
-    private int unlockedZombie;
-    private bool spawnBrains;
-    void Start()
+    [HideInInspector] public int unlockedZombie;
+    [HideInInspector] public bool spawnBrains;
+    void Awake()
     {
         builds = new List<GameObject>();
         brains = startBrains;
         counterText.text = "\nX" + this.brains.ToString() + "   ";
-        Transporter transporter = FindObjectOfType<Transporter>();
-        unlockedZombie = transporter.unlockedZombie;
-        spawnBrains = transporter.spawnBrains;
         if (spawnBrains)
         {
             StartCoroutine(PassiveBrains());
+        }
+        if(unlockedZombie<5)
+        {
+            blueSwitch.SetActive(false);
+            if (unlockedZombie < 4)
+            {
+                openManager.SetActive(false); 
+                if (unlockedZombie < 3)
+                {
+                    buyTabs[5].gameObject.SetActive(false);
+                    if (unlockedZombie < 2)
+                    {
+                        buyTabs[4].gameObject.SetActive(false);
+                        if (unlockedZombie < 1)
+                        {
+                            buyTabs[3].gameObject.SetActive(false);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                openManager.GetComponent<OpenManager>().blueTabActive = false;
+            }
         }
     }
 
@@ -50,9 +72,9 @@ public class ZombieManager : MonoBehaviour
     {
         this.brains += brains;
         counterText.text = "\nX" + this.brains.ToString() + "   ";
-        foreach(BuyHolder tab in buyTabs)
+        for(int i = 0; i<Mathf.Min(3+unlockedZombie,6); i++)
         {
-            tab.UpdateBuyable();
+            buyTabs[i].UpdateBuyable();
         }
     }
     public int GetBrains()

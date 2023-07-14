@@ -6,9 +6,11 @@ public class OpenManager : MonoBehaviour
 {
     [SerializeField] private BuyHolder[] tabs;
 
+    public bool blueTabActive;
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(blueTabActive && Input.GetKeyDown(KeyCode.Q))
         {
             Activate(2);
         }

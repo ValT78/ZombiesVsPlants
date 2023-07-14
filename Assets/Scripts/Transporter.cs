@@ -31,7 +31,12 @@ public class Transporter : MonoBehaviour
     {
         if (scene.isLoaded && scene.name == "Game")
         {
-            FindObjectOfType<PlantManager>().plantOrder = plantTable;
+            PlantManager plantManager = FindObjectOfType<PlantManager>();
+            ZombieManager zombieManager = FindObjectOfType<ZombieManager>();
+            plantManager.plantOrder = plantTable;
+            plantManager.sunMultiplier = sunMultiplier;
+            zombieManager.spawnBrains = spawnBrains;
+
         }
     }
 }

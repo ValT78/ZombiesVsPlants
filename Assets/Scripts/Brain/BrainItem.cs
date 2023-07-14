@@ -66,7 +66,7 @@ public class BrainItem : MonoBehaviour
         if (!getClicked)
         {
             col.enabled = false;
-            zombieManager.GetComponent<ZombieManager>().ObtainBrains(storedBrains);
+            zombieManager.ObtainBrains(storedBrains);
         }
         getClicked = true;
         startPosition = transform.position;

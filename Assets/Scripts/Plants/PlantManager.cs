@@ -24,7 +24,7 @@ public class PlantManager : MonoBehaviour
     public float averageTimeBetweenPlants;
 
 
-    private float sunMultiplier;
+    public float sunMultiplier;
 
     public int totalSun;
 
@@ -43,10 +43,7 @@ public class PlantManager : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-        Transporter transporter = FindObjectOfType<Transporter>();
-        plantOrder = transporter.plantTable;
-        sunMultiplier = transporter.sunMultiplier;
-
+        
         index = 0;
         totalSun = startingSun;
 

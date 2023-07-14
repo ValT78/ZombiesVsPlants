@@ -20,7 +20,7 @@ public class BuyHolder : MonoBehaviour
 
     private GameObject closestObject;
     private ZombieManager zombieManager;
-    [HideInInspector] public int tabColor;
+    [HideInInspector] public int tabColor = 0;
     private bool canBuy = false;
     private bool select = false;
 

@@ -23,17 +23,17 @@ public class BuyTabs : MonoBehaviour
             ResetEveryTabs();
             tabs[2].OnMouseClic();
         }
-        else if (Input.GetKeyDown(KeyCode.J))
+        else if (Input.GetKeyDown(KeyCode.J) && tabs[3].gameObject.activeSelf)
         {
             ResetEveryTabs();
             tabs[3].OnMouseClic();
         }
-        else if (Input.GetKeyDown(KeyCode.K))
+        else if (Input.GetKeyDown(KeyCode.K) && tabs[4].gameObject.activeSelf)
         {
             ResetEveryTabs();
             tabs[4].OnMouseClic();
         }
-        else if (Input.GetKeyDown(KeyCode.L))
+        else if (Input.GetKeyDown(KeyCode.L) && tabs[5].gameObject.activeSelf)
         {
             ResetEveryTabs();
             tabs[5].OnMouseClic();
