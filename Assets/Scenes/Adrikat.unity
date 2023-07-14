@@ -3330,6 +3330,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 802816282964646704, guid: 79311bf9daeccf34fbb22e3569b57c56, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 802816282991811075, guid: 79311bf9daeccf34fbb22e3569b57c56, type: 3}
       propertyPath: m_SizeDelta.x
       value: 80
