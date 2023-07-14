@@ -21,13 +21,20 @@ public class ZombieManager : MonoBehaviour
 
     private List<GameObject> builds;
     private int brains;
+    private int unlockedZombie;
+    private bool spawnBrains;
     void Start()
     {
         builds = new List<GameObject>();
         brains = startBrains;
-        StartCoroutine(PassiveBrains());
         counterText.text = "\nX" + this.brains.ToString() + "   ";
-
+        Transporter transporter = FindObjectOfType<Transporter>();
+        unlockedZombie = transporter.unlockedZombie;
+        spawnBrains = transporter.spawnBrains;
+        if (spawnBrains)
+        {
+            StartCoroutine(PassiveBrains());
+        }
     }
 
     private IEnumerator PassiveBrains()

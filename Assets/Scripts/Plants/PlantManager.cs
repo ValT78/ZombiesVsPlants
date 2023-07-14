@@ -24,7 +24,7 @@ public class PlantManager : MonoBehaviour
     public float averageTimeBetweenPlants;
 
 
-
+    private float sunMultiplier;
 
     public int totalSun;
 
@@ -38,20 +38,14 @@ public class PlantManager : MonoBehaviour
 
 
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-	{
-		if (scene.isLoaded)
-		{
-            plantOrder = GameObject.Find("Level_parameters").GetComponent<LevelParameters>().plantTable;
-            Debug.Log(GameObject.Find("Level_parameters"));
-        }
-	}
+    
 
     void Start()
     {
         Application.targetFrameRate = 60;
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        Transporter transporter = FindObjectOfType<Transporter>();
+        plantOrder = transporter.plantTable;
+        sunMultiplier = transporter.sunMultiplier;
 
         index = 0;
         totalSun = startingSun;
@@ -71,7 +65,7 @@ public class PlantManager : MonoBehaviour
         randomSeed = Random.Range(0, 50);
 
 	}
-
+    
     void Update()
     {
 		if (framesCount % 2000 == 0)

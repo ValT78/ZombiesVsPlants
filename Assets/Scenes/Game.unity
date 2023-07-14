@@ -947,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1
+      value: -7.9
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1027,7 +1027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 363
+      value: -36.2
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1213,7 +1213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.9
+      value: 5.1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1293,7 +1293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -36.2
+      value: 363
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1567,8 +1567,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 712040684}
-  - {fileID: 635381606}
   - {fileID: 1353568609}
+  - {fileID: 635381606}
   - {fileID: 227292559}
   - {fileID: 259134687}
   - {fileID: 1230816496}
@@ -1588,12 +1588,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabs:
-  - {fileID: 1230816497}
-  - {fileID: 259134688}
-  - {fileID: 1351935990}
+  - {fileID: 910391907}
   - {fileID: 1353568610}
   - {fileID: 1807779720}
-  - {fileID: 910391907}
+  - {fileID: 1351935990}
+  - {fileID: 259134688}
+  - {fileID: 1230816497}
 --- !u!1 &1094446151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6298382233659753452, guid: b4729beb6c8f1c54293c8a3c44209f3e, type: 3}
@@ -1868,7 +1868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1948,7 +1948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 43.05
+      value: 284.4
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2111,11 +2111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2195,7 +2195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 284.4
+      value: 123.1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2597,11 +2597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: -5.3
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2685,7 +2685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 203.4
+      value: 43.05
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3354,7 +3354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144094, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3434,7 +3434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 123.1
+      value: 203.4
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_AnchoredPosition.y
