@@ -140,9 +140,9 @@ public class ZombieManager : MonoBehaviour
     {
         builds.Add(build);
         UpdateHolder(build, true);
-        foreach (BuyHolder tab in buyTabs)
+        for (int i = 0; i < Mathf.Min(3 + unlockedZombie, 6); i++)
         {
-            tab.UpdateBuyable();
+            buyTabs[i].UpdateBuyable();
         }
     }
 
@@ -167,12 +167,12 @@ public class ZombieManager : MonoBehaviour
             }
             if(!flag)
             {
-                foreach (BuyHolder tab in buyTabs)
+                for(int i = 0; i < Mathf.Min(3 + unlockedZombie, 6); i++)
                 {
-                    if (tab.tabColor == 1)
+                    if (buyTabs[i].tabColor == 1)
                     {
-                        tab.ResetImage();
-                        tab.UpdateBuyable();
+                        buyTabs[i].ResetImage();
+                        buyTabs[i].UpdateBuyable();
                     }
                 }
             }
