@@ -12,6 +12,10 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2129994429429423770, guid: 6702883390870b544a020b924f32d21b, type: 3}
+      propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129994429429423770, guid: 6702883390870b544a020b924f32d21b, type: 3}
       propertyPath: zombieColor
       value: 1
       objectReference: {fileID: 0}

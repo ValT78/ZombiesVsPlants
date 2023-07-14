@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlantManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlantManager : MonoBehaviour
     public GameObject[] placeholdersMatrix;
 
     public ZombieManager zombieManager;
+    [SerializeField] private TextMeshProUGUI sunMultiplierUI;
 
     [Tooltip("Number of sunflowers to start with")]
     public int startingSun;
@@ -50,25 +52,14 @@ public class PlantManager : MonoBehaviour
         if (priceGrid.Length != plantTypes.Length)
             Debug.LogError("Price Grid and plant types must have the same length !");
 
-
-        /*for (int i = 0; i < 5; i++)
-		{
-			for (int j = 0; j < 12; j++)
-			{
-				InstantiatePlant(0, i, j);
-			}
-		}*/
-
         randomSeed = Random.Range(0, 50);
+        sunMultiplierUI.text = "X" + this.sunMultiplier.ToString();
 
+        StartCoroutine(PassiveSun());
 	}
     
     void Update()
     {
-		if (framesCount % 2000 == 0)
-		{
-            GetSun(passiveSun);
-		}
 
         if(framesCount% (int)(averageTimeBetweenPlants*30 + randomSeed) == 0)
 		{
@@ -77,7 +68,7 @@ public class PlantManager : MonoBehaviour
 
             int[] pos = GetRandomNextFreePosition();
 
-			if (InstantiatePlant(plantOrder[index], pos[0], pos[1]) || Random.Range(0f, 1f) > 0.96)
+			if (InstantiatePlant(plantOrder[index], pos[0], pos[1]))
 			{
                 index = (index+1)%plantOrder.Length;
                 //Debug.Log("Skipped a plant !");
@@ -87,6 +78,15 @@ public class PlantManager : MonoBehaviour
         }
 
         framesCount++;
+    }
+
+    private IEnumerator PassiveSun()
+    {
+        while (true) {
+            yield return new WaitForSeconds(10/sunMultiplier);
+            GetSun(passiveSun);
+            yield return new WaitForSeconds(10 / sunMultiplier);
+        }
     }
 
     
@@ -142,7 +142,7 @@ public class PlantManager : MonoBehaviour
         Transform pos = placeholdersMatrix[linePos*12+columnPos].transform;
 
         GameObject instance = Instantiate(plantTypes[plant], pos.position, Quaternion.identity);
-        instance.GetComponent<BasicPlantBehaviour>().Initialize(this, zombieManager, linePos, columnPos);
+        instance.GetComponent<BasicPlantBehaviour>().Initialize(this, zombieManager, linePos, columnPos, sunMultiplier);
         plantMatrix[linePos, columnPos] = instance;
 
         totalSun -= priceGrid[plant];

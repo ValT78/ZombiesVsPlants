@@ -37,7 +37,7 @@ public class BuildHP : MonoBehaviour
         while (blinkTimer < blinkDuration)
         {
             float t = Mathf.PingPong(blinkTimer * 1f, 1f) / blinkDuration;
-            spriteRenderer.color = Color.Lerp(Color.green, Color.white, t);
+            spriteRenderer.color = Color.Lerp(Color.red, Color.white, t);
 
             blinkTimer += Time.deltaTime;
             yield return null;

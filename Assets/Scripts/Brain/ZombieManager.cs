@@ -17,6 +17,7 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private BuyHolder[] buyTabs;
     [SerializeField] private GameObject blueSwitch;
     [SerializeField] private GameObject openManager;
+    [SerializeField] private TextMeshProUGUI startMessage;
 
     public GameObject[] PlaceHolders = new GameObject[60];
 
@@ -29,13 +30,15 @@ public class ZombieManager : MonoBehaviour
         builds = new List<GameObject>();
         brains = startBrains;
         counterText.text = "\nX" + this.brains.ToString() + "   ";
-        
+        StartCoroutine(CollapseMessage());
+
     }
 
-    public void DispawnObject(int unlockedZombie, bool spawnBrains)
+    public void DispawnObject(int unlockedZombie, string message, bool spawnBrains)
     {
         this.spawnBrains = spawnBrains;
         this.unlockedZombie = unlockedZombie;
+        startMessage.text = message;
         if (spawnBrains)
         {
             StartCoroutine(PassiveBrains());
@@ -73,6 +76,13 @@ public class ZombieManager : MonoBehaviour
             yield return new WaitForSeconds(timePassiveBrains);
             SummonGroundBrain();
         }
+    }
+
+    private IEnumerator CollapseMessage()
+    {
+        yield return new WaitForSeconds(20f);
+        startMessage.GetComponentInParent<Canvas>().enabled = false;
+
     }
 
     public void ObtainBrains(int brains)
@@ -189,12 +199,12 @@ public class ZombieManager : MonoBehaviour
             }
             if (!flag)
             {
-                foreach (BuyHolder tab in buyTabs)
+                for (int i = 0; i < Mathf.Min(3 + unlockedZombie, 6); i++)
                 {
-                    if (tab.tabColor == 2)
+                    if (buyTabs[i].tabColor == 2)
                     {
-                        tab.ResetImage();
-                        tab.UpdateBuyable();
+                        buyTabs[i].ResetImage();
+                        buyTabs[i].UpdateBuyable();
                     }
                 }
             }

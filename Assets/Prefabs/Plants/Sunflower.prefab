@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2338437170530538874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.489, y: -3.074, z: 0}
-  m_LocalScale: {x: 0.95839125, y: 0.9785056, z: 0.61712253}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15314816, z: 0.09658726}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,8 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 0
-  cost: 100
-  HP: 20
+  HP: 30
   attackSpeed: 0
   bulletSpeed: 0
   bulletDamage: 0
@@ -110,6 +109,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
   blinkDuration: 0.5
   spriteRenderer: {fileID: 8687565341010220491}
+  plantManager: {fileID: 0}
+  zombieManager: {fileID: 0}
 --- !u!61 &6601214795515292116
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 13.38, y: 17.59}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

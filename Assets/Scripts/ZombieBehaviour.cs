@@ -60,7 +60,7 @@ public class ZombieBehaviour : MonoBehaviour
         while (isEating)
         {
             eated.GetComponent<BasicPlantBehaviour>().takeDamage(damage);
-            yield return new WaitForSeconds(12.5f/frequency);
+            yield return new WaitForSeconds(3.1f/frequency);
         }
     }
 
@@ -82,7 +82,7 @@ public class ZombieBehaviour : MonoBehaviour
         {
             // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement
             float t = Mathf.PingPong(blinkTimer * 1f, 1f) / blinkDuration;
-            spriteRenderer.color = Color.Lerp(Color.green, color, t);
+            spriteRenderer.color = Color.Lerp(Color.red, color, t);
 
             blinkTimer += Time.deltaTime;
             yield return null;

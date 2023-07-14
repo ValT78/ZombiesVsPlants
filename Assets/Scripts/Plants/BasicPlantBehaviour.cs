@@ -6,8 +6,6 @@ public class BasicPlantBehaviour : MonoBehaviour
 {
     [Tooltip("The plant's name displayed to the player")]
     public PlantTypes plantType;
-    [Tooltip("Amount of sunflowers requiered to plant it")]
-    public int cost;
     [Tooltip("The plant's Health Points")]
     public int HP;
     [Tooltip("Bullets per seconds")]
@@ -38,15 +36,11 @@ public class BasicPlantBehaviour : MonoBehaviour
 
     private bool initialized = false;
     private float blinkTimer;
+    private float sunMultiplier;
 
 
 
-    private int framesCount = 1;
-    private int framesPerBullet;
-
-
-    private int nextWait = 720;
-
+    private bool pearTrigger = false;
 
     public enum PlantTypes
     {
@@ -54,57 +48,76 @@ public class BasicPlantBehaviour : MonoBehaviour
         Supersunflower,
         Wallnut,
         Brain,
+        pear,
         Peashooter,
-        DoublePeashooter
+        DoublePeashooter,
+        TriplePea
         
     }
 
     
 
-    public void Initialize(PlantManager p, ZombieManager z, int linePos, int columnPos)
+    public void Initialize(PlantManager p, ZombieManager z, int linePos, int columnPos, float sunMultiplier)
 	{
         plantManager = p;
         zombieManager = z;
         plantPosition[0] = linePos;
         plantPosition[1] = columnPos;
         initialized = true;
+        this.sunMultiplier = sunMultiplier;
     }
 
 	void Start()
 	{
         currentHP = HP;
-        framesPerBullet = (int)(60 / attackSpeed);
-	}
+        if (plantType <= PlantTypes.Supersunflower)
+        {
+            StartCoroutine(SunFlower());
+        }
+        if (plantType >= PlantTypes.Peashooter)
+        {
+            StartCoroutine(Peashooter());
 
-	void Update()
-    {
-
-        if (plantType >= PlantTypes.Peashooter && framesCount % framesPerBullet == 0)
-            ShootProjectile();
-
-
-        if (plantType == PlantTypes.DoublePeashooter && framesCount % framesPerBullet == framesPerBullet/6)
-            ShootProjectile();
+        }
 
 
-        if(plantType <= PlantTypes.Supersunflower && framesCount % nextWait == 0)
-		{
-            plantManager.GetSun(25);
-
-            if (plantType == PlantTypes.Supersunflower)
-                plantManager.GetSun(25);
-
-            nextWait = Random.Range(720, 2000);
-
-		}
-
-        framesCount ++;
     }
 
+    private IEnumerator SunFlower()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(12f/sunMultiplier);
+            plantManager.GetSun(25);
+            if (plantType == PlantTypes.Supersunflower)
+            {
+                plantManager.GetSun(25);
+            }
+            yield return new WaitForSeconds(12f / sunMultiplier);
 
-    private void ShootProjectile()
+        }
+    }
+    private IEnumerator Peashooter()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1/attackSpeed-0.1f);
+            ShootProjectile(0);
+            if (plantType == PlantTypes.TriplePea)
+            {
+                ShootProjectile(2.6f);
+                ShootProjectile(-2.6f);
+
+            }
+            yield return new WaitForSeconds(0.1f);
+            if (plantType == PlantTypes.DoublePeashooter)
+                ShootProjectile(0);
+        }
+    }
+
+    private void ShootProjectile(float y)
 	{
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position+new Vector3(0,y,0), Quaternion.identity);
         bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletSpeed, bulletDamage, plantColor); // May be very VERY glutton
 	}
 
@@ -138,11 +151,54 @@ public class BasicPlantBehaviour : MonoBehaviour
         {
             // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement
             float t = Mathf.PingPong(blinkTimer * 1f, 1f) / blinkDuration;
-            spriteRenderer.color = Color.Lerp(Color.green, Color.white, t);
+            spriteRenderer.color = Color.Lerp(Color.red, Color.white, t);
 
             blinkTimer += Time.deltaTime;
             yield return null;
         }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(plantType== PlantTypes.pear && !pearTrigger)
+        {
+            if(collision.gameObject.CompareTag("Zombie")) {
+                pearTrigger = true;
+                StartCoroutine(Pear(collision.transform.position));
+            }
+        }
+    }
+    private IEnumerator Pear(Vector3 finalPosition)
+    {
+        Vector3 initialPosition = transform.position;
+        float t = 0;
+        while (t < 0.2) {
+            transform.position = Vector3.Lerp(initialPosition, finalPosition + new Vector3(0, 2.6f, 0), t/0.2f);
+            t += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        yield return new WaitForSeconds(0.3f);
+
+        initialPosition = transform.position;
+        t = 0;
+        while (t < 0.1)
+        {
+            transform.position = Vector3.Lerp(initialPosition, finalPosition + new Vector3(0, -2f, 0), t / 0.1f);
+            t += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 2f);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Zombie"))
+            {
+                Destroy(collider.gameObject);
+                // Faites quelque chose avec le GameObject Zombie détecté
+            }
+        }
+        Destroy(gameObject, 0.3f);
 
     }
 }

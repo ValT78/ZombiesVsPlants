@@ -7,6 +7,7 @@ public class Transporter : MonoBehaviour
 {
     public int[] plantTable;
     public int unlockedZombie;
+    public string message;
     public float sunMultiplier;
     public bool spawnBrains;
 
@@ -19,10 +20,11 @@ public class Transporter : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void LoadGame(int[] plantTable, int unlockedZombie, float sunMultiplier, bool spawnBrains)
+    public void LoadGame(int[] plantTable, int unlockedZombie, string message, float sunMultiplier, bool spawnBrains)
     {
         this.plantTable = plantTable;
         this.unlockedZombie = unlockedZombie;
+        this.message = message;
         this.sunMultiplier = sunMultiplier;
         this.spawnBrains = spawnBrains;
         SceneManager.LoadScene("Game");
@@ -35,8 +37,14 @@ public class Transporter : MonoBehaviour
             ZombieManager zombieManager = FindObjectOfType<ZombieManager>();
             plantManager.plantOrder = plantTable;
             plantManager.sunMultiplier = sunMultiplier;
-            zombieManager.DispawnObject(unlockedZombie, spawnBrains);
-
+            zombieManager.DispawnObject(unlockedZombie, message,spawnBrains);
+            StartCoroutine(Kill());
         }
+    }
+
+    private IEnumerator Kill()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 }
