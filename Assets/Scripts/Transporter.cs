@@ -35,7 +35,7 @@ public class Transporter : MonoBehaviour
             ZombieManager zombieManager = FindObjectOfType<ZombieManager>();
             plantManager.plantOrder = plantTable;
             plantManager.sunMultiplier = sunMultiplier;
-            zombieManager.spawnBrains = spawnBrains;
+            zombieManager.DispawnObject(unlockedZombie, spawnBrains);
 
         }
     }

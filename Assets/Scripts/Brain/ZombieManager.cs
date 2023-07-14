@@ -24,21 +24,28 @@ public class ZombieManager : MonoBehaviour
     private int brains;
     [HideInInspector] public int unlockedZombie;
     [HideInInspector] public bool spawnBrains;
-    void Awake()
+    void Start()
     {
         builds = new List<GameObject>();
         brains = startBrains;
         counterText.text = "\nX" + this.brains.ToString() + "   ";
+        
+    }
+
+    public void DispawnObject(int unlockedZombie, bool spawnBrains)
+    {
+        this.spawnBrains = spawnBrains;
+        this.unlockedZombie = unlockedZombie;
         if (spawnBrains)
         {
             StartCoroutine(PassiveBrains());
         }
-        if(unlockedZombie<5)
+        if (unlockedZombie < 5)
         {
             blueSwitch.SetActive(false);
             if (unlockedZombie < 4)
             {
-                openManager.SetActive(false); 
+                openManager.SetActive(false);
                 if (unlockedZombie < 3)
                 {
                     buyTabs[5].gameObject.SetActive(false);
