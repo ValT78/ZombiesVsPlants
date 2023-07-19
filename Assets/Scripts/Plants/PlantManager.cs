@@ -48,7 +48,7 @@ public class PlantManager : MonoBehaviour
         }
         if (Transporter.message == " ")
         {
-            totalSun = 25;
+            totalSun = 0;
 
         }
         sunMultiplierUI.text = "Production x" + Transporter.sunMultiplier.ToString();
@@ -75,10 +75,10 @@ public class PlantManager : MonoBehaviour
     private IEnumerator PassiveSun()
     {
         while (true) {
-            yield return new WaitForSeconds(10f/Transporter.sunMultiplier);
+            yield return new WaitForSeconds(8f/Transporter.sunMultiplier);
             GetSun(passiveSun);
             
-            yield return new WaitForSeconds(10f/ Transporter.sunMultiplier);
+            yield return new WaitForSeconds(8f/ Transporter.sunMultiplier);
         }
     }
 

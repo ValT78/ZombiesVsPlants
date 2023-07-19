@@ -76,7 +76,7 @@ public class ZombieManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(timePassiveBrains/Transporter.sunMultiplier);
+            yield return new WaitForSeconds(timePassiveBrains/(Transporter.sunMultiplier/1.5f));
             SummonGroundBrain();
         }
     }

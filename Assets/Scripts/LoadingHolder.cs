@@ -31,7 +31,7 @@ public class LoadingHolder : MonoBehaviour
         {
             if (reloadTimer[i] < reloadTimes[i])
             {
-                reloadTimer[i] += Time.deltaTime;
+                reloadTimer[i] += Time.deltaTime*Transporter.sunMultiplier; 
                 flag = false;
             }
             

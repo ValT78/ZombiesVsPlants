@@ -16,7 +16,7 @@ public class LevelParameters : MonoBehaviour
         unlockedZombie = new int[] { 0, 0, 1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5,5,5};
         sunMultiplier = new float[] { 1f, 1f, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1f, 1.70f, 1.70f, 1.70f, 1f, 1.80f,1.80f,1.90f, 1.90f, 2f};
 
-        listLevel.Add(new int[] { 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0 ,0 ,0, 0 , 0 ,0, 0 ,0, 0,0 ,0 , 0,0,0,0,0,0,0,0,0,0,0,0,0, });
+        listLevel.Add(new int[] { 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0 ,0 ,0, 0 , 0 ,0, 0 ,0, 0,0 ,0 , 0,0,0,0,0,0,0,0,0,0,0,0,0, });
         listLevel.Add(new int[] { 3 });
         listLevel.Add(new int[] { 0, 0, 3 , 0, 0, 0, 0,0 ,0,0 ,0});
         listLevel.Add(new int[] { 0, 3, 0, 2, 2, 2, 2, 2, 2, 3,0, 0, 2, 2, 2, 2, 2 });

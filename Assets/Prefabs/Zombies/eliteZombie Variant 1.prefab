@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 827995886126968388, guid: 3f764497dcc797b4f93d297bd81c6619, type: 3}
       propertyPath: HP
-      value: 300
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 827995886126968388, guid: 3f764497dcc797b4f93d297bd81c6619, type: 3}
       propertyPath: zombieColor

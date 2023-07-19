@@ -50,7 +50,7 @@ public class BuildHP : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(timeGenerateBrains / Transporter.sunMultiplier-1f);
+            yield return new WaitForSeconds(timeGenerateBrains / (Transporter.sunMultiplier/1.5f)-1f);
             StartCoroutine(Blink(Color.magenta, 1.5f));
             yield return new WaitForSeconds(1f);
             SummonBrain();

@@ -79,7 +79,7 @@ public class BasicPlantBehaviour : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10f/ Transporter.sunMultiplier-1f);
+            yield return new WaitForSeconds(12f/ Transporter.sunMultiplier-1f);
             StartCoroutine(Blink(Color.green, 1.5f));
             yield return new WaitForSeconds(1f);
             PlantManager.plantManager.GetSun(25);
@@ -87,7 +87,7 @@ public class BasicPlantBehaviour : MonoBehaviour
             {
                 PlantManager.plantManager.GetSun(25);
             }
-            yield return new WaitForSeconds(10f / Transporter.sunMultiplier);
+            yield return new WaitForSeconds(12f / Transporter.sunMultiplier);
 
         }
     }

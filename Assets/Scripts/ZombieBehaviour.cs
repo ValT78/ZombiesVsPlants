@@ -18,7 +18,7 @@ public class ZombieBehaviour : MonoBehaviour
     private float startTime;
     private bool isEating;
     private float blinkTimer;
-    private readonly int additionnalDamage = 7;
+    private readonly int additionnalDamage = 5;
 
     void Start()
     {
