@@ -18,7 +18,7 @@ public class ZombieBehaviour : MonoBehaviour
     private float startTime;
     private bool isEating;
     private float blinkTimer;
-    private readonly int additionnalDamage = 5;
+    private readonly int additionnalDamage = 7;
 
     void Start()
     {
@@ -59,7 +59,7 @@ public class ZombieBehaviour : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         while (isEating)
         {
-            eated.GetComponent<BasicPlantBehaviour>().takeDamage(damage);
+            eated.GetComponent<BasicPlantBehaviour>().TakeDamage(damage);
             yield return new WaitForSeconds(3.1f/frequency);
         }
     }

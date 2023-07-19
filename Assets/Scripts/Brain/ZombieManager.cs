@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ZombieManager : MonoBehaviour
@@ -16,46 +17,48 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private BuyHolder[] buyTabs;
     [SerializeField] private GameObject blueSwitch;
-    [SerializeField] private GameObject openManager;
     [SerializeField] private TextMeshProUGUI startMessage;
+    [SerializeField] private GameObject tutorial;
 
     public GameObject[] PlaceHolders = new GameObject[60];
 
-    private List<GameObject> builds;
-    private int brains;
-    [HideInInspector] public int unlockedZombie;
-    [HideInInspector] public bool spawnBrains;
-    void Start()
+    [HideInInspector] public static List<GameObject> builds;
+    [HideInInspector] public static int brains;
+    [HideInInspector] public static ZombieManager zombieManager;
+    private void Awake()
     {
+        zombieManager = this;
         builds = new List<GameObject>();
         brains = startBrains;
-        counterText.text = "\nX" + this.brains.ToString() + "   ";
+        counterText.text = "\nX" + brains.ToString() + "   ";
         StartCoroutine(CollapseMessage());
-
     }
+    
 
-    public void DispawnObject(int unlockedZombie, string message, bool spawnBrains)
+    public void DispawnObject()
     {
-        this.spawnBrains = spawnBrains;
-        this.unlockedZombie = unlockedZombie;
-        startMessage.text = message;
-        if (spawnBrains)
+        if(Transporter.message==" ")
+        {
+            tutorial.SetActive(true);
+        }
+        startMessage.text = Transporter.message;
+        if (Transporter.spawnBrains)
         {
             StartCoroutine(PassiveBrains());
         }
-        if (unlockedZombie < 5)
+        if (Transporter.unlockedZombie < 5)
         {
             blueSwitch.SetActive(false);
-            if (unlockedZombie < 4)
+            if (Transporter.unlockedZombie < 4)
             {
-                openManager.SetActive(false);
-                if (unlockedZombie < 3)
+                OpenManager.openManager.gameObject.SetActive(false);
+                if (Transporter.unlockedZombie < 3)
                 {
                     buyTabs[5].gameObject.SetActive(false);
-                    if (unlockedZombie < 2)
+                    if (Transporter.unlockedZombie < 2)
                     {
                         buyTabs[4].gameObject.SetActive(false);
-                        if (unlockedZombie < 1)
+                        if (Transporter.unlockedZombie < 1)
                         {
                             buyTabs[3].gameObject.SetActive(false);
                         }
@@ -64,7 +67,7 @@ public class ZombieManager : MonoBehaviour
             }
             else
             {
-                openManager.GetComponent<OpenManager>().blueTabActive = false;
+                OpenManager.openManager.blueTabActive = false;
             }
         }
     }
@@ -73,7 +76,7 @@ public class ZombieManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(timePassiveBrains);
+            yield return new WaitForSeconds(timePassiveBrains/Transporter.sunMultiplier);
             SummonGroundBrain();
         }
     }
@@ -87,26 +90,18 @@ public class ZombieManager : MonoBehaviour
 
     public void ObtainBrains(int brains)
     {
-        this.brains += brains;
-        counterText.text = "\nX" + this.brains.ToString() + "   ";
-        for(int i = 0; i<Mathf.Min(3+unlockedZombie,6); i++)
+        ZombieManager.brains += brains;
+        counterText.text = "\nX" + ZombieManager.brains.ToString() + "   ";
+        for(int i = 0; i<Mathf.Min(3+Transporter.unlockedZombie,6); i++)
         {
             buyTabs[i].UpdateBuyable();
         }
     }
-    public int GetBrains()
-    {
-        return brains;
-    }
+    
     public void ShowCostZombie(int cost, float[] information)
     {
         brainCostUI.SetActive(true);
         brainCostUI.GetComponentInChildren<TextMeshProUGUI>().text = " HP : "+ information[0].ToString() + "\n Damage : " + information[1].ToString() + "\n Speed : " + information[2].ToString() + "\n Coast : " + cost.ToString();
-
-        foreach(BuyHolder tab in buyTabs)
-        {
-            tab.ResetImage();
-        }
     }
     public void ShowCostTomb(int cost, int color)
     {
@@ -118,10 +113,6 @@ public class ZombieManager : MonoBehaviour
         else
         {
             brainCostUI.GetComponentInChildren<TextMeshProUGUI>().text = " Create brain\n Allows color\n zombies\n Coast : " + cost.ToString();
-        }
-        foreach (BuyHolder tab in buyTabs)
-        {
-            tab.ResetImage();
         }
     }
     public void HideCost()
@@ -150,7 +141,7 @@ public class ZombieManager : MonoBehaviour
     {
         builds.Add(build);
         UpdateHolder(build, true);
-        for (int i = 0; i < Mathf.Min(3 + unlockedZombie, 6); i++)
+        for (int i = 0; i < Mathf.Min(3 + Transporter.unlockedZombie, 6); i++)
         {
             buyTabs[i].UpdateBuyable();
         }
@@ -177,7 +168,7 @@ public class ZombieManager : MonoBehaviour
             }
             if(!flag)
             {
-                for(int i = 0; i < Mathf.Min(3 + unlockedZombie, 6); i++)
+                for(int i = 0; i < Mathf.Min(3 + Transporter.unlockedZombie, 6); i++)
                 {
                     if (buyTabs[i].tabColor == 1)
                     {
@@ -199,7 +190,7 @@ public class ZombieManager : MonoBehaviour
             }
             if (!flag)
             {
-                for (int i = 0; i < Mathf.Min(3 + unlockedZombie, 6); i++)
+                for (int i = 0; i < Mathf.Min(3 + Transporter.unlockedZombie, 6); i++)
                 {
                     if (buyTabs[i].tabColor == 2)
                     {
@@ -236,5 +227,16 @@ public class ZombieManager : MonoBehaviour
         }
         
 
+    }
+    public void KillScript()
+    {
+        Destroy(this);
+    }
+    public void ResetAllTabs()
+    {
+        for (int i = 0; i < Mathf.Min(3 + Transporter.unlockedZombie, 6); i++)
+        {
+            buyTabs[i].ResetImage();
+        }
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BrainItem : MonoBehaviour
 {
-    private ZombieManager zombieManager;
     private Vector3 target;
 
     [SerializeField] private Collider2D col;
@@ -27,7 +26,6 @@ public class BrainItem : MonoBehaviour
         StartCoroutine(Depop());
         StartCoroutine(FloatingAnimation());
 
-        zombieManager = FindObjectOfType<ZombieManager>();
         target = GameObject.Find("brainUI").transform.position;
         fromGroundSpeed = Random.Range(1.0f, 2.0f);
         startPosition = transform.position;
@@ -66,7 +64,7 @@ public class BrainItem : MonoBehaviour
         if (!getClicked)
         {
             col.enabled = false;
-            zombieManager.ObtainBrains(storedBrains);
+            ZombieManager.zombieManager.ObtainBrains(storedBrains);
         }
         getClicked = true;
         startPosition = transform.position;

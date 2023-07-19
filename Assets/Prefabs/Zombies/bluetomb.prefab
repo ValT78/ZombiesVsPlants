@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2987652847509483149}
   - component: {fileID: 2987652847509483148}
   - component: {fileID: 2987652847509483151}
-  - component: {fileID: 1545071508026860003}
   m_Layer: 0
   m_Name: bluetomb
   m_TagString: Build
@@ -125,23 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f078f27fee25a4f908a6a455009a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 5
+  HP: 60
   blinkDuration: 0.5
   spriteRenderer: {fileID: 2987652847509483149}
+  shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
+  timeGenerateBrains: 17
   distance: 0
   placeHolder: {fileID: 0}
   color: 2
---- !u!114 &1545071508026860003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2987652847509483147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31a377b9f468454ebe3011b1541da17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
-  timeGenerateBrains: 12

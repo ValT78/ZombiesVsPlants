@@ -124,11 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8422161ff0bb942927078a39584f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 3.2
   frequency: 5
   amplitude: 5
   damage: 5
-  HP: 30
+  HP: 10
   zombieColor: 0
   blinkDuration: 0.5
   spriteRenderer: {fileID: 5118353816513391811}

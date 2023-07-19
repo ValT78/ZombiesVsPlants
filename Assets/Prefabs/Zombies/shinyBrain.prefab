@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 8181392724142703512}
   storedBrains: 25
-  despawnTime: 10
+  despawnTime: 8
   collectTime: 1
   floatRange: 2
   floatSpeed: 0.3

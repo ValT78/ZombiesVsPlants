@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: HP
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: cost
@@ -68,8 +68,12 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
+      propertyPath: attackSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: brainReward
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5382182265286895324, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

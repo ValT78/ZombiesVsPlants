@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 6
-  HP: 30
-  attackSpeed: 0.25
+  HP: 50
+  attackSpeed: 0.3
   bulletSpeed: 6
   bulletDamage: 10
   plantColor: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3763160838388861097}
   plantManager: {fileID: 0}
   zombieManager: {fileID: 0}
+  brain: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
 --- !u!61 &8827270878961027809
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.042424083, y: -1.2652453}
+  m_Offset: {x: 0.042424202, y: -0.5495331}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.794486, y: 3.9531581}
+  m_Size: {x: 5.794486, y: 2.5217333}
   m_EdgeRadius: 0
 --- !u!50 &-1575442713814613795
 Rigidbody2D:

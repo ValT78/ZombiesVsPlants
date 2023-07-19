@@ -5,11 +5,10 @@ using UnityEngine;
 public class SwitchTab : MonoBehaviour
 {
     [SerializeField] private int tabColor;
-    [SerializeField] private OpenManager openManager;
 
-    void OnMouseUp()
+    public void OnClick()
     {
-        openManager.Activate(tabColor);
+        OpenManager.openManager.Activate(tabColor);
     }
     
 }

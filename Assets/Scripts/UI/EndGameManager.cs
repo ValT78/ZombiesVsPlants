@@ -9,13 +9,14 @@ public class EndGameManager : MonoBehaviour
     public float targetScale;
 
 
-    private int framesCount;
     private float currentScale;
     void Start()
     {
-        framesCount = 0;
+        PlantManager.plantManager.KillScript();
+        ZombieManager.zombieManager.KillScript();
         currentScale = 0;
         transform.localScale = new Vector3(0, 0, 1);
+        StartCoroutine(EndLevel());
     }
 
     // Update is called once per frame
@@ -25,11 +26,12 @@ public class EndGameManager : MonoBehaviour
         transform.localScale = new Vector3(currentScale, currentScale, 1);
         
      
-        framesCount++;
 
-		if (framesCount>=360)
-		{
-            SceneManager.LoadScene("AdriKat");
-		}
+    }
+
+    private IEnumerator EndLevel()
+    {
+        yield return new WaitForSeconds(6);
+        SceneManager.LoadScene("AdriKat", LoadSceneMode.Single);
     }
 }

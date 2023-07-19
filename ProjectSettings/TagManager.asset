@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plant
-  - Zombie
   - Nexus
-  - Build
   - Brain
   - BuyTab
+  - SwitchTab
+  - Build
+  - Zombie
+  - TutoManager
   layers:
   - Default
   - TransparentFX

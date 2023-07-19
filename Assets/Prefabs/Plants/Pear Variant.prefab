@@ -76,6 +76,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6689820752548645010, guid: 7630918f686fd9443bab2686e9402a69, type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
+    - target: {fileID: 6689820752548645010, guid: 7630918f686fd9443bab2686e9402a69, type: 3}
       propertyPath: plantType
       value: 4
       objectReference: {fileID: 0}
@@ -109,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6689820752548645022, guid: 7630918f686fd9443bab2686e9402a69, type: 3}
       propertyPath: m_Name
-      value: Pear
+      value: Pear Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6689820752548645022, guid: 7630918f686fd9443bab2686e9402a69, type: 3}
       propertyPath: m_TagString

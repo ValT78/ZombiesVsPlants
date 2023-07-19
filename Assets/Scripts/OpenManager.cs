@@ -5,8 +5,13 @@ using UnityEngine;
 public class OpenManager : MonoBehaviour
 {
     [SerializeField] private BuyHolder[] tabs;
+    [HideInInspector] public static OpenManager openManager;
 
     public bool blueTabActive;
+    private void Awake()
+    {
+        openManager = this;
+    }
 
     void Update()
     {

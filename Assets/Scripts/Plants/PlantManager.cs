@@ -6,17 +6,16 @@ using TMPro;
 
 public class PlantManager : MonoBehaviour
 {
+    [HideInInspector] public static PlantManager plantManager;
 
     public GameObject[] plantTypes; // All prefabs
 
     public int[] priceGrid;
 
-    private GameObject[,] plantMatrix = new GameObject[5, 12];
+    public PlaceHolder[] placeholders;
 
-    public GameObject[] placeholdersMatrix;
-
-    public ZombieManager zombieManager;
     [SerializeField] private TextMeshProUGUI sunMultiplierUI;
+    [SerializeField] private TextMeshProUGUI sunCounter;
 
     [Tooltip("Number of sunflowers to start with")]
     public int startingSun;
@@ -26,133 +25,104 @@ public class PlantManager : MonoBehaviour
     public float averageTimeBetweenPlants;
 
 
-    public float sunMultiplier;
-
-    public int totalSun;
-
-    private int framesCount;
+    public int totalSun = 0;
 
     private int index;
 
-    private float randomSeed;
-
     public int[] plantOrder;
 
-
-
-    
-
-    void Start()
+    private void Awake()
     {
-        Application.targetFrameRate = 60;
-        
+        plantManager = this;
         index = 0;
-        totalSun = startingSun;
-
-        if (priceGrid.Length != plantTypes.Length)
-            Debug.LogError("Price Grid and plant types must have the same length !");
-
-        randomSeed = Random.Range(0, 50);
-        sunMultiplierUI.text = "X" + this.sunMultiplier.ToString();
 
         StartCoroutine(PassiveSun());
-	}
-    
-    void Update()
-    {
-
-        if(framesCount% (int)(averageTimeBetweenPlants*30 + randomSeed) == 0)
-		{
-
-            //Debug.Log("Trying to plant at frame "+framesCount);
-
-            int[] pos = GetRandomNextFreePosition();
-
-			if (InstantiatePlant(plantOrder[index], pos[0], pos[1]))
-			{
-                index = (index+1)%plantOrder.Length;
-                //Debug.Log("Skipped a plant !");
-			}
-
-            randomSeed = Random.Range(0, 50);
+        StartCoroutine(PlacePlants());
+        if (Transporter.spawnBrains)
+        {
+            totalSun = startingSun;
         }
+        else
+        {
+            totalSun = 0;
+        }
+        if (Transporter.message == " ")
+        {
+            totalSun = 25;
 
-        framesCount++;
+        }
+        sunMultiplierUI.text = "Production x" + Transporter.sunMultiplier.ToString();
+        sunCounter.text = "x" + totalSun.ToString();
+        plantOrder = Transporter.plantTable;
+
     }
+
+    private IEnumerator PlacePlants()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3);
+            if (priceGrid[plantOrder[index]] <= totalSun)
+            {
+                GetSun(-priceGrid[plantOrder[index]]);
+                InstantiatePlant(plantOrder[index]);
+                index = (index + 1) % plantOrder.Length;
+            }
+        }
+    }
+
 
     private IEnumerator PassiveSun()
     {
         while (true) {
-            yield return new WaitForSeconds(10/sunMultiplier);
+            yield return new WaitForSeconds(10f/Transporter.sunMultiplier);
             GetSun(passiveSun);
-            yield return new WaitForSeconds(10 / sunMultiplier);
+            
+            yield return new WaitForSeconds(10f/ Transporter.sunMultiplier);
         }
     }
-
-    
-    private int[] GetRandomNextFreePosition()
-	{
-        int i = Random.Range(0,5);
-        int j = 0;
-
-        int sat = 0;
-
-		while (j < 12 && plantMatrix[i, j] != null)
-		{
-            i = Random.Range(0, 5);
-            sat += 1;
-
-            j = sat / 6;
-        }
-
-        return new int[] { i, j };
-	}
 
 
     public void GetSun(int amount)
 	{
         totalSun += amount;
-	}
-
-
-    public bool InstantiatePlant(int plant, int linePos, int columnPos)
-    {
-        if(plantMatrix[linePos,columnPos] != null)
-		{
-            Debug.LogError("Can't spawn a plant on top of an existing plant !");
-            return false;
-		}
-
-		if (totalSun - priceGrid[plant] < 0)
-		{
-            //Debug.LogError("Not enough sun to plant !");
-            return false;
-        }
-
-        PlaceHolder placeholder = placeholdersMatrix[linePos * 12 + columnPos].GetComponent<PlaceHolder>();
-
-        if (!placeholder.canBuild)
-		{
-            // Can't build !
-            return false;
-		}
-
-        placeholder.canBuild = false;
-
-        Transform pos = placeholdersMatrix[linePos*12+columnPos].transform;
-
-        GameObject instance = Instantiate(plantTypes[plant], pos.position, Quaternion.identity);
-        instance.GetComponent<BasicPlantBehaviour>().Initialize(this, zombieManager, linePos, columnPos, sunMultiplier);
-        plantMatrix[linePos, columnPos] = instance;
-
-        totalSun -= priceGrid[plant];
-
-        return true;
+        sunCounter.text = "x" + totalSun.ToString();
     }
 
-    public void FreePlantPlaceHolder(int linePos, int columnPos)
-	{
-        placeholdersMatrix[linePos * 12 + columnPos].GetComponent<PlaceHolder>().canBuild = true;
-        plantMatrix[linePos, columnPos] = null;
+
+    public void InstantiatePlant(int plant)
+    {
+        int distance = 12;
+        List<PlaceHolder> toPlaces;
+        toPlaces = new();
+
+        foreach (PlaceHolder placeHolder in placeholders)
+        {
+            if (placeHolder.canBuild)
+            {
+                if (placeHolder.distance < distance)
+                {
+                    distance = placeHolder.distance;
+                    toPlaces = new();
+                    toPlaces.Add(placeHolder);
+                }
+                else if (placeHolder.distance == distance)
+                {
+                    toPlaces.Add(placeHolder);
+                }
+            }
+        }
+        PlaceHolder toPlace = toPlaces[Random.Range(0,toPlaces.Count)];
+
+        toPlace.canBuild = false;
+
+        GameObject instance = Instantiate(plantTypes[plant], toPlace.gameObject.transform.position, Quaternion.identity);
+        instance.GetComponent<BasicPlantBehaviour>().Initialize(toPlace);
+
+    }
+
+    public void KillScript()
+    {
+        Destroy(this);
     }
 }

@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 3
-  HP: 80
+  HP: 120
   attackSpeed: 0
   bulletSpeed: 0
   bulletDamage: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1131828628619135306}
   plantManager: {fileID: 0}
   zombieManager: {fileID: 0}
+  brain: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
 --- !u!61 &2138694929409575895
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class Animator : MonoBehaviour
 	public void MouserOver(int hovered)
 	{
 		hoveredOption = hovered;
-		icon.transform.position = options[hoveredOption].transform.position - Vector3.right*130;
+		icon.transform.position = options[hoveredOption].transform.position - 0.1f * Camera.main.pixelWidth * Vector3.right;
 		hoversoundEffect.Play();
 	}
 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7730931122551912230}
   - component: {fileID: 7730931122551912231}
-  - component: {fileID: 7730931122551912233}
   - component: {fileID: -8375079349468493173}
   - component: {fileID: 8703535966361620457}
   m_Layer: 0
@@ -87,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7730931122551912233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7730931122551912228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31a377b9f468454ebe3011b1541da17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
-  timeGenerateBrains: 12
 --- !u!61 &-8375079349468493173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f078f27fee25a4f908a6a455009a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 5
+  HP: 60
   blinkDuration: 0.5
   spriteRenderer: {fileID: 7730931122551912231}
+  shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
+  timeGenerateBrains: 17
   distance: 12
+  placeHolder: {fileID: 0}
+  color: 0

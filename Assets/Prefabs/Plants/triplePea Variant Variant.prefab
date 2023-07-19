@@ -9,12 +9,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 366168469606361787, guid: eae5cee615d46f549bddafcc28ea5642, type: 3}
       propertyPath: HP
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 366168469606361787, guid: eae5cee615d46f549bddafcc28ea5642, type: 3}
       propertyPath: plantColor
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 366168469606361787, guid: eae5cee615d46f549bddafcc28ea5642, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5476864066535955260, guid: 7b53ef5144177f644a1535b49b3b110a, type: 3}
     - target: {fileID: 4132426076155577130, guid: eae5cee615d46f549bddafcc28ea5642, type: 3}
       propertyPath: m_RootOrder
       value: 0

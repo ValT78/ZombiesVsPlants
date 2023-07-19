@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: plantColor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 669524713398315201, guid: 4a62aeff387953c479576b62bcc6e8a0, type: 3}
+      propertyPath: brainReward
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 669524713398315201, guid: 4a62aeff387953c479576b62bcc6e8a0, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5476864066535955260, guid: e2834bd7c57d6a845919197af1982009, type: 3}
     - target: {fileID: 3821048074687922512, guid: 4a62aeff387953c479576b62bcc6e8a0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -69,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5140691759542588888, guid: 4a62aeff387953c479576b62bcc6e8a0, type: 3}
       propertyPath: m_Name
-      value: triplePea Variant
+      value: triplePea Variant Variant 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a62aeff387953c479576b62bcc6e8a0, type: 3}

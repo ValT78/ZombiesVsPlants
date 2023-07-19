@@ -5,15 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Transporter : MonoBehaviour
 {
-    public int[] plantTable;
-    public int unlockedZombie;
-    public string message;
-    public float sunMultiplier;
-    public bool spawnBrains;
+    public static int[] plantTable;
+    public static int unlockedZombie;
+    public static string message;
+    public static float sunMultiplier;
+    public static bool spawnBrains;
+    private static bool hasBeenLoaded;
+    public static Transporter transporter;
 
     // Start is called before the first frame update
     void Start()
     {
+        transporter = this;
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
 
@@ -22,29 +25,32 @@ public class Transporter : MonoBehaviour
     // Update is called once per frame
     public void LoadGame(int[] plantTable, int unlockedZombie, string message, float sunMultiplier, bool spawnBrains)
     {
-        this.plantTable = plantTable;
-        this.unlockedZombie = unlockedZombie;
-        this.message = message;
-        this.sunMultiplier = sunMultiplier;
-        this.spawnBrains = spawnBrains;
+        Transporter.plantTable = plantTable;
+        Transporter.unlockedZombie = unlockedZombie;
+        Transporter.message = message;
+        Transporter.sunMultiplier = sunMultiplier;
+        Transporter.spawnBrains = spawnBrains;
         SceneManager.LoadScene("Game");
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.isLoaded && scene.name == "Game")
         {
-            PlantManager plantManager = FindObjectOfType<PlantManager>();
-            ZombieManager zombieManager = FindObjectOfType<ZombieManager>();
-            plantManager.plantOrder = plantTable;
-            plantManager.sunMultiplier = sunMultiplier;
-            zombieManager.DispawnObject(unlockedZombie, message,spawnBrains);
-            StartCoroutine(Kill());
+            ZombieManager.zombieManager.DispawnObject();
         }
     }
-
-    private IEnumerator Kill()
+    private void Awake()
     {
-        yield return new WaitForSeconds(5);
-        Destroy(gameObject);
+        if (!hasBeenLoaded)
+        {
+            // Marquer le GameObject comme chargé et ne pas le détruire lors des transitions de scène
+            hasBeenLoaded = true;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // Détruire le GameObject s'il a déjà été chargé auparavant
+            Destroy(gameObject);
+        }
     }
 }
