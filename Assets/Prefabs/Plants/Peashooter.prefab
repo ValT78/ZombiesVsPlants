@@ -101,16 +101,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantType: 5
   HP: 50
-  attackSpeed: 0.3
+  attackSpeed: 0.2
   bulletSpeed: 5
   bulletDamage: 10
   plantColor: 0
   brainReward: 25
   bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
-  blinkDuration: 0.5
   spriteRenderer: {fileID: 8607506411306646918}
-  plantManager: {fileID: 0}
-  zombieManager: {fileID: 0}
   brain: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
 --- !u!61 &5382182265286895324
 BoxCollider2D:

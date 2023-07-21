@@ -31,11 +31,11 @@ public class BuildHP : MonoBehaviour
             ZombieManager.zombieManager.RemoveBuild(this.gameObject, placeHolder, color);
             Destroy(this.gameObject);
         }
-        StartCoroutine(Blink(Color.red, 0.8f));
+        StartCoroutine(Blink(Color.red, 0.8f + Time.time));
     }
     private IEnumerator Blink(Color color, float blinkDuration)
     {
-        blinkTimer = 0;
+        blinkTimer = Time.time;
         while (blinkTimer < blinkDuration)
         {
             float t = Mathf.PingPong(blinkTimer * 3f, blinkDuration) / blinkDuration;
@@ -50,8 +50,8 @@ public class BuildHP : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(timeGenerateBrains / (Transporter.sunMultiplier/1.5f)-1f);
-            StartCoroutine(Blink(Color.magenta, 1.5f));
+            yield return new WaitForSeconds(timeGenerateBrains / (Transporter.sunMultiplier/2f+0.5f)-1f);
+            StartCoroutine(Blink(Color.magenta, 1.5f+Time.time));
             yield return new WaitForSeconds(1f);
             SummonBrain();
         }

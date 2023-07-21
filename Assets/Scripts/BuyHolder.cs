@@ -18,6 +18,10 @@ public class BuyHolder : MonoBehaviour
     [SerializeField] private bool isAZombie;
     [SerializeField] private bool isOpen;
 
+    [SerializeField] private Sprite[] tombstoneSkin;
+    [SerializeField] private Vector3 imageShift;
+    [SerializeField] private Vector3 spawnShift;
+
     private GameObject closestObject;
     [HideInInspector] public int tabColor = 0;
     private bool canBuy = false;
@@ -88,7 +92,7 @@ public class BuyHolder : MonoBehaviour
                 {
                     if (closestObject.GetComponent<PlaceHolder>().distance < 12)
                     {
-                        image.GetComponent<SuppCostBrain>().ShowSupp((12 - closestObject.GetComponent<PlaceHolder>().distance) * 50);
+                        image.GetComponent<SuppCostBrain>().ShowSupp((12 - closestObject.GetComponent<PlaceHolder>().distance) * 25);
                     }
                     else
                     {
@@ -108,15 +112,15 @@ public class BuyHolder : MonoBehaviour
         {
             if (!isAZombie)
             {
-                if (ZombieManager.brains >= prices[tabColor] + (12 - closestObject.GetComponent<PlaceHolder>().distance) * 50)
+                if (ZombieManager.brains >= prices[tabColor] + (12 - closestObject.GetComponent<PlaceHolder>().distance) * 25)
                 {
-                    ZombieManager.zombieManager.ObtainBrains(-prices[tabColor] - (12 - closestObject.GetComponent<PlaceHolder>().distance) * 50);
+                    ZombieManager.zombieManager.ObtainBrains(-prices[tabColor] - (12 - closestObject.GetComponent<PlaceHolder>().distance) * 25);
                     closestObject.GetComponent<PlaceHolder>().canBuild = false;
                     GameObject instanceSpawn = Instantiate(toBuy[tabColor], image.transform.position, Quaternion.identity);
                     instanceSpawn.GetComponent<BuildHP>().placeHolder = closestObject;
                     instanceSpawn.GetComponent<BuildHP>().distance = closestObject.GetComponent<PlaceHolder>().distance;
                     ZombieManager.zombieManager.AddBuild(instanceSpawn);
-                    instanceSpawn.transform.position += new Vector3(0, 0.55f, 0);
+                    instanceSpawn.transform.position += spawnShift;
                 }
                 else
                 {
@@ -127,7 +131,7 @@ public class BuyHolder : MonoBehaviour
             {
                 ZombieManager.zombieManager.ObtainBrains(-prices[tabColor]);
                 GameObject instanceSpawn = Instantiate(toBuy[tabColor], image.transform.position, Quaternion.identity);
-                instanceSpawn.transform.position += new Vector3(0, 0.55f, 0);
+                instanceSpawn.transform.position += spawnShift;
 
             }
             canBuy = false;
@@ -198,7 +202,7 @@ public class BuyHolder : MonoBehaviour
     public void ResetImage()
     {
         select = false;
-        image.transform.position = transform.position;
+        image.transform.position = transform.position + imageShift*transform.localScale.x;
         if(!isAZombie)
         {
             image.GetComponent<SuppCostBrain>().HideSupp();
@@ -208,23 +212,13 @@ public class BuyHolder : MonoBehaviour
     public void ChangeColor(int tabColor)
     {
         this.tabColor = tabColor;
-        spriteRenderer.color = colors[tabColor];
-        /*if(isAZombie)
-        {
-            imageRenderer.color = colors[tabColor];
-        }
-        else
-        {
-            imageRenderer.color = colors[tabColor];
-
-        }*/
         UpdateBuyable();
 
         if (loading.activeSelf) {
             canBuy = loading.GetComponent<LoadingHolder>().SetActiveTab(tabColor);
             
         }
-        if (!canBuy || (tabColor == 1 && !HasRedHolder()) || (tabColor == 2 && !HasBlueHolder()))
+        if (!canBuy || isAZombie && ((tabColor == 1 && !HasRedHolder()) || (tabColor == 2 && !HasBlueHolder())))
         {
             ResetImage();
         }
@@ -232,8 +226,17 @@ public class BuyHolder : MonoBehaviour
 
     public void UpdateBuyable()
     {
-        imageRenderer.color = colors[tabColor];
-        if(ZombieManager.brains < prices[tabColor])
+        if (isAZombie)
+        {
+            imageRenderer.color = colors[tabColor];
+        }
+        else
+        {
+            imageRenderer.color = colors[0];
+            imageRenderer.sprite = tombstoneSkin[tabColor];
+
+        }
+        if (ZombieManager.brains < prices[tabColor])
         {
             imageRenderer.color /= 2;
         }

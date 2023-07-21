@@ -18,7 +18,11 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private BuyHolder[] buyTabs;
     [SerializeField] private GameObject blueSwitch;
     [SerializeField] private TextMeshProUGUI startMessage;
+
     [SerializeField] private GameObject tutorial;
+    [SerializeField] private GameObject level2;
+    [SerializeField] private GameObject level9;
+    [SerializeField] private GameObject level10;
 
     public GameObject[] PlaceHolders = new GameObject[60];
 
@@ -41,7 +45,25 @@ public class ZombieManager : MonoBehaviour
         {
             tutorial.SetActive(true);
         }
-        startMessage.text = Transporter.message;
+        else if (Transporter.message == "  ")
+        {
+            level2.SetActive(true);
+
+        }
+        else if (Transporter.message == "   ")
+        {
+            level9.SetActive(true);
+
+        }
+        else if (Transporter.message == "    ")
+        {
+            level10.SetActive(true);
+
+        }
+        else
+        {
+            startMessage.text = Transporter.message;
+        }
         if (Transporter.spawnBrains)
         {
             StartCoroutine(PassiveBrains());
@@ -76,7 +98,7 @@ public class ZombieManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(timePassiveBrains/(Transporter.sunMultiplier/1.5f));
+            yield return new WaitForSeconds(timePassiveBrains/(Transporter.sunMultiplier/2f+0.5f));
             SummonGroundBrain();
         }
     }

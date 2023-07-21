@@ -71,13 +71,14 @@ public class ZombieBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        blinkDuration = blinkDuration + Time.time;
         StartCoroutine(Blink());
 
     }
 
     private IEnumerator Blink()
     {
-        blinkTimer = 0;
+        blinkTimer = Time.time;
         while (blinkTimer < blinkDuration)
         {
             // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement

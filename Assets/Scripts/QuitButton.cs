@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class QuitButton : MonoBehaviour
 {
-    [HideInInspector] public static QuitButton quitButton;
     private void OnMouseDown()
     {
         PlantManager.plantManager.KillScript();

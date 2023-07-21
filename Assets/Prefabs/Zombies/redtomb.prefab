@@ -99,18 +99,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.4693408, y: -4.5168624}
+  m_Offset: {x: 1.4693408, y: -1.136688}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.650001, y: 22.523684}
+    oldSize: {x: 13.041667, y: 18.769735}
     newSize: {x: 15.650001, y: 22.523684}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.969876, y: 12.183875}
+  m_Size: {x: 10.969876, y: 9.4797325}
   m_EdgeRadius: 0
 --- !u!114 &1487561588493753417
 MonoBehaviour:
@@ -128,7 +128,7 @@ MonoBehaviour:
   blinkDuration: 0.5
   spriteRenderer: {fileID: 5213501027713449920}
   shinyBrainPrefab: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
-  timeGenerateBrains: 17
+  timeGenerateBrains: 15
   distance: 0
   placeHolder: {fileID: 0}
   color: 1

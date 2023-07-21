@@ -80,7 +80,7 @@ public class BasicPlantBehaviour : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(12f/ Transporter.sunMultiplier-1f);
-            StartCoroutine(Blink(Color.green, 1.5f));
+            StartCoroutine(Blink(Color.green, 1.5f+Time.time));
             yield return new WaitForSeconds(1f);
             PlantManager.plantManager.GetSun(25);
             if (plantType == PlantTypes.Supersunflower)
@@ -95,7 +95,6 @@ public class BasicPlantBehaviour : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1/attackSpeed-0.3f);
             ShootProjectile(0);
             if (plantType == PlantTypes.TriplePea)
             {
@@ -108,6 +107,8 @@ public class BasicPlantBehaviour : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
             if (plantType == PlantTypes.DoublePeashooter)
                 ShootProjectile(0);
+            yield return new WaitForSeconds(1 / attackSpeed - 0.3f);
+
         }
     }
 
@@ -138,7 +139,7 @@ public class BasicPlantBehaviour : MonoBehaviour
             }
             Death();
         }
-        StartCoroutine(Blink(Color.red, 0.8f));
+        StartCoroutine(Blink(Color.red, 0.8f+Time.time));
     }
 
     public void Death()
@@ -151,7 +152,7 @@ public class BasicPlantBehaviour : MonoBehaviour
 	}
     private IEnumerator Blink(Color color, float blinkDuration)
     {
-        blinkTimer = 0;
+        blinkTimer = Time.time;
         while (blinkTimer < blinkDuration)
         {
             // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement

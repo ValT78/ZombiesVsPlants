@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     [HideInInspector] public static bool pause;
+    [SerializeField] private GameObject quitButton;
     // Start is called before the first frame update
 
     private void Start()
@@ -26,12 +27,12 @@ public class Pause : MonoBehaviour
         {
             pause = false;
             Time.timeScale = 1;
-            QuitButton.quitButton.gameObject.SetActive(false);
+            quitButton.SetActive(false);
 
         }
         else
         {
-            QuitButton.quitButton.gameObject.SetActive(true);
+            quitButton.SetActive(true);
             pause = true;
             Time.timeScale = 0; 
 

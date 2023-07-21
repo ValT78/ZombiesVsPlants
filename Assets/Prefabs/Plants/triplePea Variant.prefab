@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: attackSpeed
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: brainReward
