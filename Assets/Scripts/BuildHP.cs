@@ -17,11 +17,13 @@ public class BuildHP : MonoBehaviour
     public int color;
     private float blinkTimer;
     private Color baseColor;
+    private float brainMultiplier;
 
     private void Start()
     {
         baseColor = spriteRenderer.color;
         StartCoroutine(GenerateBrains());
+        brainMultiplier = Transporter.brainMultiplier;
     }
     public void TakeDamage(float damage)
     {
@@ -51,7 +53,7 @@ public class BuildHP : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(timeGenerateBrains / (Transporter.sunMultiplier/2f+0.5f)-1f);
+            yield return new WaitForSeconds(timeGenerateBrains / brainMultiplier-1f);
             StartCoroutine(Blink(Color.magenta, 2+Time.time));
             yield return new WaitForSeconds(1f);
             SummonBrain();

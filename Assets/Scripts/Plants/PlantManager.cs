@@ -17,17 +17,17 @@ public class PlantManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sunMultiplierUI;
     [SerializeField] private TextMeshProUGUI sunCounter;
 
-    [Tooltip("Number of sunflowers to start with")]
-    public int startingSun;
     [Tooltip("Number of sunflowers gained every 5 seconds")]
     public int passiveSun;
     [Tooltip("Average duration (in seconds) between which plants are being planted")]
     public float averageTimeBetweenPlants;
 
 
-    public int totalSun = 0;
+    public int totalSun;
 
     private int index;
+    private float sunMultiplier;
+    private float plantSpawnTime;
 
     public int[] plantOrder;
 
@@ -38,35 +38,11 @@ public class PlantManager : MonoBehaviour
 
         StartCoroutine(PassiveSun());
         StartCoroutine(PlacePlants());
-        if (Transporter.spawnBrains)
-        {
-            totalSun = startingSun;
-        }
-        else
-        {
-            totalSun = 0;
-        }
-        if (Transporter.message == " ")
-        {
-            totalSun = 0;
 
-        }
-        if (Transporter.message == "  ")
-        {
-            totalSun = 50;
-
-        }
-        else if (Transporter.message == "   ")
-        {
-            totalSun = 0;
-
-        }
-        else if (Transporter.message == "    ")
-        {
-            totalSun = 0;
-
-        }
-        sunMultiplierUI.text = "Production x" + Transporter.sunMultiplier.ToString();
+        plantSpawnTime = Transporter.plantSpawnTime;
+        sunMultiplier = Transporter.sunMultiplier;
+        sunMultiplierUI.text = "x" + sunMultiplier.ToString();
+        totalSun = Transporter.startingSun;
         sunCounter.text = "x" + totalSun.ToString();
         plantOrder = Transporter.plantTable;
 
@@ -76,7 +52,7 @@ public class PlantManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(plantSpawnTime);
             if (priceGrid[plantOrder[index]] <= totalSun)
             {
                 GetSun(-priceGrid[plantOrder[index]]);
@@ -90,10 +66,10 @@ public class PlantManager : MonoBehaviour
     private IEnumerator PassiveSun()
     {
         while (true) {
-            yield return new WaitForSeconds(5f/Transporter.sunMultiplier);
+            yield return new WaitForSeconds(5f/ sunMultiplier);
             GetSun(passiveSun);
             
-            yield return new WaitForSeconds(5f/ Transporter.sunMultiplier);
+            yield return new WaitForSeconds(5f/ sunMultiplier);
         }
     }
 

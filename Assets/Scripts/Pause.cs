@@ -8,10 +8,10 @@ public class Pause : MonoBehaviour
     [SerializeField] private GameObject quitButton;
     // Start is called before the first frame update
 
-    private void Start()
+    private void Awake()
     {
         pause = false;
-        Time.timeScale = 1;
+        Time.timeScale = Transporter.gameSpeed;
     }
     private void Update()
     {
@@ -26,7 +26,7 @@ public class Pause : MonoBehaviour
         if (pause)
         {
             pause = false;
-            Time.timeScale = 1;
+            Time.timeScale = Transporter.gameSpeed;
             quitButton.SetActive(false);
 
         }

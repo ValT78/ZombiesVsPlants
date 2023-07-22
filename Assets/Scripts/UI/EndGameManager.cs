@@ -17,6 +17,8 @@ public class EndGameManager : MonoBehaviour
         currentScale = 0;
         transform.localScale = new Vector3(0, 0, 1);
         StartCoroutine(EndLevel());
+        Time.timeScale = 1;
+
     }
 
     // Update is called once per frame

@@ -8,7 +8,6 @@ public class ZombieManager : MonoBehaviour
 {
     [SerializeField] private GameObject shinyBrainPrefab;
 
-    [SerializeField] private int startBrains;
     [SerializeField] private float timePassiveBrains;
     [SerializeField] private float conqueredArea;
     public List<GameObject> goldenBrains;
@@ -18,6 +17,7 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private BuyHolder[] buyTabs;
     [SerializeField] private GameObject blueSwitch;
     [SerializeField] private TextMeshProUGUI startMessage;
+    [SerializeField] private TextMeshProUGUI brainMultiplierText;
 
     [SerializeField] private GameObject tutorial;
     [SerializeField] private GameObject level2;
@@ -29,11 +29,13 @@ public class ZombieManager : MonoBehaviour
     [HideInInspector] public static List<GameObject> builds;
     [HideInInspector] public static int brains;
     [HideInInspector] public static ZombieManager zombieManager;
+    [SerializeField] private float brainMultiplier;
+
     private void Awake()
     {
         zombieManager = this;
         builds = new List<GameObject>();
-        brains = startBrains;
+        brains = Transporter.startingBrain;
         counterText.text = "\nX" + brains.ToString() + "   ";
         StartCoroutine(CollapseMessage());
     }
@@ -64,6 +66,10 @@ public class ZombieManager : MonoBehaviour
         {
             startMessage.text = Transporter.message;
         }
+        brainMultiplier = Transporter.brainMultiplier;
+        print(brainMultiplier);
+        brainMultiplierText.text = "x"+brainMultiplier.ToString();   
+
         if (Transporter.spawnBrains)
         {
             StartCoroutine(PassiveBrains());
@@ -98,7 +104,7 @@ public class ZombieManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(timePassiveBrains/(Transporter.sunMultiplier/2f+0.5f));
+            yield return new WaitForSeconds(timePassiveBrains/brainMultiplier);
             SummonGroundBrain();
         }
     }

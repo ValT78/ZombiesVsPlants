@@ -34,6 +34,7 @@ public class BasicPlantBehaviour : MonoBehaviour
     private Color baseColor;
 
     private float blinkTimer;
+    private float sunMultiplier;
 
 
 
@@ -61,6 +62,7 @@ public class BasicPlantBehaviour : MonoBehaviour
 
 	void Start()
 	{
+        sunMultiplier = Transporter.sunMultiplier;
         currentHP = HP;
         if (plantType <= PlantTypes.Supersunflower)
         {
@@ -79,7 +81,7 @@ public class BasicPlantBehaviour : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(12f/ Transporter.sunMultiplier-1f);
+            yield return new WaitForSeconds(12f/ sunMultiplier-1f);
             StartCoroutine(Blink(Color.green, 2f+Time.time));
             yield return new WaitForSeconds(1f);
             PlantManager.plantManager.GetSun(25);
@@ -87,7 +89,7 @@ public class BasicPlantBehaviour : MonoBehaviour
             {
                 PlantManager.plantManager.GetSun(25);
             }
-            yield return new WaitForSeconds(12f / Transporter.sunMultiplier);
+            yield return new WaitForSeconds(12f / sunMultiplier);
 
         }
     }

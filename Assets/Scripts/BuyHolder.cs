@@ -9,12 +9,12 @@ public class BuyHolder : MonoBehaviour
     [SerializeField] private BoxCollider2D col;
     [SerializeField] private GameObject loading;
     [SerializeField] private GameObject image;
+    [SerializeField] private GameObject cantPlace;
 
     [SerializeField] private GameObject[] toBuy;
     [SerializeField] private int[] prices;
     [SerializeField] private Color[] colors;
 
-    [SerializeField] private float conqueredArea;
     [SerializeField] private bool isAZombie;
     [SerializeField] private bool isOpen;
 
@@ -124,6 +124,7 @@ public class BuyHolder : MonoBehaviour
                 }
                 else
                 {
+                    Instantiate(cantPlace);
                     return;
                 }
             }

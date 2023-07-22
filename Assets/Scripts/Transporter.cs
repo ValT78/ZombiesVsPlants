@@ -8,11 +8,19 @@ public class Transporter : MonoBehaviour
     public static int[] plantTable;
     public static int unlockedZombie;
     public static string message;
-    public static float sunMultiplier;
-    public static bool spawnBrains;
     public static int nexusLife;
+    public static float sunMultiplier;
+    public static float brainMultiplier;
+    public static int startingSun;
+    public static int startingBrain;
+    public static float plantSpawnTime;
+    public static bool spawnBrains;
+
     private static bool hasBeenLoaded;
+
+    public static float gameSpeed = 1;
     public static Transporter transporter;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +32,18 @@ public class Transporter : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void LoadGame(int[] plantTable, int unlockedZombie, string message, float sunMultiplier, bool spawnBrains,int nexusLife)
+    public void LoadGame(int[] plantTable, int unlockedZombie, string message, int nexusLife, float sunMultiplier, float brainMultiplier, int startingSun, int startingBrain, int plantSpawnTime,bool spawnBrains)
     {
         Transporter.plantTable = plantTable;
         Transporter.unlockedZombie = unlockedZombie;
         Transporter.message = message;
-        Transporter.sunMultiplier = sunMultiplier;
-        Transporter.spawnBrains = spawnBrains;
         Transporter.nexusLife = nexusLife;
+        Transporter.sunMultiplier = sunMultiplier;
+        Transporter.brainMultiplier = brainMultiplier;
+        Transporter.startingSun = startingSun;
+        Transporter.startingBrain = startingBrain;
+        Transporter.plantSpawnTime = plantSpawnTime;
+        Transporter.spawnBrains = spawnBrains;
         SceneManager.LoadScene("Game");
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

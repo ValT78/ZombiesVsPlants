@@ -101,15 +101,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5328195804465144093}
+  imageRenderer: {fileID: 0}
   col: {fileID: 5328195804465144095}
   loading: {fileID: 5328195804492714935}
   image: {fileID: 5328195804666246755}
-  toBuy: {fileID: 7730931122551912228, guid: 024ff4390e139aa499ecceb4c62ed32d, type: 3}
-  price: 50
-  conqueredArea: 4
-  tabColor: 0
+  cantPlace: {fileID: 3249506731922296681, guid: 5ce850c926f3e7b45acb58563ac7fd93, type: 3}
+  toBuy:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  prices: 
+  colors: []
   isAZombie: 0
   isOpen: 0
+  tombstoneSkin: []
+  imageShift: {x: 0, y: 0, z: 0}
+  spawnShift: {x: 0, y: 0, z: 0}
+  tabColor: 0
 --- !u!61 &5328195804465144095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buyHolder: {fileID: 5328195804465144092}
   loader: {fileID: 5328195804492714925}
-  loadTime: 3
+  reloadTimes: []
 --- !u!222 &5328195804492714926
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -5,18 +5,26 @@ using UnityEngine;
 public class LevelParameters : MonoBehaviour
 {
     private readonly List<int[]> listLevel = new();
-    private float[] sunMultiplier;
     private int[] unlockedZombie;
-    private int[] nexusLife;
-    private bool[] spawnBrains;
     private string[] messages;
+    private int[] nexusLife;
+    private float[] sunMultiplier;
+    private float[] brainMultiplier;
+    private int[] startingSun;
+    private int[] startingBrain;
+    private int[] plantSpawnTime;
+    private bool[] spawnBrains;
 
     void Start()
     {
         spawnBrains = new bool[] { true, true, true, true, true, true, true, true, false, true, true, true, false, true, true, true,true,true};
         unlockedZombie = new int[] { 0, 0, 1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5,5,5};
-        sunMultiplier = new float[] { 1f, 1f, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1f, 1.70f, 1.70f, 1.70f, 1f, 1.80f,1.80f,1.90f, 1.90f, 2f};
+        sunMultiplier = new float[] { 1f, 1f, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1f, 1.70f, 1.70f, 1.70f, 1f, 1.80f, 1.80f, 1.90f, 1.90f, 2f };
+        brainMultiplier = new float[] { 1f, 1f, 1.05f, 1.10f, 1.15f, 1.20f, 1.25f, 1.30f, 1f, 1.35f, 1.35f, 1.35f, 1f, 1.40f, 1.40f, 1.45f, 1.45f, 1.5f };
+        startingSun = new int[] { 0, 100, 50, 100, 100, 100, 100, 100, 0, 0, 0, 100, 0, 100, 100, 100, 100, 100 };
+        startingBrain = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
         nexusLife = new int[] { 800, 800, 700, 600, 500, 450, 400, 350, 300, 250, 200, 150, 300, 100, 50, 50, 30, 30 };
+        plantSpawnTime = new int[] { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
         listLevel.Add(new int[] { 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, });
         listLevel.Add(new int[] { 3 });
         listLevel.Add(new int[] { 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0 });
@@ -61,7 +69,7 @@ public class LevelParameters : MonoBehaviour
 
     public void LoadGame(int level)
 	{
-        Transporter.transporter.LoadGame(listLevel[level], unlockedZombie[level], messages[level], sunMultiplier[level],spawnBrains[level],nexusLife[level]);
+        Transporter.transporter.LoadGame(listLevel[level], unlockedZombie[level], messages[level], nexusLife[level], sunMultiplier[level], brainMultiplier[level], startingSun[level], startingBrain[level], plantSpawnTime[level], spawnBrains[level]);
 	}
     
 
