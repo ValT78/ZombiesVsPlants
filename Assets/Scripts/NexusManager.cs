@@ -8,7 +8,7 @@ public class NexusManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverScreen;
 
-    [SerializeField] private int startingHP;
+    private int startingHP;
 
     [SerializeField] private Image lifeBar;
     [SerializeField] private RectTransform lifeBarRect;
@@ -24,13 +24,16 @@ public class NexusManager : MonoBehaviour
     private float timer;
     private Vector3 initialPosition;
 
+    private void Awake()
+    {
+        startingHP = Transporter.nexusLife;
+        currentHP = startingHP;
+    }
     void Start()
     {
-        currentHP = startingHP;
         redBarRect.position = new Vector2(redBarRect.position.x, lifeBarRect.position.y+ lifeBarRect.localScale.y/2);
         recentDamage = 0;
         initialPosition = transform.position;
-
     }
 
 

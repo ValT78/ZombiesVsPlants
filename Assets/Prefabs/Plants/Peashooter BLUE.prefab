@@ -102,7 +102,7 @@ MonoBehaviour:
   plantType: 5
   HP: 50
   attackSpeed: 0.2
-  bulletSpeed: 6
+  bulletSpeed: 5
   bulletDamage: 10
   plantColor: 1
   brainReward: 25
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07008314, y: -0.83756936}
+  m_Offset: {x: 1.8114047, y: -0.83756936}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.565317, y: 3.5987694}
+  m_Size: {x: 1.082674, y: 3.5987694}
   m_EdgeRadius: 0
 --- !u!50 &-3629773483435518025
 Rigidbody2D:

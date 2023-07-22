@@ -80,7 +80,7 @@ public class BasicPlantBehaviour : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(12f/ Transporter.sunMultiplier-1f);
-            StartCoroutine(Blink(Color.green, 1.5f+Time.time));
+            StartCoroutine(Blink(Color.green, 2f+Time.time));
             yield return new WaitForSeconds(1f);
             PlantManager.plantManager.GetSun(25);
             if (plantType == PlantTypes.Supersunflower)
@@ -114,7 +114,7 @@ public class BasicPlantBehaviour : MonoBehaviour
 
     private void ShootProjectile(float y)
 	{
-        GameObject bullet = Instantiate(bulletPrefab, transform.position+new Vector3(-2,y,0), Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position+new Vector3(-4,y,0), Quaternion.identity);
         bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletSpeed, bulletDamage, plantColor); // May be very VERY glutton
 	}
 
@@ -139,7 +139,7 @@ public class BasicPlantBehaviour : MonoBehaviour
             }
             Death();
         }
-        StartCoroutine(Blink(Color.red, 0.8f+Time.time));
+        StartCoroutine(Blink(Color.red, 1+Time.time));
     }
 
     public void Death()
@@ -156,13 +156,13 @@ public class BasicPlantBehaviour : MonoBehaviour
         while (blinkTimer < blinkDuration)
         {
             // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement
-            float t = Mathf.PingPong(blinkTimer * 3f, blinkDuration) / blinkDuration;
-            spriteRenderer.color = Color.Lerp(color, baseColor, t);
+            float t = (Mathf.Sin((blinkDuration - blinkTimer) *4* Mathf.PI) + 1) / 2;
+            spriteRenderer.color = Color.Lerp(baseColor, color, t);
 
             blinkTimer += Time.deltaTime;
             yield return null;
         }
-
+        spriteRenderer.color = baseColor;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

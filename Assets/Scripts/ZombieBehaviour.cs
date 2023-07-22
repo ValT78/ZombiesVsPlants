@@ -10,7 +10,6 @@ public class ZombieBehaviour : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private int HP;
     [SerializeField] private int zombieColor;
-    [SerializeField] private float blinkDuration;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     private Color color;
@@ -67,27 +66,31 @@ public class ZombieBehaviour : MonoBehaviour
     public void TakeDamage(int damage, int bulletColor)
     {
         HP -= damage - additionnalDamage*bulletColor*zombieColor;
+        if(bulletColor*zombieColor==-1)
+        {
+            HP -= additionnalDamage*3;
+        }
         if (HP <= 0)
         {
             Destroy(this.gameObject);
         }
-        blinkDuration = blinkDuration + Time.time;
-        StartCoroutine(Blink());
+        StartCoroutine(Blink(1 + Time.time));
 
     }
 
-    private IEnumerator Blink()
+    private IEnumerator Blink(float blinkDuration)
     {
         blinkTimer = Time.time;
         while (blinkTimer < blinkDuration)
         {
             // Interpolation linéaire entre la couleur d'origine et la couleur de clignotement
-            float t = Mathf.PingPong(blinkTimer * 1f, 1f) / blinkDuration;
-            spriteRenderer.color = Color.Lerp(Color.red, color, t);
+            float t = (Mathf.Sin((blinkDuration - blinkTimer)*4 * Mathf.PI) + 1) / 2;
+            spriteRenderer.color = Color.Lerp(color, Color.red, t);
 
             blinkTimer += Time.deltaTime;
             yield return null;
         }
+        spriteRenderer.color = color;
 
     }
     public float[] Information()

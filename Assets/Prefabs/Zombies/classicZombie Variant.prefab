@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7735660374544706052, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: m_Size.x
-      value: 6.9362392
+      value: 3.9250693
       objectReference: {fileID: 0}
     - target: {fileID: 7735660374544706052, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: m_Size.y
@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7735660374544706052, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: m_Offset.x
-      value: 0.20375681
+      value: -2.1410105
       objectReference: {fileID: 0}
     - target: {fileID: 7735660374544706052, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: m_Offset.y
@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7735660374544706075, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: HP
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7735660374544706075, guid: 88715031f25139c49bd4ee278eb77bb4, type: 3}
       propertyPath: zombieColor

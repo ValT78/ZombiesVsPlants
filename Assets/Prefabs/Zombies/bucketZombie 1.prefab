@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4088931, y: -2.114141}
+  m_Offset: {x: -2.8553805, y: -1.845561}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.038566, y: 7.707469}
+  m_Size: {x: 3.5100183, y: 7.170309}
   m_EdgeRadius: 0
 --- !u!114 &2651289205787288623
 MonoBehaviour:
@@ -128,7 +128,6 @@ MonoBehaviour:
   frequency: 5
   amplitude: 5
   damage: 1
-  HP: 180
+  HP: 150
   zombieColor: 1
-  blinkDuration: 0.5
   spriteRenderer: {fileID: 2651289205787288621}

@@ -107,7 +107,6 @@ MonoBehaviour:
   plantColor: 0
   brainReward: 25
   bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
-  blinkDuration: 0.5
   spriteRenderer: {fileID: 8687565341010220491}
   brain: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}
 --- !u!61 &6601214795515292116
@@ -123,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06364095, y: -0.28000355}
+  m_Offset: {x: 2.3308237, y: -1.1682339}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8292873, y: 2.0346322}
+  m_Size: {x: 2.7361617, y: 9.294956}
   m_EdgeRadius: 0
 --- !u!50 &-2552843824926469723
 Rigidbody2D:

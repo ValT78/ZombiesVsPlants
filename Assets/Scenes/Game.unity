@@ -2621,11 +2621,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: reloadTimes.Array.data[1]
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714929, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: reloadTimes.Array.data[2]
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804492714931, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: m_LocalScale.x
@@ -4055,6 +4055,10 @@ PrefabInstance:
     - target: {fileID: 368582955945781191, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: m_Name
       value: goldbrain (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
+      propertyPath: HP
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantType
@@ -5701,11 +5705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: prices.Array.data[1]
-      value: 70
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: prices.Array.data[2]
-      value: 70
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: colors.Array.data[0].a
@@ -6030,6 +6034,10 @@ PrefabInstance:
     - target: {fileID: 368582955945781191, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: m_Name
       value: goldbrain (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
+      propertyPath: HP
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantType
@@ -6734,11 +6742,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: prices.Array.data[1]
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: prices.Array.data[2]
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: colors.Array.data[0].a
@@ -7852,6 +7860,10 @@ PrefabInstance:
       value: goldbrain (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
+      propertyPath: HP
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantType
       value: 3
       objectReference: {fileID: 0}
@@ -8550,11 +8562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: prices.Array.data[1]
-      value: 175
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: prices.Array.data[2]
-      value: 175
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5328195804465144092, guid: 7504570e6080b9f4785516902085a023, type: 3}
       propertyPath: colors.Array.data[0].a
@@ -8908,7 +8920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: HP
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantType
@@ -11767,7 +11779,7 @@ PrefabInstance:
       objectReference: {fileID: 1076709546}
     - target: {fileID: 1434418417764551934, guid: 014d780c8a56fc64ab09ec7ebc388b7f, type: 3}
       propertyPath: startingHP
-      value: 600
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1434418417764551934, guid: 014d780c8a56fc64ab09ec7ebc388b7f, type: 3}
       propertyPath: lifeBarRect
@@ -12903,7 +12915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: HP
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4797403975186165822, guid: 6a8744542ae054143bcb7af61c74ca57, type: 3}
       propertyPath: plantType

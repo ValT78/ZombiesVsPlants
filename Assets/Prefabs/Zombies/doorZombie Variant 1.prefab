@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5873200481821243725, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
       propertyPath: HP
-      value: 150
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 5873200481821243725, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
       propertyPath: damage
@@ -76,12 +76,16 @@ PrefabInstance:
       value: doorZombie Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 9041724113304809889, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
+      propertyPath: m_Size.x
+      value: 4.476448
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041724113304809889, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
       propertyPath: m_Size.y
       value: 8.069036
       objectReference: {fileID: 0}
     - target: {fileID: 9041724113304809889, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
       propertyPath: m_Offset.x
-      value: 1.5253496
+      value: -3.384943
       objectReference: {fileID: 0}
     - target: {fileID: 9041724113304809889, guid: d829b4e820f2b5b499e2cab8c3082ae8, type: 3}
       propertyPath: m_Offset.y

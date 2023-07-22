@@ -7,6 +7,7 @@ public class LevelParameters : MonoBehaviour
     private readonly List<int[]> listLevel = new();
     private float[] sunMultiplier;
     private int[] unlockedZombie;
+    private int[] nexusLife;
     private bool[] spawnBrains;
     private string[] messages;
 
@@ -15,25 +16,25 @@ public class LevelParameters : MonoBehaviour
         spawnBrains = new bool[] { true, true, true, true, true, true, true, true, false, true, true, true, false, true, true, true,true,true};
         unlockedZombie = new int[] { 0, 0, 1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5,5,5};
         sunMultiplier = new float[] { 1f, 1f, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1f, 1.70f, 1.70f, 1.70f, 1f, 1.80f,1.80f,1.90f, 1.90f, 2f};
-
-        listLevel.Add(new int[] { 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0 ,0 ,0, 0 , 0 ,0, 0 ,0, 0,0 ,0 , 0,0,0,0,0,0,0,0,0,0,0,0,0, });
+        nexusLife = new int[] { 800, 800, 700, 600, 500, 450, 400, 350, 300, 250, 200, 150, 300, 100, 50, 50, 30, 30 };
+        listLevel.Add(new int[] { 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, });
         listLevel.Add(new int[] { 3 });
-        listLevel.Add(new int[] { 0, 0, 3 , 0, 0, 0, 0,0 ,0,0 ,0});
+        listLevel.Add(new int[] { 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0 });
         listLevel.Add(new int[] { 0, 3, 0, 2, 2, 2, 2, 2, 2, 3,0, 0, 2, 2, 2, 2, 2 });
-        listLevel.Add(new int[] { 0, 3, 0, 0,0,0,3,2,0,3,2,0,3,2,0,3,2,0,3,2,0 });
-        listLevel.Add(new int[] { 0,0 ,12,12,12,12,12});
-        listLevel.Add(new int[] { 0, 0, 2, 2, 3, 2, 2, 2,3,2,2,2,2,3,2,2,2,2,3});
-        listLevel.Add(new int[] { 3,3,0,0,9,9,3,3,3,9,3,3,3,9 });
-        listLevel.Add(new int[] { 3,3,2,0,12,0,9,0,2 });
-        listLevel.Add(new int[] { 0,4,0,4,2,4,4,12,0,2,0,10,4,0,12,10,0 });
-        listLevel.Add(new int[] { 0, 5,0,5,0,0,12,5,2,12,11,5,11,2,12,0 });
-        listLevel.Add(new int[] { 0, 1,6, 0,6, 1,7,8,7,8 });
-        listLevel.Add(new int[] { 3,2,4,0,5,12,1,4,8,0,5,0,2,12,0,10,0,11 });
-        listLevel.Add(new int[] { 0,5,0,7,1,12,2,12,0,9,4,4,0,1,2,12,2,6,3,11,0,1,12,12,2,3,4,5,3,4,5,0,1,2,2,12,10,11,6,0});
-        listLevel.Add(new int[] { 0,3,2,0,4,12,0,8,2,1,5,12,0,10,2,1,6,12,0,5,2,0,7,12,0,9,2,1,5,12});
-        listLevel.Add(new int[] { 0, 0, 0, 10,11, 12, 12, 12, 12, 12, 0,0,0,3, 4, 5, 3, 4, 5, 3, 4, 5, 2,2,2});
-        listLevel.Add(new int[] { 0, 0, 7, 10, 1,12,12,0, 8, 11,0,1,2,2,2,12, 6, 9});
-        listLevel.Add(new int[] { 0, 0, 0, 1, 1, 2, 12, 2, 12, 2, 4, 5, 4, 5, 4, 0, 1, 1, 1,0, 9, 9,12,2,12,2,12 });
+        listLevel.Add(new int[] { 0, 3, 0, 0, 0, 0, 3, 2, 0, 3, 2, 0, 3, 2, 0, 3, 2, 0, 3, 2, 0 });
+        listLevel.Add(new int[] { 0, 0, 12, 12, 12, 12, 12 });
+        listLevel.Add(new int[] { 0, 0, 2, 2, 3, 2, 2, 2, 3, 2, 2, 2, 2, 3, 2, 2, 2, 2, 3 });
+        listLevel.Add(new int[] { 3, 3, 0, 0, 9, 9, 3, 3, 3, 9, 3, 3, 3, 9 });
+        listLevel.Add(new int[] { 3, 3, 2, 0, 12, 0, 9, 0, 2 });
+        listLevel.Add(new int[] { 0, 4, 0, 4, 2, 4, 4, 12, 0, 2, 0, 10, 4, 0, 12, 10, 0 });
+        listLevel.Add(new int[] { 0, 5, 0, 5, 0, 0, 12, 5, 2, 12, 11, 5, 11, 2, 12, 0 });
+        listLevel.Add(new int[] { 0, 1, 6, 0, 6, 1, 7, 8, 7, 8 });
+        listLevel.Add(new int[] { 3, 2, 4, 0, 5, 12, 1, 4, 8, 0, 5, 0, 2, 12, 0, 10, 0, 11 });
+        listLevel.Add(new int[] { 0, 5, 0, 7, 1, 12, 2, 12, 0, 9, 4, 4, 0, 1, 2, 12, 2, 6, 3, 11, 0, 1, 12, 12, 2, 3, 4, 5, 3, 4, 5, 0, 1, 2, 2, 12, 10, 11, 6, 0 });
+        listLevel.Add(new int[] { 0, 3, 2, 0, 4, 12, 0, 8, 2, 1, 5, 12, 0, 10, 2, 1, 6, 12, 0, 5, 2, 0, 7, 12, 0, 9, 2, 1, 5, 12 });
+        listLevel.Add(new int[] { 3,0, 0, 0, 10, 11, 12, 12, 12, 12, 12, 0, 0, 0, 3, 4, 5, 3, 4, 5, 3, 4, 5, 2, 2, 2 });
+        listLevel.Add(new int[] { 0,5, 0, 7, 10, 1, 12, 12, 0, 8, 11, 0, 1, 2, 2, 2, 12, 6, 9 });
+        listLevel.Add(new int[] { 0, 0, 0, 1, 1, 2, 12, 2, 12, 2, 4, 5, 4, 5, 4, 0, 1, 1, 1, 0, 9, 9, 12, 2, 12, 2, 12 });
 
         messages = new string[]
         {
@@ -52,7 +53,7 @@ public class LevelParameters : MonoBehaviour
             "Another level with no bonus brains from the ground ! We need gravestones !",
             "You know everything of this game now. But are you really that strong ?",
             "you think the last level was hard ? Try this one",
-            "OK ! You dare challenge this ? You will regret it !",
+            "OK ! You dare challenge this game ? You will regret it !",
             "will you ever be tired of destroying happy plants wanting to live in peace",
             "If you're able to defeat this level, you really are the zombie's master !"
         };
@@ -60,7 +61,7 @@ public class LevelParameters : MonoBehaviour
 
     public void LoadGame(int level)
 	{
-        Transporter.transporter.LoadGame(listLevel[level], unlockedZombie[level], messages[level], sunMultiplier[level],spawnBrains[level]);
+        Transporter.transporter.LoadGame(listLevel[level], unlockedZombie[level], messages[level], sunMultiplier[level],spawnBrains[level],nexusLife[level]);
 	}
     
 

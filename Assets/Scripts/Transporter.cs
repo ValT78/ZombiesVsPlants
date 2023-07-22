@@ -10,6 +10,7 @@ public class Transporter : MonoBehaviour
     public static string message;
     public static float sunMultiplier;
     public static bool spawnBrains;
+    public static int nexusLife;
     private static bool hasBeenLoaded;
     public static Transporter transporter;
 
@@ -23,13 +24,14 @@ public class Transporter : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void LoadGame(int[] plantTable, int unlockedZombie, string message, float sunMultiplier, bool spawnBrains)
+    public void LoadGame(int[] plantTable, int unlockedZombie, string message, float sunMultiplier, bool spawnBrains,int nexusLife)
     {
         Transporter.plantTable = plantTable;
         Transporter.unlockedZombie = unlockedZombie;
         Transporter.message = message;
         Transporter.sunMultiplier = sunMultiplier;
         Transporter.spawnBrains = spawnBrains;
+        Transporter.nexusLife = nexusLife;
         SceneManager.LoadScene("Game");
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
