@@ -11,14 +11,13 @@ public class BasicPlantBehaviour : MonoBehaviour
     [Tooltip("Bullets per seconds")]
     public float attackSpeed;
     [Tooltip("In units per second")]
-    public float bulletSpeed;
-    [Tooltip("In units per second")]
     public int bulletDamage;
     [Tooltip("In units per second")]
     public int plantColor;
     [Tooltip("Brains granted to player uppon death of the plant")]
     public int brainReward;
-
+    public float xBulletSpeed;
+    public float yBulletSpeed;
 
     [Tooltip("The projectile used by the plant")]
     public GameObject bulletPrefab;
@@ -49,7 +48,9 @@ public class BasicPlantBehaviour : MonoBehaviour
         pear,
         Peashooter,
         DoublePeashooter,
-        TriplePea
+        TriplePea,
+        Mushroom,
+        SplitPea
         
     }
 
@@ -97,32 +98,41 @@ public class BasicPlantBehaviour : MonoBehaviour
     {
         while (true)
         {
-            ShootProjectile(0);
+            if(plantType<=PlantTypes.Mushroom)
+            {
+                ShootProjectile(-4, 0, xBulletSpeed, yBulletSpeed);
+            }
+            else
+            {
+                ShootProjectile(2, 2f, xBulletSpeed, yBulletSpeed);
+                ShootProjectile(2, -2f, xBulletSpeed, -yBulletSpeed);
+
+            }
             if (plantType == PlantTypes.TriplePea)
             {
                 if(transform.position.y<5)
-                    ShootProjectile(2.6f);
+                    ShootProjectile(-4, 2.6f, xBulletSpeed, yBulletSpeed);
                 if(transform.position.y>-5)
-                    ShootProjectile(-2.6f);
+                    ShootProjectile(-4, -2.6f, xBulletSpeed, yBulletSpeed);
 
             }
             yield return new WaitForSeconds(0.3f);
             if (plantType == PlantTypes.DoublePeashooter)
-                ShootProjectile(0);
+                ShootProjectile(-4, 0, xBulletSpeed, yBulletSpeed);
             yield return new WaitForSeconds(1 / attackSpeed - 0.3f);
 
         }
     }
 
-    private void ShootProjectile(float y)
+    private void ShootProjectile(float x, float y, float vx, float vy)
 	{
-        GameObject bullet = Instantiate(bulletPrefab, transform.position+new Vector3(-4,y,0), Quaternion.identity);
-        bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletSpeed, bulletDamage, plantColor); // May be very VERY glutton
+        GameObject bullet = Instantiate(bulletPrefab, transform.position+new Vector3(x,y,0), Quaternion.identity);
+        bullet.GetComponent<ProjectileBehaviour>().Initialize(bulletDamage, vx, vy); // May be very VERY glutton
 	}
 
 
 
-    public void TakeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
+    public bool TakeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
 	{
         currentHP -= damage;
 		if (currentHP <= 0)
@@ -139,18 +149,20 @@ public class BasicPlantBehaviour : MonoBehaviour
                 ZombieManager.zombieManager.goldenBrains.Remove(gameObject);
                 ZombieManager.zombieManager.CheckVictory();
             }
-            Death();
+            if (plantType != PlantTypes.Brain)
+            {
+                plantPosition.canBuild = true;
+            }
+            Destroy(gameObject,0.1f);
+            return true;
         }
         StartCoroutine(Blink(Color.red, 1+Time.time));
+        return false;
     }
 
     public void Death()
 	{
-        if (plantType != PlantTypes.Brain)
-        {
-            plantPosition.canBuild = true;
-        }
-        Destroy(gameObject);
+        
 	}
     private IEnumerator Blink(Color color, float blinkDuration)
     {

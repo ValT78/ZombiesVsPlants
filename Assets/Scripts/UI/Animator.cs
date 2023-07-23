@@ -5,8 +5,9 @@ using UnityEngine;
 public class Animator : MonoBehaviour
 {
 
-	public GameObject icon, playButton, htpButton, creditsButton, quitButton;
+	public GameObject icon, playButton, dlcButton, htpButton, optionsButton, quitButton;
 
+	[SerializeField] private float shiftBrain;
     private int hoveredOption;
 
 	private GameObject[] options;
@@ -14,7 +15,7 @@ public class Animator : MonoBehaviour
 	public AudioSource hoversoundEffect;
 	void Start()
 	{
-		options = new GameObject[] { playButton, htpButton, creditsButton, quitButton };
+		options = new GameObject[] { playButton, dlcButton, htpButton, optionsButton, quitButton };
 
 		MouserOver(0);
 	}
@@ -23,7 +24,7 @@ public class Animator : MonoBehaviour
 	public void MouserOver(int hovered)
 	{
 		hoveredOption = hovered;
-		icon.transform.position = options[hoveredOption].transform.position - 0.1f * Camera.main.pixelWidth * Vector3.right;
+		icon.transform.position = options[hoveredOption].transform.position - shiftBrain * Camera.main.pixelWidth * Vector3.right;
 		hoversoundEffect.Play();
 	}
 

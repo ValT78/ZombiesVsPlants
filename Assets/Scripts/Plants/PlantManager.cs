@@ -1,50 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlantManager : MonoBehaviour
 {
     [HideInInspector] public static PlantManager plantManager;
 
-    public GameObject[] plantTypes; // All prefabs
+    [SerializeField] private GameObject[] plantTypes; // All prefabs
 
-    public int[] priceGrid;
+    [SerializeField] private int[] priceGrid;
 
-    public PlaceHolder[] placeholders;
+    [SerializeField] private PlaceHolder[] placeholders;
 
     [SerializeField] private TextMeshProUGUI sunMultiplierUI;
     [SerializeField] private TextMeshProUGUI sunCounter;
 
     [Tooltip("Number of sunflowers gained every 5 seconds")]
-    public int passiveSun;
-    [Tooltip("Average duration (in seconds) between which plants are being planted")]
-    public float averageTimeBetweenPlants;
+    [SerializeField] private int passiveSun;
+    
 
-
-    public int totalSun;
+    private int totalSun;
 
     private int index;
+    private int indexPlacement;
     private float sunMultiplier;
     private float plantSpawnTime;
 
-    public int[] plantOrder;
+    private int[] plantOrder;
+    private int[] plantPlacement;
 
     private void Awake()
     {
         plantManager = this;
         index = 0;
+        indexPlacement = 0;
 
-        StartCoroutine(PassiveSun());
-        StartCoroutine(PlacePlants());
-
+        
         plantSpawnTime = Transporter.plantSpawnTime;
         sunMultiplier = Transporter.sunMultiplier;
         sunMultiplierUI.text = "x" + sunMultiplier.ToString();
-        totalSun = Transporter.startingSun;
-        sunCounter.text = "x" + totalSun.ToString();
+        GetSun(Transporter.startingSun);
         plantOrder = Transporter.plantTable;
+        plantPlacement = Transporter.plantPlacement;
+        if (Transporter.spawnSuns)
+        {
+            StartCoroutine(PassiveSun());
+        }
+        StartCoroutine(PlacePlants());
 
     }
 
@@ -55,9 +58,9 @@ public class PlantManager : MonoBehaviour
             yield return new WaitForSeconds(plantSpawnTime);
             if (priceGrid[plantOrder[index]] <= totalSun)
             {
-                GetSun(-priceGrid[plantOrder[index]]);
-                InstantiatePlant(plantOrder[index]);
+                InstantiatePlant(plantOrder[index], plantPlacement[indexPlacement]);
                 index = (index + 1) % plantOrder.Length;
+                indexPlacement = (indexPlacement + 1) % plantPlacement.Length;
             }
         }
     }
@@ -76,36 +79,45 @@ public class PlantManager : MonoBehaviour
 
     public void GetSun(int amount)
 	{
+        print(totalSun);
         totalSun += amount;
         sunCounter.text = "x" + totalSun.ToString();
     }
 
 
-    public void InstantiatePlant(int plant)
+    public void InstantiatePlant(int plant, int placement)
     {
         int distance = 12;
-        List<PlaceHolder> toPlaces;
-        toPlaces = new();
+        List<PlaceHolder> toPlaces = new();
 
         foreach (PlaceHolder placeHolder in placeholders)
         {
             if (placeHolder.canBuild)
             {
-                if (placeHolder.distance < distance)
+                if (placement == 0 || placeHolder.lane == placement)
                 {
-                    distance = placeHolder.distance;
-                    toPlaces = new();
-                    toPlaces.Add(placeHolder);
-                }
-                else if (placeHolder.distance == distance)
-                {
-                    toPlaces.Add(placeHolder);
+                    if (placeHolder.distance < distance)
+                    {
+                        distance = placeHolder.distance;
+                        toPlaces = new();
+                        toPlaces.Add(placeHolder);
+                    }
+                    else if (placeHolder.distance == distance)
+                    {
+                        toPlaces.Add(placeHolder);
+                    }
                 }
             }
+        }
+        if(toPlaces.Count==0)
+        {
+            return;
         }
         PlaceHolder toPlace = toPlaces[Random.Range(0,toPlaces.Count)];
 
         toPlace.canBuild = false;
+
+        GetSun(-priceGrid[plant]);
 
         GameObject instance = Instantiate(plantTypes[plant], toPlace.gameObject.transform.position, Quaternion.identity);
         instance.GetComponent<BasicPlantBehaviour>().Initialize(toPlace);

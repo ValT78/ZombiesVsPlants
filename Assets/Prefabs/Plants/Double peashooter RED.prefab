@@ -102,10 +102,11 @@ MonoBehaviour:
   plantType: 6
   HP: 50
   attackSpeed: 0.2
-  bulletSpeed: 5
   bulletDamage: 10
   plantColor: -1
   brainReward: 50
+  xBulletSpeed: 5
+  yBulletSpeed: 0
   bulletPrefab: {fileID: 5476864066535955260, guid: 7b53ef5144177f644a1535b49b3b110a, type: 3}
   spriteRenderer: {fileID: 1917186200716000261}
   brain: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}

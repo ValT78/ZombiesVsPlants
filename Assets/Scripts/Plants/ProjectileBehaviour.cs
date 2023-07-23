@@ -5,51 +5,72 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour
 {
 
+	[SerializeField] private Rigidbody2D rb;
 	[SerializeField] private int bulletColor;
-    private float bulletSpeed;
+	[SerializeField] private bool isSpores;
+
+	private List<ZombieBehaviour> touched = new();
+
 	private int damage;
-	private bool initialized = false;
 	private bool hasCollided = false;
 
-	public void Initialize(float bs, int dmg, int plantColor)
+	public void Initialize(int dmg, float vx, float vy)
 	{
-		bulletSpeed = bs + Random.Range(-0.3f,0.3f);
+		rb.AddForce(new(vx, vy), ForceMode2D.Impulse);
 		damage = dmg;
-		initialized = true;
-		bulletColor = plantColor;
+		Destroy(gameObject, 8f);
 	}
 
-    void FixedUpdate()
+    private void DealDamage()
     {
+		ZombieBehaviour zombie = touched[0];
+			int HP = 0;
+			foreach (ZombieBehaviour touch in touched)
+			{
+				if(HP<touch.HP)
+                {
+					zombie = touch;
+					HP = touch.HP;
+				}
+			}
+			zombie.TakeDamage(damage, bulletColor);
+			Destroy(gameObject);
+	}
 
-		if(initialized)
-			transform.Translate(bulletSpeed / 60, 0, 0);
 
-    }
-
-	private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
 	{
-		if(!hasCollided)
-        {
-			if (initialized && collider.TryGetComponent<NexusManager>(out NexusManager nexusManager))
-			{
-				hasCollided = true;
+		if (!hasCollided && collider.TryGetComponent<NexusManager>(out NexusManager nexusManager))
+		{
+			if (!hasCollided)
 				nexusManager.TakeDamage(damage);
-				Destroy(gameObject);
-			}
-			else if (initialized && collider.TryGetComponent<BuildHP>(out BuildHP build))
-			{
-				hasCollided = true;
+			Destroy(gameObject);
+		}
+		else if (!hasCollided && collider.TryGetComponent<BuildHP>(out BuildHP build))
+		{
+			if (!hasCollided)
 				build.TakeDamage(damage);
-				Destroy(gameObject);
-			}
-			else if (initialized && collider.TryGetComponent<ZombieBehaviour>(out ZombieBehaviour zombie))
-			{
-				hasCollided = true;
+			Destroy(gameObject);
+		}
+		else if (collider.TryGetComponent<ZombieBehaviour>(out ZombieBehaviour zombie))
+		{
+			hasCollided = true;
+			if (isSpores)
+            {
 				zombie.TakeDamage(damage, bulletColor);
-				Destroy(gameObject);
-
+				Destroy(gameObject, 2f);
+				rb.AddForce(new(-0.5f,0), ForceMode2D.Impulse);
+				if(rb.velocity.x < 0)
+                {
+					Destroy(gameObject);
+                }
 			}
+			else
+            {
+				touched.Add(zombie);
+				Invoke("DealDamage",0.1f);
+			}
+
 		}
 		
 	}
