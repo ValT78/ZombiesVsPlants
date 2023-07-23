@@ -19,15 +19,15 @@ public class LevelParameters : MonoBehaviour
 
     void Start()
     {
-        spawnBrains = new bool[] { true, true, true, true, true, true, true, true, false, true, true, true, false, true, true, true, true, true };
-        spawnSuns = new bool[] { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true };
-        unlockedZombie = new int[] { 0, 0, 1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5,5,5};
-        sunMultiplier = new float[] { 1f, 1f, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1f, 1.70f, 1.70f, 1.70f, 1f, 1.80f, 1.80f, 1.90f, 1.90f, 2f };
-        brainMultiplier = new float[] { 1f, 1f, 1.05f, 1.10f, 1.15f, 1.20f, 1.25f, 1.30f, 1f, 1.35f, 1.35f, 1.35f, 1f, 1.40f, 1.40f, 1.45f, 1.45f, 1.5f };
-        startingSun = new int[] { 0, 100, 50, 100, 100, 100, 100, 100, 0, 0, 0, 100, 0, 100, 100, 100, 100, 100 };
-        startingBrain = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
-        nexusLife = new int[] { 800, 800, 700, 600, 500, 450, 400, 350, 300, 250, 200, 150, 300, 100, 50, 50, 30, 30 };
-        plantSpawnTime = new int[] { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+        spawnBrains = new bool[] { true, true, true, true, true, true, true, true, false, true, true, true, false, true, true, true, true, true,   true, true  };
+        spawnSuns = new bool[] { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true,   true, true,};
+        unlockedZombie = new int[] { 0, 0, 1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5,5,5,   5, 5};
+        sunMultiplier = new float[] { 1f, 1f, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1f, 1.70f, 1.70f, 1.70f, 1f, 1.80f, 1.80f, 1.90f, 1.90f, 2f,   1,90f, 1.90f, };
+        brainMultiplier = new float[] { 1f, 1f, 1.05f, 1.10f, 1.15f, 1.20f, 1.25f, 1.30f, 1f, 1.35f, 1.35f, 1.35f, 1f, 1.40f, 1.40f, 1.45f, 1.45f, 1.5f,   1.45f, 1.45f };
+        startingSun = new int[] { 0, 100, 50, 100, 100, 100, 100, 100, 0, 0, 0, 100, 0, 100, 100, 100, 100, 100,   100, 100, };
+        startingBrain = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,   100, 100, };
+        nexusLife = new int[] { 800, 800, 700, 600, 500, 450, 400, 350, 300, 250, 200, 150, 300, 100, 50, 50, 30, 30,   100, 100,  };
+        plantSpawnTime = new int[] { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,   3, 3 };
 
         listLevel.Add(new int[] { 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
         listLevel.Add(new int[] { 3 });
@@ -48,6 +48,10 @@ public class LevelParameters : MonoBehaviour
         listLevel.Add(new int[] { 0,5, 0, 7, 10, 1, 12, 12, 0, 8, 11, 0, 1, 2, 2, 2, 12, 6, 9 });
         listLevel.Add(new int[] { 0, 0, 0, 1, 1, 2, 12, 2, 12, 2, 4, 5, 4, 5, 4, 0, 1, 1, 1, 0, 9, 9, 12, 2, 12, 2, 12 });
 
+        listLevel.Add(new int[] { 0, 15, 0, 15, 1, 2, 2, 2, 2, 15, 15, 0, 1, 15, 2, 2, 2 });
+        listLevel.Add(new int[] { 0,0,4,5,0,0,4,5,1,10, 12, 11,12,4,5,0,0,7,8,0,0,2,2,4,5 });
+
+
         plantPlacement.Add(new int[] { 0 });
         plantPlacement.Add(new int[] { 0 });
         plantPlacement.Add(new int[] { 0 });
@@ -66,6 +70,9 @@ public class LevelParameters : MonoBehaviour
         plantPlacement.Add(new int[] { 0 });
         plantPlacement.Add(new int[] { 0 });
         plantPlacement.Add(new int[] { 0 });
+
+        plantPlacement.Add(new int[] { 0 });
+        plantPlacement.Add(new int[] { 1,5,1,5,2,4,4,2,3,2,2,4,4,1,5,3,3,2,4,5,1,5,1,2,4 });
 
         messages = new string[]
         {
@@ -86,7 +93,9 @@ public class LevelParameters : MonoBehaviour
             "you think the last level was hard ? Try this one",
             "OK ! You dare challenge this game ? You will regret it !",
             "will you ever be tired of destroying happy plants wanting to live in peace",
-            "If you're able to defeat this level, you really are the zombie's master !"
+            "If you're able to defeat this level, you really are the zombie's master !",
+            "Introducing Mushroom ! Shoot spores, dealing damage to several zombies with one projectile",
+            "In DLC levels, plants can now spawn on a predefine lane instead of the furthest from zombies"
         };
     }
 

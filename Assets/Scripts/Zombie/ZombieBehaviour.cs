@@ -13,6 +13,7 @@ public class ZombieBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private bool oneEatPlant;
 
+    [HideInInspector] public int currentHP;
     private Color color;
     private GameObject eated;
     private float startTime;
@@ -24,6 +25,7 @@ public class ZombieBehaviour : MonoBehaviour
     {
         startTime = Time.time;
         color = spriteRenderer.color;
+        currentHP = HP;
     }
 
     void Update()
@@ -35,7 +37,7 @@ public class ZombieBehaviour : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(-1, 0, 0) * Mathf.Clamp01(0.8f - (Mathf.Abs(Mathf.Sin((Time.time - startTime) * frequency) + 1) / 2)), speed * Time.deltaTime);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Plant"))
         {
@@ -69,12 +71,12 @@ public class ZombieBehaviour : MonoBehaviour
 
     public void TakeDamage(int damage, int bulletColor)
     {
-        HP -= damage - additionnalDamage*bulletColor*zombieColor;
+        currentHP -= damage - additionnalDamage*bulletColor*zombieColor;
         if(bulletColor*zombieColor==-1)
         {
-            HP -= additionnalDamage*3;
+            currentHP -= additionnalDamage*3;
         }
-        if (HP <= 0)
+        if (currentHP <= 0)
         {
             Destroy(this.gameObject);
         }

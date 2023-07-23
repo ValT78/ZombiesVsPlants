@@ -12168,11 +12168,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3826652514628277358, guid: 014d780c8a56fc64ab09ec7ebc388b7f, type: 3}
       propertyPath: m_Size.x
-      value: 3.6934814
+      value: 4.417141
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826652514628277358, guid: 014d780c8a56fc64ab09ec7ebc388b7f, type: 3}
+      propertyPath: m_Size.y
+      value: 23.793232
       objectReference: {fileID: 0}
     - target: {fileID: 3826652514628277358, guid: 014d780c8a56fc64ab09ec7ebc388b7f, type: 3}
       propertyPath: m_Offset.x
-      value: 0.8223839
+      value: 0.46055412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826652514628277358, guid: 014d780c8a56fc64ab09ec7ebc388b7f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2221961
       objectReference: {fileID: 0}
     - target: {fileID: 3826652514628277358, guid: 014d780c8a56fc64ab09ec7ebc388b7f, type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode

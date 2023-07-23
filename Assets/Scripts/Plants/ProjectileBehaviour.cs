@@ -24,32 +24,35 @@ public class ProjectileBehaviour : MonoBehaviour
     private void DealDamage()
     {
 		ZombieBehaviour zombie = touched[0];
-			int HP = 0;
-			foreach (ZombieBehaviour touch in touched)
-			{
-				if(HP<touch.HP)
-                {
-					zombie = touch;
-					HP = touch.HP;
-				}
+		int HP = 0;
+		foreach (ZombieBehaviour touch in touched)
+		{
+			if(HP<touch.HP)
+            {
+				zombie = touch;
+				HP = touch.HP;
 			}
-			zombie.TakeDamage(damage, bulletColor);
-			Destroy(gameObject);
+			else if(HP==touch.HP && zombie.currentHP>touch.currentHP)
+			{
+				zombie = touch;
+			}
+		}
+		zombie.TakeDamage(damage, bulletColor);
+		Destroy(gameObject);
 	}
 
 
     private void OnTriggerEnter2D(Collider2D collider)
 	{
-		if (!hasCollided && collider.TryGetComponent<NexusManager>(out NexusManager nexusManager))
+		if (collider.TryGetComponent<NexusManager>(out NexusManager nexusManager))
 		{
 			if (!hasCollided)
 				nexusManager.TakeDamage(damage);
 			Destroy(gameObject);
 		}
-		else if (!hasCollided && collider.TryGetComponent<BuildHP>(out BuildHP build))
+		else if (collider.TryGetComponent<BuildHP>(out BuildHP build))
 		{
-			if (!hasCollided)
-				build.TakeDamage(damage);
+			build.TakeDamage(damage);
 			Destroy(gameObject);
 		}
 		else if (collider.TryGetComponent<ZombieBehaviour>(out ZombieBehaviour zombie))
@@ -58,12 +61,12 @@ public class ProjectileBehaviour : MonoBehaviour
 			if (isSpores)
             {
 				zombie.TakeDamage(damage, bulletColor);
-				Destroy(gameObject, 2f);
-				rb.AddForce(new(-0.5f,0), ForceMode2D.Impulse);
-				if(rb.velocity.x < 0)
-                {
+				Destroy(gameObject, 5f);
+				rb.AddForce(new(-rb.velocity.x*3/4,0), ForceMode2D.Impulse);
+				if (rb.velocity.x < 0)
+				{
 					Destroy(gameObject);
-                }
+				}
 			}
 			else
             {

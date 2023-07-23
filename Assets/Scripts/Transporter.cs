@@ -55,6 +55,7 @@ public class Transporter : MonoBehaviour
         if (scene.isLoaded && scene.name == "Game")
         {
             ZombieManager.zombieManager.DispawnObject();
+            Time.timeScale = gameSpeed;
         }
     }
     private void Awake()
