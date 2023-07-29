@@ -8,8 +8,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 439060832014338513, guid: 7e9ce45b62db2004fa0a276058ffe9ec, type: 3}
+      propertyPath: HP
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 439060832014338513, guid: 7e9ce45b62db2004fa0a276058ffe9ec, type: 3}
       propertyPath: plantColor
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 439060832014338513, guid: 7e9ce45b62db2004fa0a276058ffe9ec, type: 3}
+      propertyPath: brainReward
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 439060832014338513, guid: 7e9ce45b62db2004fa0a276058ffe9ec, type: 3}
+      propertyPath: bulletDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 439060832014338513, guid: 7e9ce45b62db2004fa0a276058ffe9ec, type: 3}
       propertyPath: bulletPrefab

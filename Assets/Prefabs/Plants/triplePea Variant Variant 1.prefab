@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 669524713398315201, guid: 4a62aeff387953c479576b62bcc6e8a0, type: 3}
       propertyPath: HP
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 669524713398315201, guid: 4a62aeff387953c479576b62bcc6e8a0, type: 3}
       propertyPath: plantColor

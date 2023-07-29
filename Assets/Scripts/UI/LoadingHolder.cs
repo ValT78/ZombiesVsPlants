@@ -10,13 +10,15 @@ public class LoadingHolder : MonoBehaviour
     [SerializeField] private float[] reloadTimes;
 
     private int activeTab;
-    private float[] reloadTimer = { 0, 0, 0 };
+    private float[] reloadTimer = new float[3];
     private bool flag;
 
-    private void Awake()
+    private void Start()
     {
         activeTab = 0;
-        
+        reloadTimer[0] = reloadTimes[0] / 2;
+        reloadTimer[1] = reloadTimes[1] / 2;
+        reloadTimer[2] = reloadTimes[2] / 2;
     }
     void OnEnable()
     {

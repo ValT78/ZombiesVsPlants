@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: HP
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: cost
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: attackSpeed
-      value: 0.2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4293562590926864210, guid: 6b9f4fcace037214bbb286985dce8234, type: 3}
       propertyPath: brainReward

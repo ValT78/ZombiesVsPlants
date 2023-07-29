@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 5
-  HP: 50
-  attackSpeed: 0.2
+  HP: 20
+  attackSpeed: 0.25
   bulletDamage: 10
   plantColor: -1
   brainReward: 25

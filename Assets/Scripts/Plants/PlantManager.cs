@@ -79,7 +79,6 @@ public class PlantManager : MonoBehaviour
 
     public void GetSun(int amount)
 	{
-        print(totalSun);
         totalSun += amount;
         sunCounter.text = "x" + totalSun.ToString();
     }

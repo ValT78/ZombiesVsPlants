@@ -100,12 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 9
-  HP: 50
-  attackSpeed: 0.2
+  HP: 20
+  attackSpeed: 0.25
   bulletDamage: 10
   plantColor: 0
   brainReward: 25
-  xBulletSpeed: 7
+  xBulletSpeed: 6.5
   yBulletSpeed: 1.8
   bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
   spriteRenderer: {fileID: 8962734350009815313}
@@ -144,7 +144,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8962734350009815325}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

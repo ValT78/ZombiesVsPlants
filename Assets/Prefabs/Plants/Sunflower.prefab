@@ -100,12 +100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 0
-  HP: 50
+  HP: 20
   attackSpeed: 0
-  bulletSpeed: 0
   bulletDamage: 0
   plantColor: 0
   brainReward: 25
+  xBulletSpeed: 0
+  yBulletSpeed: 0
   bulletPrefab: {fileID: 5476864066535955260, guid: 80a0a04dacba9e94a83aa65083643a61, type: 3}
   spriteRenderer: {fileID: 8687565341010220491}
   brain: {fileID: 8181392724142703519, guid: 66f13af4fbe5de64aba72fd906567e8e, type: 3}

@@ -53,18 +53,19 @@ public class ZombieBehaviour : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Plant"))
         {
+            if(oneEatPlant)
+            {
+                Destroy(gameObject);
+            }
             isEating = false;
         }
     }
     private IEnumerator Eat()
     {
         yield return new WaitForSeconds(0.2f);
-        while (isEating)
-        {
-            if(eated.GetComponent<BasicPlantBehaviour>().TakeDamage(damage) && oneEatPlant)
-            {
-                Destroy(gameObject);
-            }
+        while (isEating) {
+
+            eated.GetComponent<BasicPlantBehaviour>().TakeDamage(damage);
             yield return new WaitForSeconds(3.1f/frequency);
         }
     }
@@ -81,8 +82,9 @@ public class ZombieBehaviour : MonoBehaviour
             Destroy(this.gameObject);
         }
         StartCoroutine(Blink(1 + Time.time));
-
     }
+
+   
 
     private IEnumerator Blink(float blinkDuration)
     {

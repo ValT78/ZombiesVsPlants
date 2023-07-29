@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.565841, y: -2.293789}
+  m_Offset: {x: -2.8447986, y: -4.9774485}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.8271017, y: 9.346756}
+  m_Size: {x: 7.5855274, y: 14.714077}
   m_EdgeRadius: 0
 --- !u!114 &610554921991923813
 MonoBehaviour:
@@ -127,7 +127,9 @@ MonoBehaviour:
   speed: 2.5
   frequency: 5
   amplitude: 2
-  damage: 20
-  HP: 110
+  damage: 10
+  HP: 130
   zombieColor: 0
   spriteRenderer: {fileID: 5364382574057527533}
+  oneEatPlant: 0
+  currentHP: 0

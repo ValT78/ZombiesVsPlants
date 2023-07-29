@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Transporter : MonoBehaviour
 {
+
     public static int[] plantTable;
     public static int[] plantPlacement;
     public static int unlockedZombie;
@@ -17,6 +18,7 @@ public class Transporter : MonoBehaviour
     public static float plantSpawnTime;
     public static bool spawnSuns;
     public static bool spawnBrains;
+    public static int level = -1;
 
     private static bool hasBeenLoaded;
 
@@ -34,8 +36,9 @@ public class Transporter : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void LoadGame(int[] plantTable, int[] plantPlacement, int unlockedZombie, string message, int nexusLife, float sunMultiplier, float brainMultiplier, int startingSun, int startingBrain, int plantSpawnTime, bool spawnSuns, bool spawnBrains)
+    public void LoadGame(int level, int[] plantTable, int[] plantPlacement, int unlockedZombie, string message, int nexusLife, float sunMultiplier, float brainMultiplier, int startingSun, int startingBrain, int plantSpawnTime, bool spawnSuns, bool spawnBrains)
     {
+        Transporter.level = level;
         Transporter.plantTable = plantTable;
         Transporter.plantPlacement = plantPlacement;
         Transporter.unlockedZombie = unlockedZombie;
@@ -57,6 +60,8 @@ public class Transporter : MonoBehaviour
             ZombieManager.zombieManager.DispawnObject();
             Time.timeScale = gameSpeed;
         }
+        
+        
     }
     private void Awake()
     {

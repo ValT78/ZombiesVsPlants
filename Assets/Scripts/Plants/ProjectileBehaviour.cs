@@ -63,7 +63,7 @@ public class ProjectileBehaviour : MonoBehaviour
 				zombie.TakeDamage(damage, bulletColor);
 				Destroy(gameObject, 5f);
 				rb.AddForce(new(-rb.velocity.x*3/4,0), ForceMode2D.Impulse);
-				if (rb.velocity.x < 0)
+				if (rb.velocity.x < 0.1f)
 				{
 					Destroy(gameObject);
 				}

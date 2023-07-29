@@ -104,8 +104,8 @@ public class BasicPlantBehaviour : MonoBehaviour
             }
             else
             {
-                ShootProjectile(2, 2f, xBulletSpeed, yBulletSpeed);
-                ShootProjectile(2, -2f, xBulletSpeed, -yBulletSpeed);
+                ShootProjectile(1.8f, 2f, xBulletSpeed, yBulletSpeed);
+                ShootProjectile(1.8f, -2f, xBulletSpeed, -yBulletSpeed);
 
             }
             if (plantType == PlantTypes.TriplePea)
@@ -132,7 +132,7 @@ public class BasicPlantBehaviour : MonoBehaviour
 
 
 
-    public bool TakeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
+    public void TakeDamage(int damage) // Decreases the plant's hp and grants brains if that kills it
 	{
         currentHP -= damage;
 		if (currentHP <= 0)
@@ -153,11 +153,10 @@ public class BasicPlantBehaviour : MonoBehaviour
             {
                 plantPosition.canBuild = true;
             }
-            Destroy(gameObject,0.1f);
-            return true;
+            
+            Destroy(gameObject);
         }
         StartCoroutine(Blink(Color.red, 1+Time.time));
-        return false;
     }
 
     public void Death()
@@ -209,14 +208,13 @@ public class BasicPlantBehaviour : MonoBehaviour
             t += Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + new Vector3(0, 1f, 0), 3f);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + new Vector3(0, 2f, 0), new Vector2(5f,2.6f), 0);
 
         foreach (Collider2D collider in colliders)
         {
             if (collider.CompareTag("Zombie"))
             {
                 Destroy(collider.gameObject);
-                // Faites quelque chose avec le GameObject Zombie détecté
             }
         }
         Destroy(gameObject, 0.3f);

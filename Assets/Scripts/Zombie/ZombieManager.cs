@@ -20,6 +20,7 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI brainMultiplierText;
 
     [SerializeField] private GameObject tutorial;
+    [SerializeField] private GameObject level1;
     [SerializeField] private GameObject level2;
     [SerializeField] private GameObject level9;
     [SerializeField] private GameObject level10;
@@ -33,6 +34,7 @@ public class ZombieManager : MonoBehaviour
 
     private void Awake()
     {
+        brains = 0;
         zombieManager = this;
         builds = new List<GameObject>();
         brainMultiplier = Transporter.brainMultiplier;
@@ -54,18 +56,22 @@ public class ZombieManager : MonoBehaviour
         }
         else if (Transporter.message == "  ")
         {
-            level2.SetActive(true);
+            level1.SetActive(true);
 
         }
         else if (Transporter.message == "   ")
         {
-            level9.SetActive(true);
+            level2.SetActive(true);
 
         }
         else if (Transporter.message == "    ")
         {
-            level10.SetActive(true);
+            level9.SetActive(true);
 
+        }
+        else if (Transporter.message == "     ")
+        {
+            level10.SetActive(true);
         }
         else
         {
